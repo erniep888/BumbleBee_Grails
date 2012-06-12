@@ -4,7 +4,7 @@
 		module="Bumblebee"
 		revision="0.1"
 		status="release"
-		publication="20120611201514"
+		publication="20120611205942"
 		default="true"
 	/>
 	<configurations>
@@ -599,6 +599,11 @@
 			<exclude org="*" module="jmxtools" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="*" module="jmxri" name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
+		<dependency org="mysql" name="mysql-connector-java" rev="5.1.16" conf="runtime->default">
+			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
+			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
+			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
 		<dependency org="org.grails.plugins" name="hibernate" rev="2.0.3" conf="runtime->default">
 			<artifact name="hibernate" type="zip" ext="zip" conf=""/>
 			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
@@ -619,6 +624,12 @@
 		</dependency>
 		<dependency org="org.grails.plugins" name="tomcat" rev="2.0.3" conf="build->default">
 			<artifact name="tomcat" type="zip" ext="zip" conf=""/>
+			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
+			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
+			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.grails.plugins" name="jdbc-pool" rev="1.0.9.3" force="true" conf="runtime->default">
+			<artifact name="jdbc-pool" type="zip" ext="zip" conf=""/>
 			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
@@ -660,6 +671,11 @@
 		</dependency>
 		<dependency org="org.grails.plugins" name="webxml" rev="1.4.1" conf="provided->default">
 			<artifact name="webxml" type="zip" ext="zip" conf=""/>
+			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
+			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
+			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.tomcat" name="com.springsource.org.apache.tomcat.jdbc" rev="1.0.9.3" conf="runtime->default">
 			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>

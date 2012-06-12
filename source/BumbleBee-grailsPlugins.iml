@@ -5,6 +5,7 @@
       <configuration>
         <webroots>
           <root url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/jquery-1.7.1/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/jdbc-pool-1.0.9.3/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -19,6 +20,9 @@
     <exclude-output />
     <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/hibernate-2.0.3">
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/hibernate-2.0.3/grails-app/i18n" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/jdbc-pool-1.0.9.3">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/jdbc-pool-1.0.9.3/grails-app/i18n" isTestSource="false" />
     </content>
     <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/jquery-1.7.1">
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/jquery-1.7.1/src/groovy" isTestSource="false" />

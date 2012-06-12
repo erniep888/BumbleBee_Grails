@@ -7,10 +7,10 @@
 		revision="0.1"
 		conf="runtime"
 		confs="runtime"
-		date="20120611201521"/>
+		date="20120611205954"/>
 	<dependencies>
 		<module organisation="org.hibernate" name="hibernate-ehcache">
-			<revision name="3.6.10.Final" status="release" pubdate="20120214013056" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="79">
+			<revision name="3.6.10.Final" status="release" pubdate="20120214013056" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="83">
 				<metadata-artifact status="no" details="" size="7428" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.hibernate\hibernate-ehcache\ivy-3.6.10.Final.xml" searched="false" origin-is-local="true" origin-location="C:\Java\Grails\grails-2.0.3\lib\org.hibernate\hibernate-ehcache\ivy-3.6.10.Final.xml"/>
 				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="3.6.10.Final" rev-constraint-default="3.6.10.Final" rev-constraint-dynamic="3.6.10.Final" callerrev="0.1"/>
 				<artifacts>
@@ -21,7 +21,7 @@
 			</revision>
 		</module>
 		<module organisation="antlr" name="antlr">
-			<revision name="2.7.7" status="release" pubdate="20120222141729" resolver="cache" artresolver="cache" homepage="http://www.antlr.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="77">
+			<revision name="2.7.7" status="release" pubdate="20120222141729" resolver="cache" artresolver="cache" homepage="http://www.antlr.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="81">
 				<license name="BSD License" url="http://www.antlr.org/license.html"/>
 				<metadata-artifact status="no" details="" size="2430" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\antlr\antlr\ivy-2.7.7.xml" searched="false" origin-is-local="true" origin-location="C:\Java\Grails\grails-2.0.3\lib\antlr\antlr\ivy-2.7.7.xml"/>
 				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="2.7.7" rev-constraint-default="2.7.7" rev-constraint-dynamic="2.7.7" callerrev="0.1"/>
@@ -33,7 +33,7 @@
 			</revision>
 		</module>
 		<module organisation="org.hibernate" name="hibernate-core">
-			<revision name="3.6.10.Final" status="release" pubdate="20120212092332" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="72">
+			<revision name="3.6.10.Final" status="release" pubdate="20120212092332" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="76">
 				<metadata-artifact status="no" details="" size="9551" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.hibernate\hibernate-core\ivy-3.6.10.Final.xml" searched="false" origin-is-local="true" origin-location="C:\Java\Grails\grails-2.0.3\lib\org.hibernate\hibernate-core\ivy-3.6.10.Final.xml"/>
 				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="3.6.10.Final" rev-constraint-default="3.6.10.Final" rev-constraint-dynamic="3.6.10.Final" callerrev="0.1"/>
 				<artifacts>
@@ -44,7 +44,7 @@
 			</revision>
 		</module>
 		<module organisation="javassist" name="javassist">
-			<revision name="3.12.0.GA" status="release" pubdate="20120222141743" resolver="cache" artresolver="cache" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="76">
+			<revision name="3.12.0.GA" status="release" pubdate="20120222141743" resolver="cache" artresolver="cache" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="80">
 				<license name="LGPL 2.1" url="http://www.gnu.org/licenses/lgpl-2.1.html"/>
 				<metadata-artifact status="no" details="" size="2748" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\javassist\javassist\ivy-3.12.0.GA.xml" searched="false" origin-is-local="true" origin-location="C:\Java\Grails\grails-2.0.3\lib\javassist\javassist\ivy-3.12.0.GA.xml"/>
 				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="3.12.0.GA" rev-constraint-default="3.12.0.GA" rev-constraint-dynamic="3.12.0.GA" callerrev="0.1"/>
@@ -56,7 +56,7 @@
 			</revision>
 		</module>
 		<module organisation="org.hibernate" name="hibernate-validator">
-			<revision name="4.1.0.Final" status="release" pubdate="20120222141733" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="74">
+			<revision name="4.1.0.Final" status="release" pubdate="20120222141733" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="78">
 				<metadata-artifact status="no" details="" size="8815" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.hibernate\hibernate-validator\ivy-4.1.0.Final.xml" searched="false" origin-is-local="true" origin-location="C:\Java\Grails\grails-2.0.3\lib\org.hibernate\hibernate-validator\ivy-4.1.0.Final.xml"/>
 				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="4.1.0.Final" rev-constraint-default="4.1.0.Final" rev-constraint-dynamic="4.1.0.Final" callerrev="0.1"/>
 				<artifacts>
@@ -67,7 +67,7 @@
 			</revision>
 		</module>
 		<module organisation="org.hibernate" name="hibernate-commons-annotations">
-			<revision name="3.2.0.Final" status="release" pubdate="20120222141737" resolver="cache" artresolver="cache" homepage="http://hibernate.org" downloaded="false" searched="false" default="false" conf="default, compile, master(*), runtime, compile(*), runtime(*), master" position="73">
+			<revision name="3.2.0.Final" status="release" pubdate="20120222141737" resolver="cache" artresolver="cache" homepage="http://hibernate.org" downloaded="false" searched="false" default="false" conf="default, compile, master(*), runtime, compile(*), runtime(*), master" position="77">
 				<license name="GNU LESSER GENERAL PUBLIC LICENSE" url="http://www.gnu.org/licenses/lgpl.txt"/>
 				<metadata-artifact status="no" details="" size="3543" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.hibernate\hibernate-commons-annotations\ivy-3.2.0.Final.xml" searched="false" origin-is-local="true" origin-location="C:\Java\Grails\grails-2.0.3\lib\org.hibernate\hibernate-commons-annotations\ivy-3.2.0.Final.xml"/>
 				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="3.2.0.Final" rev-constraint-default="3.2.0.Final" rev-constraint-dynamic="3.2.0.Final" callerrev="0.1"/>
@@ -79,8 +79,42 @@
 				</artifacts>
 			</revision>
 		</module>
+		<module organisation="org.grails.plugins" name="jdbc-pool">
+			<revision name="1.0.9.3" status="release" pubdate="20120410154226" resolver="cache" artresolver="cache" homepage="http://grails.org/JdbcPool+Plugin" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="73">
+				<metadata-artifact status="no" details="" size="2977" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.grails.plugins\jdbc-pool\ivy-1.0.9.3.xml" searched="false" origin-is-local="false" origin-location="http://plugins.grails.org/grails-jdbc-pool/tags/RELEASE_1_0_9_3/jdbc-pool-1.0.9.3.pom"/>
+				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="1.0.9.3" rev-constraint-default="1.0.9.3" rev-constraint-dynamic="1.0.9.3" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="jdbc-pool" type="zip" ext="zip" status="no" details="" size="130026" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.grails.plugins\jdbc-pool\zips\jdbc-pool-1.0.9.3.zip">
+						<origin-location is-local="false" location="http://plugins.grails.org/grails-jdbc-pool/tags/RELEASE_1_0_9_3/grails-jdbc-pool-1.0.9.3.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.tomcat" name="com.springsource.org.apache.tomcat.jdbc">
+			<revision name="1.0.9.3" status="release" pubdate="20110120043605" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, master(*), runtime, compile(*), runtime(*), master" position="74">
+				<metadata-artifact status="no" details="" size="2612" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.tomcat\com.springsource.org.apache.tomcat.jdbc\ivy-1.0.9.3.xml" searched="false" origin-is-local="false" origin-location="http://repository.springsource.com/maven/bundles/external/org/apache/tomcat/com.springsource.org.apache.tomcat.jdbc/1.0.9.3/com.springsource.org.apache.tomcat.jdbc-1.0.9.3.pom"/>
+				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="1.0.9.3" rev-constraint-default="1.0.9.3" rev-constraint-dynamic="1.0.9.3" callerrev="0.1"/>
+				<caller organisation="org.grails.plugins" name="jdbc-pool" conf="default, compile, runtime, master" rev="1.0.9.3" rev-constraint-default="1.0.9.3" rev-constraint-dynamic="1.0.9.3" callerrev="1.0.9.3"/>
+				<artifacts>
+					<artifact name="com.springsource.org.apache.tomcat.jdbc" type="jar" ext="jar" status="no" details="" size="110283" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.tomcat\com.springsource.org.apache.tomcat.jdbc\jars\com.springsource.org.apache.tomcat.jdbc-1.0.9.3.jar">
+						<origin-location is-local="false" location="http://repository.springsource.com/maven/bundles/external/org/apache/tomcat/com.springsource.org.apache.tomcat.jdbc/1.0.9.3/com.springsource.org.apache.tomcat.jdbc-1.0.9.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.juli" name="com.springsource.org.apache.juli.extras">
+			<revision name="6.0.24" status="release" pubdate="20100219092949" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="75">
+				<metadata-artifact status="no" details="" size="2601" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.juli\com.springsource.org.apache.juli.extras\ivy-6.0.24.xml" searched="false" origin-is-local="false" origin-location="http://repository.springsource.com/maven/bundles/external/org/apache/juli/com.springsource.org.apache.juli.extras/6.0.24/com.springsource.org.apache.juli.extras-6.0.24.pom"/>
+				<caller organisation="org.apache.tomcat" name="com.springsource.org.apache.tomcat.jdbc" conf="compile, runtime" rev="6.0.24" rev-constraint-default="6.0.24" rev-constraint-dynamic="6.0.24" callerrev="1.0.9.3"/>
+				<artifacts>
+					<artifact name="com.springsource.org.apache.juli.extras" type="jar" ext="jar" status="no" details="" size="56240" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.juli\com.springsource.org.apache.juli.extras\jars\com.springsource.org.apache.juli.extras-6.0.24.jar">
+						<origin-location is-local="false" location="http://repository.springsource.com/maven/bundles/external/org/apache/juli/com.springsource.org.apache.juli.extras/6.0.24/com.springsource.org.apache.juli.extras-6.0.24.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="org.grails.plugins" name="resources">
-			<revision name="1.1.6" status="release" pubdate="20120611201519" resolver="cache" artresolver="cache" downloaded="false" searched="false" default="true" conf="default" position="71">
+			<revision name="1.1.6" status="release" pubdate="20120611201519" resolver="cache" artresolver="cache" downloaded="false" searched="false" default="true" conf="default" position="72">
 				<metadata-artifact status="no" details="" size="430" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.grails.plugins\resources\ivy-1.1.6.xml" searched="false" origin-is-local="false" origin-location="UNKNOWN"/>
 				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="1.1.6" rev-constraint-default="1.1.6" rev-constraint-dynamic="1.1.6" callerrev="0.1"/>
 				<artifacts>
@@ -91,7 +125,7 @@
 			</revision>
 		</module>
 		<module organisation="org.grails.plugins" name="jquery">
-			<revision name="1.7.1" status="release" pubdate="20120611201519" resolver="cache" artresolver="cache" downloaded="false" searched="false" default="true" conf="default" position="70">
+			<revision name="1.7.1" status="release" pubdate="20120611201519" resolver="cache" artresolver="cache" downloaded="false" searched="false" default="true" conf="default" position="71">
 				<metadata-artifact status="no" details="" size="424" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.grails.plugins\jquery\ivy-1.7.1.xml" searched="false" origin-is-local="false" origin-location="UNKNOWN"/>
 				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="1.7.1" rev-constraint-default="1.7.1" rev-constraint-dynamic="1.7.1" callerrev="0.1"/>
 				<artifacts>
@@ -102,12 +136,24 @@
 			</revision>
 		</module>
 		<module organisation="org.grails.plugins" name="hibernate">
-			<revision name="2.0.3" status="release" pubdate="20120611201519" resolver="cache" artresolver="cache" downloaded="false" searched="false" default="true" conf="default" position="69">
+			<revision name="2.0.3" status="release" pubdate="20120611201519" resolver="cache" artresolver="cache" downloaded="false" searched="false" default="true" conf="default" position="70">
 				<metadata-artifact status="no" details="" size="430" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.grails.plugins\hibernate\ivy-2.0.3.xml" searched="false" origin-is-local="false" origin-location="UNKNOWN"/>
 				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="2.0.3" rev-constraint-default="2.0.3" rev-constraint-dynamic="2.0.3" callerrev="0.1"/>
 				<artifacts>
 					<artifact name="hibernate" type="zip" ext="zip" status="no" details="" size="7491" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.grails.plugins\hibernate\zips\hibernate-2.0.3.zip">
 						<origin-location is-local="true" location="C:\Java\Grails\grails-2.0.3\plugins\hibernate-2.0.3.zip"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="mysql" name="mysql-connector-java">
+			<revision name="5.1.16" status="release" pubdate="20110922065743" resolver="cache" artresolver="cache" homepage="http://dev.mysql.com/usingmysql/java/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="69">
+				<license name="The GNU General Public License, Version 2" url="http://www.gnu.org/licenses/gpl.txt"/>
+				<metadata-artifact status="no" details="" size="2416" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\mysql\mysql-connector-java\ivy-5.1.16.xml" searched="false" origin-is-local="false" origin-location="http://repo.grails.org/grails/core/mysql/mysql-connector-java/5.1.16/mysql-connector-java-5.1.16.pom"/>
+				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="5.1.16" rev-constraint-default="5.1.16" rev-constraint-dynamic="5.1.16" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="mysql-connector-java" type="jar" ext="jar" status="no" details="" size="786484" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\mysql\mysql-connector-java\jars\mysql-connector-java-5.1.16.jar">
+						<origin-location is-local="false" location="http://repo.grails.org/grails/core/mysql/mysql-connector-java/5.1.16/mysql-connector-java-5.1.16.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -309,7 +355,7 @@
 			</revision>
 		</module>
 		<module organisation="dom4j" name="dom4j">
-			<revision name="1.6.1" status="release" pubdate="20120222141736" resolver="cache" artresolver="cache" homepage="http://dom4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="78">
+			<revision name="1.6.1" status="release" pubdate="20120222141736" resolver="cache" artresolver="cache" homepage="http://dom4j.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="82">
 				<metadata-artifact status="no" details="" size="3645" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\dom4j\dom4j\ivy-1.6.1.xml" searched="false" origin-is-local="true" origin-location="C:\Java\Grails\grails-2.0.3\lib\dom4j\dom4j\ivy-1.6.1.xml"/>
 				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="0.1"/>
 				<artifacts>
@@ -430,7 +476,7 @@
 			</revision>
 		</module>
 		<module organisation="javax.validation" name="validation-api">
-			<revision name="1.0.0.GA" status="release" pubdate="20120222141730" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="75">
+			<revision name="1.0.0.GA" status="release" pubdate="20120222141730" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="79">
 				<license name="Apache License, Version 2.0" url="license.txt"/>
 				<metadata-artifact status="no" details="" size="2314" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\javax.validation\validation-api\ivy-1.0.0.GA.xml" searched="false" origin-is-local="true" origin-location="C:\Java\Grails\grails-2.0.3\lib\javax.validation\validation-api\ivy-1.0.0.GA.xml"/>
 				<caller organisation="org.hibernate" name="hibernate-validator" conf="default, compile, runtime, master" rev="1.0.0.GA" rev-constraint-default="1.0.0.GA" rev-constraint-dynamic="1.0.0.GA" callerrev="4.1.0.Final"/>
