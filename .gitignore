@@ -1,6 +1,7 @@
 *.iws
 *Db.properties
 *Db.script
+*.class
 eclipse
 stacktrace.log
 coverage-error.log
