@@ -13,15 +13,6 @@
     <title><g:meta name="app.userfriendly.applicationAcronym"/> - Dashboard</title>
 </head>
 <body>
-    <div id="mainNav">
-        <a href="/" class="selected">Dashboard</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="/">Tests</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="/">Library</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="/">Administration</a>
-    </div>
     <div id="dashboardNav">
         <a href="/" class="selected">By Phase</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

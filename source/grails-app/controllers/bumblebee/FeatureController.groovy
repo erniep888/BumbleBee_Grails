@@ -1,8 +1,11 @@
 package bumblebee
 
 class FeatureController {
+    def mantisIntegrationService
 
-    def index() { }
+    def index() {
+        redirect(action: 'list')
+    }
 
     def list() {
         [featureInstanceList: Feature.list(), featureInstanceTotal: 0]

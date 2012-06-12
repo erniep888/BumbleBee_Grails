@@ -26,22 +26,31 @@
             <td><a href="http://myportal"><img src="${resource(dir: 'images', file: 'logo.png')}" alt="SIMS"/></a></td>
             <td>
                 <div id="title">
-                    <g:meta name="app.userfriendly.applicationName"/>
+                    <g:message code="app.userfriendly.applicationname" default=""/>
                     <div id="login">Welcome, Ernie Paschall</div>
                 </div>
             </td>
         </tr>
     </table>
 </div>
+<div id="mainNav">
+    <a href="/" class="selected">Dashboard</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/"><g:message code="feature.label" default="Feature"/>s</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/">Library</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/">Administration</a>
+</div>
 <g:layoutBody/>
 <div class="footer">
     <table>
         <tr>
             <td>
-                <div id="footerMessage">&nbsp;Test</div>
+                <div id="footerMessage">&nbsp;Ready</div>
             </td>
             <td>
-                <div id="footerAppInfo"><g:meta name="app.userfriendly.applicationName"/>  (<g:meta name="app.version"/>)</div>
+                <div id="footerAppInfo"><g:message code="app.userfriendly.applicationname" default=""/>  (<g:meta name="app.version"/>)</div>
             </td>
         </tr>
     </table>

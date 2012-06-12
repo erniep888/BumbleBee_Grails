@@ -27,6 +27,18 @@ class MantisBugInformation implements Comparable<MantisBugInformation>
 
     static transients = ["severityMap", "statusMap"]
 
+    static MantisBugInformation createFromMap(def map) {
+        def mantisBugInformation = new MantisBugInformation()
+        if (map) {
+            mantisBugInformation.id = map.id
+            mantisBugInformation.summary = map.summary
+            mantisBugInformation.status = map.status
+            mantisBugInformation.severity = map.severity
+            mantisBugInformation.priority = map.priority
+        }
+        return mantisBugInformation
+    }
+
     String toString() {
         return "${id}"
     }
