@@ -6,12 +6,11 @@ eclipse
 stacktrace.log
 coverage-error.log
 
-/plugins
-/web-app/plugins
-/web-app/WEB-INF/classes
-/classes
-/test
-/target/classes
-/target/stacktrace.log
+source/plugins
+source/web-app/plugins
+source/web-app/WEB-INF/classes
+source/target/classes
+source/target/stacktrace.log
+source/out
 
 
