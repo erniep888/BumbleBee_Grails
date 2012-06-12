@@ -2,18 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fdf7235-76a9-4cdc-8f14-da2ad6fda12a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/images/favicon.ico" afterPath="$PROJECT_DIR$/web-app/images/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/images/logo.png" afterPath="$PROJECT_DIR$/web-app/images/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/Artifact.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/Artifact.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/ArtifactService.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/ArtifactService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/AuditActivity.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/AuditActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/DashboardController.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/DashboardController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/Feature.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/Feature.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/FeatureController.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/FeatureController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/FeaturePhase.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/FeaturePhase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/LibraryArtifact.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/LibraryArtifact.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/Link.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/Link.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/MantisBugId.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/MantisBugId.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/MantisBugInformation.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/MantisBugInformation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/MantisIntegrationService.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/MantisIntegrationService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/Phase.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/Phase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/ThirdPartyCase.class" afterPath="$PROJECT_DIR$/out/production/BumbleBee/bumblebee/ThirdPartyCase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ApplicationResources.class" afterPath="$PROJECT_DIR$/target/classes/ApplicationResources.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BootStrap.class" afterPath="$PROJECT_DIR$/target/classes/BootStrap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BuildConfig$_run_closure1.class" afterPath="$PROJECT_DIR$/target/classes/BuildConfig$_run_closure1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BuildConfig$_run_closure1_closure4.class" afterPath="$PROJECT_DIR$/target/classes/BuildConfig$_run_closure1_closure4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BuildConfig$_run_closure1_closure5.class" afterPath="$PROJECT_DIR$/target/classes/BuildConfig$_run_closure1_closure5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BuildConfig.class" afterPath="$PROJECT_DIR$/target/classes/BuildConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Config.class" afterPath="$PROJECT_DIR$/target/classes/Config.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DataSource$_run_closure3.class" afterPath="$PROJECT_DIR$/target/classes/DataSource$_run_closure3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DataSource$_run_closure3_closure4.class" afterPath="$PROJECT_DIR$/target/classes/DataSource$_run_closure3_closure4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DataSource$_run_closure3_closure5.class" afterPath="$PROJECT_DIR$/target/classes/DataSource$_run_closure3_closure5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DataSource$_run_closure3_closure6.class" afterPath="$PROJECT_DIR$/target/classes/DataSource$_run_closure3_closure6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DataSource.class" afterPath="$PROJECT_DIR$/target/classes/DataSource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/UrlMappings.class" afterPath="$PROJECT_DIR$/target/classes/UrlMappings.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/Artifact.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/Artifact.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/ArtifactService.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/ArtifactService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/AuditActivity.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/AuditActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/DashboardController.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/DashboardController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/Feature.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/Feature.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/FeatureController.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/FeatureController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/FeaturePhase.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/FeaturePhase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/LibraryArtifact.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/LibraryArtifact.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/Link.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/Link.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/MantisBugId.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/MantisBugId.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/MantisBugInformation.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/MantisBugInformation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/MantisIntegrationService.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/MantisIntegrationService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/Phase.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/Phase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/ThirdPartyCase.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/ThirdPartyCase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/resources$_run_closure1.class" afterPath="$PROJECT_DIR$/target/classes/resources$_run_closure1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/resources.class" afterPath="$PROJECT_DIR$/target/classes/resources.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BumbleBee-grailsPlugins.iml" afterPath="$PROJECT_DIR$/BumbleBee-grailsPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BumbleBee.iml" afterPath="$PROJECT_DIR$/BumbleBee.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application.properties" afterPath="$PROJECT_DIR$/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/spring/resources.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/spring/resources.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/MantisIntegrationService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/MantisIntegrationService.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" afterPath="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/antlr/antlr/ivydata-2.7.7.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/antlr/antlr/ivydata-2.7.7.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/aopalliance/aopalliance/ivydata-1.0.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/aopalliance/aopalliance/ivydata-1.0.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/asm/asm/ivydata-3.1.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/asm/asm/ivydata-3.1.properties" />
@@ -40,6 +74,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/jline/jline/ivydata-1.0.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/jline/jline/ivydata-1.0.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/junit/junit/ivydata-4.10.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/junit/junit/ivydata-4.10.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/log4j/log4j/ivydata-1.2.16.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/log4j/log4j/ivydata-1.2.16.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/mysql/mysql-connector-java/ivydata-5.1.16.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/mysql/mysql-connector-java/ivydata-5.1.16.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/net.java.dev.jna/jna/ivydata-3.2.3.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/net.java.dev.jna/jna/ivydata-3.2.3.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/net.sf.ehcache/ehcache-core/ivydata-2.4.6.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/net.sf.ehcache/ehcache-core/ivydata-2.4.6.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/opensymphony/sitemesh/ivydata-2.4.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/opensymphony/sitemesh/ivydata-2.4.properties" />
@@ -48,10 +83,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.apache.ant/ant-trax/ivydata-1.7.1.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.apache.ant/ant-trax/ivydata-1.7.1.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.apache.ant/ant/ivydata-1.8.2.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.apache.ant/ant/ivydata-1.8.2.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.apache.ivy/ivy/ivydata-2.2.0.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.apache.ivy/ivy/ivydata-2.2.0.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.apache.juli/com.springsource.org.apache.juli.extras/ivydata-6.0.24.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.apache.juli/com.springsource.org.apache.juli.extras/ivydata-6.0.24.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.apache.tomcat.embed/tomcat-embed-core/ivydata-7.0.25.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.apache.tomcat.embed/tomcat-embed-core/ivydata-7.0.25.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.apache.tomcat.embed/tomcat-embed-jasper/ivydata-7.0.25.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.apache.tomcat.embed/tomcat-embed-jasper/ivydata-7.0.25.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-juli/ivydata-7.0.25.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-juli/ivydata-7.0.25.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-log4j/ivydata-7.0.25.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-log4j/ivydata-7.0.25.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.apache.tomcat/com.springsource.org.apache.tomcat.jdbc/ivydata-1.0.9.3.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.apache.tomcat/com.springsource.org.apache.tomcat.jdbc/ivydata-1.0.9.3.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.apache.tomcat/tomcat-catalina-ant/ivydata-7.0.25.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.apache.tomcat/tomcat-catalina-ant/ivydata-7.0.25.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.aspectj/aspectjrt/ivydata-1.6.10.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.aspectj/aspectjrt/ivydata-1.6.10.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.aspectj/aspectjweaver/ivydata-1.6.10.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.aspectj/aspectjweaver/ivydata-1.6.10.properties" />
@@ -66,6 +103,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.grails.internal-Bumblebee-runtime.xml" afterPath="$PROJECT_DIR$/target/ivy-cache/org.grails.internal-Bumblebee-runtime.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.grails.internal-Bumblebee-test.xml" afterPath="$PROJECT_DIR$/target/ivy-cache/org.grails.internal-Bumblebee-test.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.grails.plugins/hibernate/ivydata-2.0.3.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.grails.plugins/hibernate/ivydata-2.0.3.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.grails.plugins/jdbc-pool/ivydata-1.0.9.3.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.grails.plugins/jdbc-pool/ivydata-1.0.9.3.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.grails.plugins/jquery/ivydata-1.7.1.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.grails.plugins/jquery/ivydata-1.7.1.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.grails.plugins/resources/ivydata-1.1.6.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.grails.plugins/resources/ivydata-1.1.6.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/org.grails.plugins/tomcat/ivydata-2.0.3.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/org.grails.plugins/tomcat/ivydata-2.0.3.properties" />
@@ -202,9 +240,7 @@
         <entry file="file://$PROJECT_DIR$/grails-app/services/MantisIntegrationService.groovy">
           <provider selected="true" editor-type-id="text-editor">
             <state line="12" column="38" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -212,36 +248,27 @@
       <file leaf-file-name="MantisBugId.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/MantisBugId.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="6" selection-start="123" selection-end="123" vertical-scroll-proportion="-1.5813954">
+            <state line="4" column="6" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="LibraryArtifact.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/LibraryArtifact.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="6" selection-start="25" selection-end="25" vertical-scroll-proportion="0.06148282">
+            <state line="11" column="29" selection-start="168" selection-end="168" vertical-scroll-proportion="0.32635254">
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MantisBugInformation.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/MantisBugInformation.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="43" selection-start="230" selection-end="230" vertical-scroll-proportion="-2.7674417">
+            <state line="7" column="43" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-            <state />
           </provider>
         </entry>
       </file>
@@ -296,7 +323,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -307,39 +334,7 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BumbleBee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BumbleBee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BumbleBee-grailsPlugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -357,6 +352,17 @@
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Grails.Grails:source">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -365,17 +371,6 @@
       <setting name="passParentEnv" value="true" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <setting name="launchBrowser" value="true" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -392,24 +387,6 @@
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -439,6 +416,24 @@
       <envs />
       <properties />
       <listeners />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -674,55 +669,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/spring/resources.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="35" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0">
+        <state line="10" column="35" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/MantisIntegrationService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="38" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/MantisBugId.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="6" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/MantisBugInformation.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="43" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/ArtifactService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="6" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/MantisBugInformation.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="43" selection-start="230" selection-end="230" vertical-scroll-proportion="-2.7674417">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/MantisIntegrationService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="38" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/MantisBugId.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="6" selection-start="123" selection-end="123" vertical-scroll-proportion="-1.5813954">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
+        <state line="4" column="6" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/LibraryArtifact.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="6" selection-start="25" selection-end="25" vertical-scroll-proportion="0.06148282">
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="29" selection-start="168" selection-end="168" vertical-scroll-proportion="0.32635254">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

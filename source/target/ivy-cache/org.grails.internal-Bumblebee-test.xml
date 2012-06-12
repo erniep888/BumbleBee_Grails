@@ -7,7 +7,7 @@
 		revision="0.1"
 		conf="test"
 		confs="test"
-		date="20120611205943"/>
+		date="20120611233029"/>
 	<dependencies>
 		<module organisation="org.grails" name="grails-test">
 			<revision name="2.0.3" status="release" pubdate="20120611201519" resolver="cache" artresolver="cache" downloaded="false" searched="false" default="true" conf="default" position="86">
@@ -113,23 +113,23 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.tomcat" name="com.springsource.org.apache.tomcat.jdbc">
-			<revision name="1.0.9.3" status="release" pubdate="20110120043605" resolver="ebrExternal" artresolver="ebrExternal" homepage="" downloaded="true" searched="true" default="false" conf="default, compile, master(*), runtime, compile(*), runtime(*), master" position="74">
-				<metadata-artifact status="successful" details="" size="855" time="734" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.tomcat\com.springsource.org.apache.tomcat.jdbc\ivy-1.0.9.3.xml" searched="true" original-local-location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.tomcat\com.springsource.org.apache.tomcat.jdbc\ivy-1.0.9.3.xml.original" origin-is-local="false" origin-location="http://repository.springsource.com/maven/bundles/external/org/apache/tomcat/com.springsource.org.apache.tomcat.jdbc/1.0.9.3/com.springsource.org.apache.tomcat.jdbc-1.0.9.3.pom"/>
+			<revision name="1.0.9.3" status="release" pubdate="20110120043605" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, master(*), runtime, compile(*), runtime(*), master" position="74">
+				<metadata-artifact status="no" details="" size="2612" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.tomcat\com.springsource.org.apache.tomcat.jdbc\ivy-1.0.9.3.xml" searched="false" origin-is-local="false" origin-location="http://repository.springsource.com/maven/bundles/external/org/apache/tomcat/com.springsource.org.apache.tomcat.jdbc/1.0.9.3/com.springsource.org.apache.tomcat.jdbc-1.0.9.3.pom"/>
 				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, test, compile, runtime" rev="1.0.9.3" rev-constraint-default="1.0.9.3" rev-constraint-dynamic="1.0.9.3" callerrev="0.1"/>
 				<caller organisation="org.grails.plugins" name="jdbc-pool" conf="default, compile, runtime, master" rev="1.0.9.3" rev-constraint-default="1.0.9.3" rev-constraint-dynamic="1.0.9.3" callerrev="1.0.9.3"/>
 				<artifacts>
-					<artifact name="com.springsource.org.apache.tomcat.jdbc" type="jar" ext="jar" status="successful" details="" size="110283" time="907" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.tomcat\com.springsource.org.apache.tomcat.jdbc\jars\com.springsource.org.apache.tomcat.jdbc-1.0.9.3.jar">
+					<artifact name="com.springsource.org.apache.tomcat.jdbc" type="jar" ext="jar" status="no" details="" size="110283" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.tomcat\com.springsource.org.apache.tomcat.jdbc\jars\com.springsource.org.apache.tomcat.jdbc-1.0.9.3.jar">
 						<origin-location is-local="false" location="http://repository.springsource.com/maven/bundles/external/org/apache/tomcat/com.springsource.org.apache.tomcat.jdbc/1.0.9.3/com.springsource.org.apache.tomcat.jdbc-1.0.9.3.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.juli" name="com.springsource.org.apache.juli.extras">
-			<revision name="6.0.24" status="release" pubdate="20100219092949" resolver="ebrExternal" artresolver="ebrExternal" homepage="" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="75">
-				<metadata-artifact status="successful" details="" size="841" time="631" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.juli\com.springsource.org.apache.juli.extras\ivy-6.0.24.xml" searched="true" original-local-location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.juli\com.springsource.org.apache.juli.extras\ivy-6.0.24.xml.original" origin-is-local="false" origin-location="http://repository.springsource.com/maven/bundles/external/org/apache/juli/com.springsource.org.apache.juli.extras/6.0.24/com.springsource.org.apache.juli.extras-6.0.24.pom"/>
+			<revision name="6.0.24" status="release" pubdate="20100219092949" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="75">
+				<metadata-artifact status="no" details="" size="2601" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.juli\com.springsource.org.apache.juli.extras\ivy-6.0.24.xml" searched="false" origin-is-local="false" origin-location="http://repository.springsource.com/maven/bundles/external/org/apache/juli/com.springsource.org.apache.juli.extras/6.0.24/com.springsource.org.apache.juli.extras-6.0.24.pom"/>
 				<caller organisation="org.apache.tomcat" name="com.springsource.org.apache.tomcat.jdbc" conf="compile, runtime" rev="6.0.24" rev-constraint-default="6.0.24" rev-constraint-dynamic="6.0.24" callerrev="1.0.9.3"/>
 				<artifacts>
-					<artifact name="com.springsource.org.apache.juli.extras" type="jar" ext="jar" status="successful" details="" size="56240" time="850" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.juli\com.springsource.org.apache.juli.extras\jars\com.springsource.org.apache.juli.extras-6.0.24.jar">
+					<artifact name="com.springsource.org.apache.juli.extras" type="jar" ext="jar" status="no" details="" size="56240" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.apache.juli\com.springsource.org.apache.juli.extras\jars\com.springsource.org.apache.juli.extras-6.0.24.jar">
 						<origin-location is-local="false" location="http://repository.springsource.com/maven/bundles/external/org/apache/juli/com.springsource.org.apache.juli.extras/6.0.24/com.springsource.org.apache.juli.extras-6.0.24.jar"/>
 					</artifact>
 				</artifacts>

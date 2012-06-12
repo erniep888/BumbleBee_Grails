@@ -5,12 +5,5 @@
 eclipse
 stacktrace.log
 coverage-error.log
-
-source/plugins
-source/web-app/plugins
-source/web-app/WEB-INF/classes
-source/target/classes
-source/target/stacktrace.log
-source/out
-
-
+/source/target/stacktrace.log
+/source/out
