@@ -33,14 +33,13 @@
         </tr>
     </table>
 </div>
-<div id="mainNav">
-    <a href="/" class="selected">Dashboard</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/"><g:message code="feature.label" default="Feature"/>s</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/">Library</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/">Administration</a>
+<div id="mainNav" class="nav">
+    <ul>
+        <li><a href="${createLink(uri: '/')}" class="home selected">Dashboard</a></li>
+        <li><a href="/" class="feature"><g:message code="feature.label" default="Feature"/>s</a></li>
+        <li><a href="/" class="library">Library</a></li>
+        <li><a href="/" class="admin">Administration</a></li>
+    </ul>
 </div>
 <g:layoutBody/>
 <div class="footer">

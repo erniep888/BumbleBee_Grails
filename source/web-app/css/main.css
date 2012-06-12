@@ -180,19 +180,18 @@ img {
 }
 
 #featureList{
-
+    padding: 10px;
 }
 
-#featureList table{
-    margin: 0;
-    border: 0;
-    padding: 0;
-    width: 100%;
+#featureList table thead{
+    font-size: 0.9em;
+    color: #555;
 }
 
 #featureList table td{
-    margin: 0;
-    padding: 0;
+    /*margin: 0;*/
+    /*padding: 0;*/
+    font-size: 0.8em;
 }
 
 .content {
@@ -267,6 +266,7 @@ img {
 /* NAVIGATION MENU */
 
 .nav {
+    font-size: 0.8em;
 	background-color: #efefef;
 	padding: 0.5em 0.75em;
 	   -moz-box-shadow: 0 0 3px 1px #aaaaaa;
@@ -316,7 +316,8 @@ img {
 	text-decoration: underline;
 }
 
-.nav a.home, .nav a.list, .nav a.create {
+.nav a.home, .nav a.list, .nav a.create,
+.nav a.delete, .nav a.feature, .nav a.library, .nav a.admin{
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
 	text-indent: 25px;
@@ -331,7 +332,27 @@ img {
 }
 
 .nav a.create {
-	background-image: url(../images/skin/database_add.png);
+     background-image: url(../images/skin/database_add.png);
+ }
+
+.nav a.delete {
+    background-image: url(../images/skin/x.png);
+}
+.nav a.feature {
+    background-image: url(../images/skin/feature.png);
+}
+.nav a.library {
+    background-image: url(../images/skin/library.png);
+}
+.nav a.admin {
+    background-image: url(../images/skin/admin.png);
+}
+
+.nav a.selected:hover {
+    background-color: transparent;
+    color: #fff;
+    text-decoration: underline;
+
 }
 
 /* CREATE/EDIT FORMS AND SHOW PAGES */
@@ -539,14 +560,14 @@ tr>td:last-child, tr>th:last-child {
 	padding-right: 1.25em;
 }*/
 
-td, th {
+.custom td, th {
 	line-height: 1.5em;
 	padding: 0.5em 0.6em;
 	text-align: left;
 	vertical-align: top;
 }
 
-th {
+.custom th {
 	background-color: #efefef;
 	background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffffff), color-stop(1, #eaeaea));
@@ -558,42 +579,42 @@ th {
 	padding: 0.2em 0.6em;
 }
 
-thead th {
+.custom thead th {
 	white-space: nowrap;
 }
 
-th a {
+.custom th a {
 	display: block;
 	text-decoration: none;
 }
 
-th a:link, th a:visited {
+.custom th a:link, th a:visited {
 	color: #666666;
 }
 
-th a:hover, th a:focus {
+.custom th a:hover, th a:focus {
 	color: #333333;
 }
 
-th.sortable a {
+.custom th.sortable a {
 	background-position: right;
 	background-repeat: no-repeat;
 	padding-right: 1.1em;
 }
 
-th.asc a {
+.custom th.asc a {
 	background-image: url(../images/skin/sorted_asc.gif);
 }
 
-th.desc a {
+.custom th.desc a {
 	background-image: url(../images/skin/sorted_desc.gif);
 }
 
-.odd {
+.custom .odd {
 	background: #f7f7f7;
 }
 
-.even {
+.custom .even {
 	background: #ffffff;
 }
 
@@ -603,7 +624,7 @@ th.desc a {
 
 /* PAGINATION */
 
-.pagination {
+.custom .pagination {
 	border-top: 0;
 	margin: 0;
 	padding: 0.3em 0.2em;
@@ -614,7 +635,7 @@ th.desc a {
 	background-color: #EFEFEF;
 }
 
-.pagination a,
+.custom .pagination a,
 .pagination .currentStep {
 	color: #666666;
 	display: inline-block;
@@ -626,7 +647,7 @@ th.desc a {
 	        border-radius: 0.3em;
 }
 
-.pagination a:hover, .pagination a:focus,
+.custom .pagination a:hover, .pagination a:focus,
 .pagination .currentStep {
 	background-color: #999999;
 	color: #ffffff;

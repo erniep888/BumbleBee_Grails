@@ -13,7 +13,6 @@
 
 <div class="nav" role="navigation">
     <ul>
-        <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
         <li><g:link class="create" action="create"><g:message code="default.new.label"
                                                               args="[entityName]"/></g:link></li>
     </ul>
@@ -23,29 +22,67 @@
     <table id="example">
         <thead>
             <tr>
-                <th>Rendering engine</th>
-                <th>Browser</th>
-                <th>Platform(s)</th>
-                <th>Engine version</th>
-                <th>CSS grade</th>
+                <th>Id</th>
+                <th>Object</th>
+                <th>Description</th>
+                <th>Developer</th>
+                <th>SME</th>
+                <th>Work Effort (h)</th>
+                <th>Status</th>
+                <th>Completed</th>
+                <th>Bugs</th>
+                <th>Bug Status</th>
+                <th>Bug Severity</th>
+                <th>3rd Party Cases</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="odd gradeX">
-                <td>Trident</td>
-                <td><a href="http://google.com">Internet Explorer 4.0</a></td>
-                <td>Win 95+</td>
-                <td class="center"> 4</td>
-                <td class="center">X</td>
+            <tr class="odd">
+                <td>1</td>
+                <td><a href="http://google.com">R57200</a></td>
+                <td>Inventory Master</td>
+                <td class="center">John Smith</td>
+                <td class="center">Sally Doe</td>
+                <td class="center">2</td>
+                <td class="center">In Progress</td>
+                <td class="center"></td>
+                <td class="center"></td>
+                <td class="center"></td>
+                <td class="center"></td>
+                <td class="center"><a href="http://google.com">1</a></td>
+            </tr>
+            <tr class="even">
+                <td>2</td>
+                <td><a href="http://google.com">R57201</a></td>
+                <td>Inventory Summary</td>
+                <td class="center">John Smith</td>
+                <td class="center">Sam Bosnac</td>
+                <td class="center">5</td>
+                <td class="center">Complete</td>
+                <td class="center">06/12/2012</td>
+                <td class="center"></td>
+                <td class="center"></td>
+                <td class="center"></td>
+                <td class="center"><a href="http://google.com">1</a></td>
+            </tr>
+            <tr class="odd">
+                <td>3</td>
+                <td><a href="http://google.com">R57202</a></td>
+                <td>Asset Ledger</td>
+                <td class="center">Ramon Devan</td>
+                <td class="center">Sam Bosnac</td>
+                <td class="center">3</td>
+                <td class="center">In Progress</td>
+                <td class="center"></td>
+                <td class="center"><a href="http://google.com">3</a></td>
+                <td class="center">assigned</td>
+                <td class="center">major</td>
+                <td class="center"><a href="http://google.com">1</a></td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <th>Rendering engine</th>
-                <th>Browser</th>
-                <th>Platform(s)</th>
-                <th>Engine version</th>
-                <th>CSS grade</th>
+                <th colspan="12"></th>
             </tr>
         </tfoot>
     </table>
@@ -53,15 +90,11 @@
 
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
-        $('#example').dataTable( {
-            "aoColumns": [
-                null,
-                { "asSorting": [ "asc" ] },
-                { "asSorting": [ "desc", "asc", "asc" ] },
-                { "asSorting": [ "desc" ] },
-                null
-            ]
-        } );
+        $('#example').dataTable({
+            "aaSorting": [[0, "asc"]],
+            "sPaginationType": "full_numbers",
+            "iDisplayLength" : 50
+            } );
     } );
 </script>
 </body>

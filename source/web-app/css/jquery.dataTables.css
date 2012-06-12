@@ -31,15 +31,15 @@ table.dataTable td.dataTables_empty {
 	text-align: center;
 }
 
-table.dataTable tr.odd { background-color: #E2E4FF; }
-table.dataTable tr.even { background-color: white; }
+table.dataTable tr.odd { background-color: #fff; }
+table.dataTable tr.even { background-color: #eee; }
 
-table.dataTable tr.odd td.sorting_1 { background-color: #D3D6FF; }
-table.dataTable tr.odd td.sorting_2 { background-color: #DADCFF; }
-table.dataTable tr.odd td.sorting_3 { background-color: #E0E2FF; }
-table.dataTable tr.even td.sorting_1 { background-color: #EAEBFF; }
-table.dataTable tr.even td.sorting_2 { background-color: #F2F3FF; }
-table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
+table.dataTable tr.odd td.sorting_1 { background-color: #fff; }
+table.dataTable tr.odd td.sorting_2 { background-color: #fff; }
+table.dataTable tr.odd td.sorting_3 { background-color: #fff; }
+table.dataTable tr.even td.sorting_1 { background-color: #eee; }
+table.dataTable tr.even td.sorting_2 { background-color: #eee; }
+table.dataTable tr.even td.sorting_3 { background-color: #eee; }
 
 
 /*
@@ -56,7 +56,9 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
  * Page length menu
  */
 .dataTables_length {
-	float: left;
+	float: right;
+    font-size: 0.9em;
+    color: #555;
 }
 
 
@@ -64,8 +66,10 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
  * Filter
  */
 .dataTables_filter {
-	float: right;
+	float: left;
 	text-align: right;
+    font-size: 0.9em;
+    color: #555;
 }
 
 
@@ -75,6 +79,8 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 .dataTables_info {
 	clear: both;
 	float: left;
+    font-size: 0.9em;
+    color: #555;
 }
 
 
@@ -154,7 +160,8 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 	margin: 0 3px;
 	cursor: pointer;
 	*cursor: hand;
-	color: #333 !important;
+    font-size: 0.9em;
+	color: #555 !important;
 }
 
 .paging_full_numbers a.paginate_button {
@@ -167,7 +174,7 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 }
 
 .paging_full_numbers a.paginate_active {
-	background-color: #99B3FF;
+	background-color: #bfdbff;
 }
 
 

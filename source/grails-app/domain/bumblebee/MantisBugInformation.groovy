@@ -17,14 +17,6 @@ class MantisBugInformation implements Comparable<MantisBugInformation>
         fillStatusMap()
     }
 
-    static mapping = {
-        datasource('mantis')
-        table(name: 'mantis_bug_table')
-        id(insertable: false, updateable: false)
-        version(false)
-        autoTimestamp(false)
-    }
-
     static transients = ["severityMap", "statusMap"]
 
     static MantisBugInformation createFromMap(def map) {
