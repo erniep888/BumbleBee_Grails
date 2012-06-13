@@ -3,9 +3,9 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource
 beans = {
     dataSourceMantis = {
         driverClassName = "com.mysql.jdbc.Driver"
-        url = "jdbc:mysql://ralappphp01t/mantis"
+        url = "jdbc:mysql://test/mantis"
         username = "readonly"
-        password = "r3ad0nly"
+        password = "readonly1"
     }
 
 }
