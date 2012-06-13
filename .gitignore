@@ -9,6 +9,7 @@ coverage-error.log
 /web-app/plugins
 /web-app/WEB-INF/classes
 /classes
+/out
 /test
 /target/classes
 /target/stacktrace.log
