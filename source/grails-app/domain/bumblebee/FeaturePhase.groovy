@@ -9,7 +9,7 @@ class FeaturePhase implements Comparable<FeaturePhase> {
     Date executionDate
     String comments
     SortedSet tests
-    SortedSet attachments
+    SortedSet artifacts
     SortedSet bugs
     SortedSet links
     SortedSet thirdPartyCases
@@ -18,7 +18,7 @@ class FeaturePhase implements Comparable<FeaturePhase> {
         phase(nullable: false)
     }
 
-    static hasMany = [tests: Artifact, attachments: Artifact,
+    static hasMany = [tests: Artifact, artifacts: Artifact,
             bugs: MantisBugId, links: Link, thirdPartyCases: ThirdPartyCase]
 
     def int compareTo(FeaturePhase featurePhase){
