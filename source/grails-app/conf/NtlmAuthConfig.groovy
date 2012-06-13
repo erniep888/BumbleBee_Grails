@@ -18,10 +18,10 @@ active = true
  */
 
 jcifs {
-	http.domainController = 'DC ADDRESS' // ... or use jcifs.netbios.wins
-	smb.client.domain = 'A DOMAIN'
-	smb.client.username = 'USERNAME'
-	smb.client.password = 'PASSWORD'
+	http.domainController = '' // ip address of ldap/AD server ... or use jcifs.netbios.wins
+	smb.client.domain = ''   // scrumtime.com
+	smb.client.username = ''    // admin@scrumtime.com
+	smb.client.password = ''                      // test01
 }
 
 /*

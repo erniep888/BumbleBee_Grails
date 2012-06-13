@@ -27,7 +27,7 @@
             <td>
                 <div id="title">
                     <g:message code="app.userfriendly.applicationname" default=""/>
-                    <div id="login">Welcome, Ernie Paschall</div>
+                    <div id="login">Welcome, <%= request.remoteUser %></div>
                 </div>
             </td>
         </tr>
