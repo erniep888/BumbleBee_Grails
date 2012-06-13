@@ -23,7 +23,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Object</th>
+                <th><g:message code="feature.label" default="Feature"/></th>
                 <th>Description</th>
                 <th>Developer</th>
                 <th>SME</th>
