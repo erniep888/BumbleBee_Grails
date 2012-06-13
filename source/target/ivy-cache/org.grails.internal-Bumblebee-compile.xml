@@ -7,7 +7,7 @@
 		revision="0.1"
 		conf="compile"
 		confs="compile"
-		date="20120612215710"/>
+		date="20120613104635"/>
 	<dependencies>
 		<module organisation="org.grails" name="grails-datastore-simple">
 			<revision name="1.0.4.RELEASE" status="release" pubdate="20120402155041" resolver="cache" artresolver="cache" homepage="http://grails.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="53">

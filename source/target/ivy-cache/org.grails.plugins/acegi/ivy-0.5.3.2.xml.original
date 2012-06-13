@@ -1,0 +1,17 @@
+<project xmlns='http://maven.apache.org/POM/4.0.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd'>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.grails.plugins</groupId>
+  <artifactId>acegi</artifactId>
+  <packaging>zip</packaging>
+  <version>0.5.3.2</version>
+  <name>Grails Spring Security 2.0 Plugin</name>
+  <description>Plugin to use Grails domain class and secure your applications with Spring Security filters.</description>
+  <url>http://grails.org/plugin/acegi</url>
+  <developers>
+    <developer>
+      <name>Tsuyoshi Yamamoto</name>
+      <email>tyama@xmldo.jp</email>
+    </developer>
+  </developers>
+  <dependencies />
+</project>
