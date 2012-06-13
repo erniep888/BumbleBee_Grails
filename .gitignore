@@ -9,7 +9,7 @@ coverage-error.log
 /source/web-app/WEB-INF/classes
 /source/out
 
-
+/source/grails-app/conf/*.groovy
 
 #        /source/target/classes
 #        /source/target/stacktrace.log
