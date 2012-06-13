@@ -1,18 +1,18 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Show Requestmap</title>
+	<title>Show bumblebee.Requestmap</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="list" action="list">Requestmap List</g:link></span>
-		<span class="menuButton"><g:link class="create" action="create">New Requestmap</g:link></span>
+		<span class="menuButton"><g:link class="list" action="list">bumblebee.Requestmap List</g:link></span>
+		<span class="menuButton"><g:link class="create" action="create">New bumblebee.Requestmap</g:link></span>
 	</div>
 
 	<div class="body">
-		<h1>Show Requestmap</h1>
+		<h1>Show bumblebee.Requestmap</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>

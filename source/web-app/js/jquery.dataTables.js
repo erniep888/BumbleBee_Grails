@@ -122,7 +122,7 @@
 		{
 			var oCol = oSettings.aoColumns[ iCol ];
 			
-			/* User specified column options */
+			/* bumblebee.User specified column options */
 			if ( oOptions !== undefined && oOptions !== null )
 			{
 				if ( oOptions.sType !== undefined )
@@ -4363,7 +4363,7 @@
 		 *  @param {string} sValue the value the cookie should take
 		 *  @param {int} iSecs duration of the cookie
 		 *  @param {string} sBaseName sName is made up of the base + file name - this is the base
-		 *  @param {function} fnCallback User definable function to modify the cookie
+		 *  @param {function} fnCallback bumblebee.User definable function to modify the cookie
 		 *  @memberof DataTable#oApi
 		 */
 		function _fnCreateCookie ( sName, sValue, iSecs, sBaseName, fnCallback )

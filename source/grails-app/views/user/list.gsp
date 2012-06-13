@@ -1,17 +1,18 @@
+<%@ page import="bumblebee.User" %>
 <head>
 	<meta name="layout" content="main" />
-	<title>User List</title>
+	<title>bumblebee.User List</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="create" action="create">New User</g:link></span>
+		<span class="menuButton"><g:link class="create" action="create">New bumblebee.User</g:link></span>
 	</div>
 
 	<div class="body">
-		<h1>User List</h1>
+		<h1>bumblebee.User List</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>

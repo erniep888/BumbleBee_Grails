@@ -1,5 +1,4 @@
-
-
+import bumblebee.Role
 
 /**
  * Authority Controller.
@@ -31,7 +30,7 @@ class RoleController {
 	def show = {
 		def authority = Role.get(params.id)
 		if (!authority) {
-			flash.message = "Role not found with id $params.id"
+			flash.message = "bumblebee.Role not found with id $params.id"
 			redirect action: list
 			return
 		}
@@ -45,14 +44,14 @@ class RoleController {
 	def delete = {
 		def authority = Role.get(params.id)
 		if (!authority) {
-			flash.message = "Role not found with id $params.id"
+			flash.message = "bumblebee.Role not found with id $params.id"
 			redirect action: list
 			return
 		}
 
 		authenticateService.deleteRole(authority)
 
-		flash.message = "Role $params.id deleted."
+		flash.message = "bumblebee.Role $params.id deleted."
 		redirect action: list
 	}
 
@@ -62,7 +61,7 @@ class RoleController {
 	def edit = {
 		def authority = Role.get(params.id)
 		if (!authority) {
-			flash.message = "Role not found with id $params.id"
+			flash.message = "bumblebee.Role not found with id $params.id"
 			redirect action: list
 			return
 		}
@@ -77,7 +76,7 @@ class RoleController {
 
 		def authority = Role.get(params.id)
 		if (!authority) {
-			flash.message = "Role not found with id $params.id"
+			flash.message = "bumblebee.Role not found with id $params.id"
 			redirect action: edit, id: params.id
 			return
 		}
@@ -85,7 +84,7 @@ class RoleController {
 		long version = params.version.toLong()
 		if (authority.version > version) {
 			authority.errors.rejectValue 'version', 'authority.optimistic.locking.failure',
-				'Another user has updated this Role while you were editing.'
+				'Another user has updated this bumblebee.Role while you were editing.'
 			render view: 'edit', model: [authority: authority]
 			return
 		}

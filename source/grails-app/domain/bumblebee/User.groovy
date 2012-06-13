@@ -1,9 +1,9 @@
+package bumblebee
 
-
-
+import bumblebee.Role
 
 /**
- * User domain class.
+ * bumblebee.User domain class.
  */
 class User {
 	static transients = ['pass']
@@ -12,7 +12,7 @@ class User {
 
 	/** Username */
 	String username
-	/** User Real Name*/
+	/** bumblebee.User Real Name*/
 	String userRealName
 	/** MD5 Password */
 	String passwd
@@ -34,4 +34,9 @@ class User {
 		passwd(nullable: true)
 		enabled()
 	}
+
+    String toString(){
+        return username
+    }
+
 }

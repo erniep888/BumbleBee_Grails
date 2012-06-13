@@ -1,6 +1,4 @@
-
-
-
+package bumblebee
 
 /**
  * Authority domain class.

@@ -1,9 +1,9 @@
 
 
-import org.springframework.util.StringUtils
+import bumblebee.Requestmap
 
 /**
- * Requestmap controller.
+ * bumblebee.Requestmap controller.
  */
 class RequestmapController {
 
@@ -26,7 +26,7 @@ class RequestmapController {
 	def show = {
 		def requestmap = Requestmap.get(params.id)
 		if (!requestmap) {
-			flash.message = "Requestmap not found with id $params.id"
+			flash.message = "bumblebee.Requestmap not found with id $params.id"
 			redirect action:list
 			return
 		}
@@ -36,7 +36,7 @@ class RequestmapController {
 	def delete = {
 		def requestmap = Requestmap.get(params.id)
 		if (!requestmap) {
-			flash.message = "Requestmap not found with id $params.id"
+			flash.message = "bumblebee.Requestmap not found with id $params.id"
 			redirect action:list
 			return
 		}
@@ -45,14 +45,14 @@ class RequestmapController {
 
 		authenticateService.clearCachedRequestmaps()
 
-		flash.message = "Requestmap $params.id deleted."
+		flash.message = "bumblebee.Requestmap $params.id deleted."
 		redirect(action: list)
 	}
 
 	def edit = {
 		def requestmap = Requestmap.get(params.id)
 		if (!requestmap) {
-			flash.message = "Requestmap not found with id $params.id"
+			flash.message = "bumblebee.Requestmap not found with id $params.id"
 			redirect(action: list)
 			return
 		}
@@ -61,13 +61,13 @@ class RequestmapController {
 	}
 
 	/**
-	 * Update action, called when an existing Requestmap is updated.
+	 * Update action, called when an existing bumblebee.Requestmap is updated.
 	 */
 	def update = {
 
 		def requestmap = Requestmap.get(params.id)
 		if (!requestmap) {
-			flash.message = "Requestmap not found with id $params.id"
+			flash.message = "bumblebee.Requestmap not found with id $params.id"
 			redirect(action: edit, id :params.id)
 			return
 		}
@@ -75,7 +75,7 @@ class RequestmapController {
 		long version = params.version.toLong()
 		if (requestmap.version > version) {
 			requestmap.errors.rejectValue 'version', "requestmap.optimistic.locking.failure",
-				"Another user has updated this Requestmap while you were editing."
+				"Another user has updated this bumblebee.Requestmap while you were editing."
 			render view: 'edit', model: [requestmap: requestmap]
 			return
 		}
@@ -95,7 +95,7 @@ class RequestmapController {
 	}
 
 	/**
-	 * Save action, called when a new Requestmap is created.
+	 * Save action, called when a new bumblebee.Requestmap is created.
 	 */
 	def save = {
 		def requestmap = new Requestmap(params)

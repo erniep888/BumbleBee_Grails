@@ -1,17 +1,18 @@
+<%@ page import="bumblebee.Role" %>
 <head>
 	<meta name="layout" content="main" />
-	<title>Role List</title>
+	<title>bumblebee.Role List</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="create" action="create">New Role</g:link></span>
+		<span class="menuButton"><g:link class="create" action="create">New bumblebee.Role</g:link></span>
 	</div>
 
 	<div class="body">
-		<h1>Role List</h1>
+		<h1>bumblebee.Role List</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>
@@ -20,7 +21,7 @@
 			<thead>
 				<tr>
 					<g:sortableColumn property="id" title="ID" />
-					<g:sortableColumn property="authority" title="Role Name" />
+					<g:sortableColumn property="authority" title="bumblebee.Role Name" />
 					<g:sortableColumn property="description" title="Description" />
 					<th>&nbsp;</th>
 				</tr>

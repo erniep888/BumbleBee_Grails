@@ -2,6 +2,7 @@ package bumblebee
 
 class FeatureController {
     def mantisIntegrationService
+    def authenticateService
 
     def index() {
         redirect(action: 'list')

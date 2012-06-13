@@ -1,8 +1,8 @@
-
-
+import bumblebee.Role
+import bumblebee.User
 
 /**
- * User controller.
+ * bumblebee.User controller.
  */
 class UserController {
 
@@ -25,7 +25,7 @@ class UserController {
 	def show = {
 		def person = User.get(params.id)
 		if (!person) {
-			flash.message = "User not found with id $params.id"
+			flash.message = "bumblebee.User not found with id $params.id"
 			redirect action: list
 			return
 		}
@@ -56,11 +56,11 @@ class UserController {
 				//first, delete this person from People_Authorities table.
 				Role.findAll().each { it.removeFromPeople(person) }
 				person.delete()
-				flash.message = "User $params.id deleted."
+				flash.message = "bumblebee.User $params.id deleted."
 			}
 		}
 		else {
-			flash.message = "User not found with id $params.id"
+			flash.message = "bumblebee.User not found with id $params.id"
 		}
 
 		redirect action: list
@@ -70,7 +70,7 @@ class UserController {
 
 		def person = User.get(params.id)
 		if (!person) {
-			flash.message = "User not found with id $params.id"
+			flash.message = "bumblebee.User not found with id $params.id"
 			redirect action: list
 			return
 		}
@@ -85,7 +85,7 @@ class UserController {
 
 		def person = User.get(params.id)
 		if (!person) {
-			flash.message = "User not found with id $params.id"
+			flash.message = "bumblebee.User not found with id $params.id"
 			redirect action: edit, id: params.id
 			return
 		}
@@ -93,7 +93,7 @@ class UserController {
 		long version = params.version.toLong()
 		if (person.version > version) {
 			person.errors.rejectValue 'version', "person.optimistic.locking.failure",
-				"Another user has updated this User while you were editing."
+				"Another user has updated this bumblebee.User while you were editing."
 				render view: 'edit', model: buildPersonModel(person)
 			return
 		}

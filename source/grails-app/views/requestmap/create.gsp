@@ -1,17 +1,17 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Create Requestmap</title>
+	<title>Create bumblebee.Requestmap</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="list" action="list">Requestmap List</g:link></span>
+		<span class="menuButton"><g:link class="list" action="list">bumblebee.Requestmap List</g:link></span>
 	</div>
 
 	<div class="body">
-		<h1>Create Requestmap</h1>
+		<h1>Create bumblebee.Requestmap</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>
@@ -33,7 +33,7 @@
 					</tr>
 
 					<tr class="prop">
-						<td valign="top" class="name"><label for="configAttribute">Role (comma-delimited):</label></td>
+						<td valign="top" class="name"><label for="configAttribute">bumblebee.Role (comma-delimited):</label></td>
 						<td valign="top" class="value ${hasErrors(bean:requestmap,field:'configAttribute','errors')}">
 							<input type="text" id="configAttribute" name="configAttribute" value="${requestmap.configAttribute?.encodeAsHTML()}"/>
 						</td>

@@ -1,4 +1,4 @@
-
+package bumblebee
 
 /**
  * Request Map domain class.
