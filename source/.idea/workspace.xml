@@ -2,28 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fdf7235-76a9-4cdc-8f14-da2ad6fda12a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/groovy/bumblebee/ActiveDirectoryUserInformation.groovy" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\conf\SecurityConfig.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\controllers\LoginController.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\controllers\LogoutController.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\controllers\RequestmapController.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\controllers\RoleController.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\controllers\UserController.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\login\auth.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\login\denied.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\login\openIdAuth.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\requestmap\create.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\requestmap\edit.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\requestmap\list.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\requestmap\show.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\role\create.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\role\edit.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\role\list.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\role\show.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\user\create.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\user\edit.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\user\list.gsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\BumbleBee_Grails\source\grails-app\views\user\show.gsp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ApplicationResources.class" afterPath="$PROJECT_DIR$/target/classes/ApplicationResources.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BootStrap.class" afterPath="$PROJECT_DIR$/target/classes/BootStrap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BuildConfig.class" afterPath="$PROJECT_DIR$/target/classes/BuildConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Config.class" afterPath="$PROJECT_DIR$/target/classes/Config.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DataSource.class" afterPath="$PROJECT_DIR$/target/classes/DataSource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/UrlMappings.class" afterPath="$PROJECT_DIR$/target/classes/UrlMappings.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/Artifact.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/Artifact.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/ArtifactService.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/ArtifactService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/AuditActivity.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/AuditActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/DashboardController.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/DashboardController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/Feature.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/Feature.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/FeatureController.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/FeatureController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/FeaturePhase.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/FeaturePhase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/LibraryArtifact.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/LibraryArtifact.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/Link.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/Link.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/MantisBugId.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/MantisBugId.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/MantisBugInformation.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/MantisBugInformation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/MantisIntegrationService.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/MantisIntegrationService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/Phase.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/Phase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bumblebee/ThirdPartyCase.class" afterPath="$PROJECT_DIR$/target/classes/bumblebee/ThirdPartyCase.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/resources.class" afterPath="$PROJECT_DIR$/target/classes/resources.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/SecurityConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/SecurityConfig.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/RequestmapController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/RequestmapController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/RoleController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/RoleController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/UserController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/UserController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BumbleBee-grailsPlugins.iml" afterPath="$PROJECT_DIR$/BumbleBee-grailsPlugins.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application.properties" afterPath="$PROJECT_DIR$/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/dashboard/index.gsp" afterPath="$PROJECT_DIR$/grails-app/views/dashboard/index.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/requestmap/create.gsp" afterPath="$PROJECT_DIR$/grails-app/views/requestmap/create.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/requestmap/edit.gsp" afterPath="$PROJECT_DIR$/grails-app/views/requestmap/edit.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/requestmap/list.gsp" afterPath="$PROJECT_DIR$/grails-app/views/requestmap/list.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/requestmap/show.gsp" afterPath="$PROJECT_DIR$/grails-app/views/requestmap/show.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/role/create.gsp" afterPath="$PROJECT_DIR$/grails-app/views/role/create.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/role/edit.gsp" afterPath="$PROJECT_DIR$/grails-app/views/role/edit.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/role/list.gsp" afterPath="$PROJECT_DIR$/grails-app/views/role/list.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/role/show.gsp" afterPath="$PROJECT_DIR$/grails-app/views/role/show.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/user/create.gsp" afterPath="$PROJECT_DIR$/grails-app/views/user/create.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/user/edit.gsp" afterPath="$PROJECT_DIR$/grails-app/views/user/edit.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/user/list.gsp" afterPath="$PROJECT_DIR$/grails-app/views/user/list.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/user/show.gsp" afterPath="$PROJECT_DIR$/grails-app/views/user/show.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/antlr/antlr/ivydata-2.7.7.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/antlr/antlr/ivydata-2.7.7.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/aopalliance/aopalliance/ivydata-1.0.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/aopalliance/aopalliance/ivydata-1.0.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/asm/asm/ivydata-3.1.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/asm/asm/ivydata-3.1.properties" />
@@ -146,10 +171,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/resolved-org.grails.internal-Bumblebee-0.1.xml" afterPath="$PROJECT_DIR$/target/ivy-cache/resolved-org.grails.internal-Bumblebee-0.1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/xalan/serializer/ivydata-2.7.1.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/xalan/serializer/ivydata-2.7.1.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ivy-cache/xpp3/xpp3_min/ivydata-1.1.4c.properties" afterPath="$PROJECT_DIR$/target/ivy-cache/xpp3/xpp3_min/ivydata-1.1.4c.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/js/jquery.dataTables.js" afterPath="$PROJECT_DIR$/web-app/js/jquery.dataTables.js" />
-      <change type="MOVED" beforePath="D:\Git\BumbleBee_Grails\source\grails-app\domain\Requestmap.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/bumblebee/Requestmap.groovy" />
-      <change type="MOVED" beforePath="D:\Git\BumbleBee_Grails\source\grails-app\domain\Role.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/bumblebee/Role.groovy" />
-      <change type="MOVED" beforePath="D:\Git\BumbleBee_Grails\source\grails-app\domain\User.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/bumblebee/User.groovy" />
     </list>
     <ignored path="BumbleBee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -211,7 +232,7 @@
       <file leaf-file-name="User.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/User.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="23" selection-start="680" selection-end="680" vertical-scroll-proportion="-24.217392">
+            <state line="38" column="23" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -220,28 +241,7 @@
       <file leaf-file-name="Role.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/Role.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="6" selection-start="60" selection-end="60" vertical-scroll-proportion="-1.9767442">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/UserController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="43" selection-start="2948" selection-end="2967" vertical-scroll-proportion="-11.826087">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SecurityConfig.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/conf/SecurityConfig.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="39" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+            <state line="5" column="6" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -250,25 +250,25 @@
       <file leaf-file-name="DashboardController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/DashboardController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="6" selection-start="25" selection-end="25" vertical-scroll-proportion="-1.4782609">
+            <state line="2" column="6" selection-start="25" selection-end="25" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeatureController.groovy" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FeatureController.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="182" selection-end="182" vertical-scroll-proportion="-8.130435">
+            <state line="3" column="32" selection-start="77" selection-end="77" vertical-scroll-proportion="0.09426987">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.gsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="list.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/feature/list.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="6" selection-start="737" selection-end="737" vertical-scroll-proportion="0.69545454">
+            <state line="9" column="21" selection-start="294" selection-end="294" vertical-scroll-proportion="-3.122449">
               <folding />
             </state>
           </provider>
@@ -277,12 +277,9 @@
       <file leaf-file-name="ActiveDirectorySettings.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/ActiveDirectorySettings.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="23" selection-start="141" selection-end="153" vertical-scroll-proportion="-3.1627908">
+            <state line="8" column="23" selection-start="141" selection-end="153" vertical-scroll-proportion="0.0">
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-            <state />
           </provider>
         </entry>
       </file>
@@ -290,9 +287,7 @@
         <entry file="file://$PROJECT_DIR$/grails-app/services/bumblebee/ActiveDirectoryService.groovy">
           <provider selected="true" editor-type-id="text-editor">
             <state line="69" column="112" selection-start="3113" selection-end="3113" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#19#46#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -324,16 +319,16 @@
         <option value="$PROJECT_DIR$/grails-app/domain/bumblebee/ActiveDirectorySettings.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/bumblebee/User.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/SecurityConfig.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/feature/list.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="width" value="1696" />
+    <option name="height" value="1036" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -378,9 +373,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -392,10 +387,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Grails.Grails:source">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="D:\Git\BumbleBee_Grails\source" />
+      <setting name="debug" value="false" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -418,13 +416,10 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="D:\Git\BumbleBee_Grails\source" />
-      <setting name="debug" value="false" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -441,6 +436,24 @@
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -470,24 +483,6 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -595,22 +590,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32781458" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32762557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.410596" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Grails View" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32959402" sideWeight="0.589404" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40981734" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32965687" sideWeight="0.6723744" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -623,6 +617,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -691,25 +686,9 @@
         <state line="38" column="91" selection-start="1967" selection-end="2018" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/requestmap/list.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="8.67347">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/user/list.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="15" selection-start="493" selection-end="493" vertical-scroll-proportion="3.122449">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/i18n/messages.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="20" selection-start="3298" selection-end="3298" vertical-scroll-proportion="-8.55">
-          <folding />
-        </state>
+        <state line="57" column="20" selection-start="3298" selection-end="3298" vertical-scroll-proportion="-8.55" />
       </provider>
       <provider editor-type-id="ResourceBundle">
         <state />
@@ -717,42 +696,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/groovy/bumblebee/ActiveDirectoryUserInformation.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#19#58#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/bumblebee/ActiveDirectoryService.groovy">
+    <entry file="file://$PROJECT_DIR$/BumbleBee-grailsPlugins.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="112" selection-start="3113" selection-end="3113" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#19#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/ActiveDirectorySettings.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="23" selection-start="141" selection-end="153" vertical-scroll-proportion="-3.1627908">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
+        <state line="20" column="91" selection-start="796" selection-end="850" vertical-scroll-proportion="0.60390764" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/User.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="23" selection-start="680" selection-end="680" vertical-scroll-proportion="-24.217392">
+        <state line="38" column="23" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/Role.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="60" selection-end="60" vertical-scroll-proportion="-1.9767442">
+        <state line="5" column="6" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -760,51 +721,37 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BumbleBee-grailsPlugins.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="91" selection-start="796" selection-end="850" vertical-scroll-proportion="0.60390764">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/UserController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="43" selection-start="2948" selection-end="2967" vertical-scroll-proportion="-11.826087">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/SecurityConfig.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="39" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/DashboardController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="6" selection-start="25" selection-end="25" vertical-scroll-proportion="-1.4782609">
+        <state line="2" column="6" selection-start="25" selection-end="25" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/acegi-0.5.3.2/lib/spring-security-core-tiger-2.0.4.jar!/org/springframework/security/annotation/Secured.class">
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/ActiveDirectorySettings.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="436" selection-end="436" vertical-scroll-proportion="0.2523191">
+        <state line="8" column="23" selection-start="141" selection-end="153" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/services/bumblebee/ActiveDirectoryService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="182" selection-end="182" vertical-scroll-proportion="-8.130435">
+        <state line="69" column="112" selection-start="3113" selection-end="3113" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/feature/list.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="6" selection-start="737" selection-end="737" vertical-scroll-proportion="0.69545454">
+        <state line="9" column="21" selection-start="294" selection-end="294" vertical-scroll-proportion="-3.122449">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="32" selection-start="77" selection-end="77" vertical-scroll-proportion="0.09426987">
           <folding />
         </state>
       </provider>

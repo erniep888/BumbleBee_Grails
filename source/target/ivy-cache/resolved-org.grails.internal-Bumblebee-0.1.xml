@@ -4,7 +4,7 @@
 		module="Bumblebee"
 		revision="0.1"
 		status="release"
-		publication="20120613112302"
+		publication="20120613131851"
 		default="true"
 	/>
 	<configurations>
@@ -630,12 +630,6 @@
 		</dependency>
 		<dependency org="org.grails.plugins" name="jdbc-pool" rev="1.0.9.3" force="true" conf="runtime->default">
 			<artifact name="jdbc-pool" type="zip" ext="zip" conf=""/>
-			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-		</dependency>
-		<dependency org="org.grails.plugins" name="acegi" rev="0.5.3.2" force="true" conf="runtime->default">
-			<artifact name="acegi" type="zip" ext="zip" conf=""/>
 			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
