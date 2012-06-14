@@ -7,7 +7,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><g:layoutTitle default="Grails"/></title>
+    <title><g:layoutTitle default="${message(code: "app.userfriendly.applicationAcronym")}"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
     <link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
@@ -33,14 +33,7 @@
         </tr>
     </table>
 </div>
-<div id="mainNav" class="nav">
-    <ul>
-        <li><a href="${createLink(uri: '/')}" class="home selected">Dashboard</a></li>
-        <li><a href="/" class="feature"><g:message code="feature.label" default="Feature"/>s</a></li>
-        <li><a href="/" class="library">Library</a></li>
-        <li><a href="/" class="admin">Administration</a></li>
-    </ul>
-</div>
+<g:render template="/shared/mainMenu"/>
 <g:layoutBody/>
 <div class="footer">
     <table>

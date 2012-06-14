@@ -14,9 +14,9 @@ class ArtifactService {
     @PostConstruct
     def initialize() {
         library = "library"
-        tests = grailsApplication.getMainContext().getMessage("feature.label").toLowerCase() + "_tests"
-        attachments = grailsApplication.getMainContext().getMessage("feature.label").toLowerCase() + "_attachments"
-        rootFolder = File.separator + grailsApplication.getMainContext().getMessage("app.userfriendly.applicationAcronym") + File.separator + "artifacts"
+        tests = grailsApplication.getMainContext().getMessage("feature.label", null, Locale.ENGLISH).toLowerCase() + "_tests"
+        attachments = grailsApplication.getMainContext().getMessage("feature.label", null, Locale.ENGLISH).toLowerCase() + "_attachments"
+        rootFolder = File.separator + grailsApplication.getMainContext().getMessage("app.userfriendly.applicationAcronym", null, Locale.ENGLISH) + File.separator + "artifacts"
 
         subfolderDictionary = new HashMap<String, String>()
         def folderNames = new Vector<String>()
@@ -38,7 +38,7 @@ class ArtifactService {
         }
     }
 
-    private Artifact saveArtifact(Artifact artifact, byte[] bytes){
+    def saveArtifact(Artifact artifact, byte[] bytes){
         artifact.validate()
         if (!artifact.hasErrors()){
             def existingArtifact = Artifact.findById(artifact?.id)
@@ -50,33 +50,28 @@ class ArtifactService {
                 if (existingFile.exists()){
                     existingFile.delete()
                 }
-                existingArtifact = handleArtifactFile(existingArtifact, bytes)
+                existingArtifact = storeArtifactFile(existingArtifact, bytes)
                 existingArtifact.fileName = artifact.fileName
                 existingArtifact.description = artifact.description
                 existingArtifact.save(flush: true)
             }  else {
-                artifact = handleArtifactFile(artifact, bytes)
+                artifact = storeArtifactFile(artifact, bytes)
                 artifact.save(flush: true)
             }
         }
-        return artifact;
-    }
-
-    private Artifact handleArtifactFile(Artifact artifact, byte[] bytes){
-        artifact.serverFilePath = subfolderDictionary[library]
-        artifact.serverFileName = UUID.randomUUID().toString()
-        artifact.size = bytes.length
-        saveArtifactFile(artifact.serverFilePath, artifact.serverFileName, bytes)
         return artifact
     }
 
-    private void saveArtifactFile(String serverFilePath, String serverFileName, byte[] bytes){
-        def fullPathAndFileName = serverFilePath + File.separator + serverFileName
+    private Artifact storeArtifactFile(Artifact artifact, byte[] bytes){
+        artifact.serverFilePath = subfolderDictionary[library]
+        artifact.serverFileName = UUID.randomUUID().toString()
+        artifact.size = bytes.length
+        def fullPathAndFileName = artifact.serverFilePath + File.separator + artifact.serverFileName
         def fileOutputStream = new FileOutputStream(fullPathAndFileName)
         fileOutputStream.write(bytes)
         fileOutputStream.close()
+        return artifact
     }
-
 
     def load(Artifact artifact) {
         def fullPathAndFileName = artifact.serverFilePath + File.separator + artifact.serverFileName

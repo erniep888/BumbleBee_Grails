@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
+		<title><g:message code="app.userfriendly.applicationAcronym" default="BumbleBee"/> </title>
 		<style type="text/css" media="screen">
 			#status {
 				background-color: #eee;

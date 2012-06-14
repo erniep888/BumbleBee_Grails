@@ -1,10 +1,11 @@
 package bumblebee
 
 class FeaturePhase implements Comparable<FeaturePhase> {
-
     Phase phase
-    String assignedTo
-    Double workEffort
+    String developer
+    String tester
+    Double developmentWorkEffort
+    Double testWorkEffort
     String status
     Date executionDate
     String comments
@@ -13,6 +14,8 @@ class FeaturePhase implements Comparable<FeaturePhase> {
     SortedSet bugs
     SortedSet links
     SortedSet thirdPartyCases
+
+    static belongsTo = [feature : Feature]
 
     static constraints = {
         phase(nullable: false)

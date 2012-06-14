@@ -3,8 +3,8 @@
 <html>
 <head>
     <meta name="layout" content="main">
-    <g:set var="entityName" value="${message(code: 'feature.label', default: 'Feature')}"/>
-    <title><g:message code="default.list.label" args="[entityName]"/></title>
+    <g:set var="featureLabel" value="${message(code: 'feature.label', default: 'Feature')}"/>
+    <title><g:message code="app.userfriendly.applicationAcronym" default="BumbleBee"/> - <g:message code="default.list.label" args="[featureLabel]"/></title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 <div class="nav" role="navigation">
     <ul>
         <li><g:link class="create" action="create"><g:message code="default.new.label"
-                                                              args="[entityName]"/></g:link></li>
+                                                              args="[featureLabel]"/></g:link></li>
     </ul>
 </div>
 
@@ -23,10 +23,10 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th><g:message code="feature.label" default="Feature"/></th>
+                <th>${featureLabel}</th>
                 <th>Description</th>
                 <th>Developer</th>
-                <th>SME</th>
+                <th><g:message code="featurephase.tester.label" default="Tester"/> </th>
                 <th>Work Effort (h)</th>
                 <th>Status</th>
                 <th>Completed</th>
@@ -37,48 +37,28 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="odd">
-                <td>1</td>
-                <td><a href="http://google.com">R57200</a></td>
-                <td>Inventory Master</td>
-                <td class="center">John Smith</td>
-                <td class="center">Sally Doe</td>
-                <td class="center">2</td>
-                <td class="center">In Progress</td>
-                <td class="center"></td>
-                <td class="center"></td>
-                <td class="center"></td>
-                <td class="center"></td>
-                <td class="center"><a href="http://google.com">1</a></td>
-            </tr>
-            <tr class="even">
-                <td>2</td>
-                <td><a href="http://google.com">R57201</a></td>
-                <td>Inventory Summary</td>
-                <td class="center">John Smith</td>
-                <td class="center">Sam Bosnac</td>
-                <td class="center">5</td>
-                <td class="center">Complete</td>
-                <td class="center">06/12/2012</td>
-                <td class="center"></td>
-                <td class="center"></td>
-                <td class="center"></td>
-                <td class="center"><a href="http://google.com">1</a></td>
-            </tr>
-            <tr class="odd">
-                <td>3</td>
-                <td><a href="http://google.com">R57202</a></td>
-                <td>Asset Ledger</td>
-                <td class="center">Ramon Devan</td>
-                <td class="center">Sam Bosnac</td>
-                <td class="center">3</td>
-                <td class="center">In Progress</td>
-                <td class="center"></td>
-                <td class="center"><a href="http://google.com">3</a></td>
-                <td class="center">assigned</td>
-                <td class="center">major</td>
-                <td class="center"><a href="http://google.com">1</a></td>
-            </tr>
+            <g:set var="featureCount" value="1" />
+            <g:each in="${featureInstanceList}" var="feature">
+                <g:if test="${featureCount%1 == 1}">
+                    <tr class="odd">
+                </g:if>
+                <g:else>
+                    <tr class="even">
+                </g:else>
+                    <td>${feature.id}</td>
+                    <td><g:link action="edit" id="${feature.id}">${feature.name}</g:link></td>
+                    <td>${feature.description}</td>
+                    <td class="center"><g:include action="userList" model="${[feature: feature, userType: "developer"]}"/></td>
+                    <td class="center"><g:include action="userList" model="${[feature: feature, userType: "tester"]}"/></td>
+                    <td class="center"></td>
+                    <td class="center"></td>
+                    <td class="center"></td>
+                    <td class="center"></td>
+                    <td class="center"></td>
+                    <td class="center"></td>
+                    <td class="center"></td>
+                </tr>
+            </g:each>
         </tbody>
         <tfoot>
             <tr>

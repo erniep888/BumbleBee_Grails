@@ -5,6 +5,8 @@ class ThirdPartyCase implements Comparable<ThirdPartyCase> {
     String status
     String description
 
+    static belongsTo = [featurePhase : FeaturePhase]
+
     static constraints = {
         caseIdentifier(nullable: false)
         status(nullable: false)

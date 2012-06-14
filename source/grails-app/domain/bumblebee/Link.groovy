@@ -5,6 +5,8 @@ class Link implements Comparable<Link> {
     String href
     Boolean inNewWindow
 
+    static belongsTo = [featurePhase : FeaturePhase]
+
     static constraints = {
         name(nullable: false)
         href(nullable: false)
