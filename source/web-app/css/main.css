@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1{
-    width: 99.3%;
+    width: 96%;
     border-bottom: #006dba solid thin;
     padding-left: 10px;
     padding-bottom:3px;
@@ -75,7 +75,7 @@ body {
 }
 
 a:link, a:visited, a:hover {
-	color: #444;
+	color: #333333;
 }
 
 a:hover, a:active {
@@ -83,7 +83,7 @@ a:hover, a:active {
 }
 
 h1 {
-	color: #444;
+	color: #b6b6c8;
 	font-weight: normal;
 	font-size: 1.25em;
 	margin: 0.8em 0 0.3em 0;
@@ -109,8 +109,7 @@ img {
 }
 
 #mainNav .selected{
-    font-size: 1.1em;
-    color: #888;
+    color: #b6b6b6;
     font-weight: bold;
     text-decoration: none;
 }
@@ -317,7 +316,7 @@ img {
 }
 
 .nav a.home, .nav a.list, .nav a.create,
-.nav a.delete, .nav a.feature, .nav a.library, .nav a.admin{
+.nav a.delete, .nav a.feature, .nav a.library, .nav a.administration{
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
 	text-indent: 25px;
@@ -344,7 +343,7 @@ img {
 .nav a.library {
     background-image: url(../images/skin/library.png);
 }
-.nav a.admin {
+.nav a.administration {
     background-image: url(../images/skin/admin.png);
 }
 
@@ -374,13 +373,14 @@ fieldset,
 
 .fieldcontain {
 	margin-top: 1em;
+    font-size: 0.9em;
 }
 
 .fieldcontain label,
 .fieldcontain .property-label {
 	color: #666666;
-	text-align: right;
-	width: 25%;
+	text-align: left;
+    width:80px;
 }
 
 .fieldcontain .property-label {
@@ -665,6 +665,7 @@ tr>td:last-child, tr>th:last-child {
 /* ACTION BUTTONS */
 
 .buttons {
+    font-size: 0.8em;
 	background-color: #efefef;
 	overflow: hidden;
 	padding: 0.3em;
@@ -725,7 +726,11 @@ tr>td:last-child, tr>th:last-child {
 }
 
 .buttons .save {
-	background-image: url(../images/skin/database_save.png);
+     background-image: url(../images/skin/database_save.png);
+ }
+
+.ie7 .buttons .save {
+    background-image: none;
 }
 
 a.skip {

@@ -10,7 +10,8 @@ table.dataTable {
 
 table.dataTable thead th {
 	padding: 3px 18px 3px 10px;
-	border-bottom: 1px solid black;
+    font-size: 0.8em;
+	border-bottom: 1px solid #d3ccd5;
 	font-weight: bold;
 	cursor: pointer;
 	*cursor: hand;
@@ -18,7 +19,7 @@ table.dataTable thead th {
 
 table.dataTable tfoot th {
 	padding: 3px 18px 3px 10px;
-	border-top: 1px solid black;
+	border-top: 1px solid #d3ccd5;
 	font-weight: bold;
 }
 
@@ -80,7 +81,7 @@ table.dataTable tr.even td.sorting_3 { background-color: #eee; }
 	clear: both;
 	float: left;
     font-size: 0.9em;
-    color: #555;
+    color: #717171;
 }
 
 

@@ -1,10 +1,7 @@
 <%@ page import="bumblebee.Feature" %>
-<!doctype html>
-<html>
 <head>
-    <meta name="layout" content="main">
-    <g:set var="featureLabel" value="${message(code: 'feature.label', default: 'Feature')}"/>
-    <title><g:message code="app.userfriendly.applicationAcronym" default="BumbleBee"/> - <g:message code="default.list.label" args="[featureLabel]"/></title>
+    <meta name="layout" content="main"/>
+    <g:render template="/shared/pageTitle" model="${ [pageTitle: message(code: 'feature.label', default: 'Feature')] }"/>
 </head>
 
 <body>
@@ -13,8 +10,11 @@
 
 <div class="nav" role="navigation">
     <ul>
-        <li><g:link class="create" action="create"><g:message code="default.new.label"
-                                                              args="[featureLabel]"/></g:link></li>
+        <li>
+            <g:link class="create" action="create">
+                <g:message code="default.new.label" args="[message(code: 'feature.label', default: 'Feature')]"/>
+            </g:link>
+        </li>
     </ul>
 </div>
 
@@ -23,7 +23,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>${featureLabel}</th>
+                <th>${message(code: 'feature.label', default: 'Feature')}</th>
                 <th>Description</th>
                 <th>Developer</th>
                 <th><g:message code="featurephase.tester.label" default="Tester"/> </th>
@@ -78,4 +78,3 @@
     } );
 </script>
 </body>
-</html>

@@ -1,0 +1,1 @@
+<title><g:message code="app.userfriendly.applicationAcronym" default="BumbleBee"/> - ${pageTitle}</title>
