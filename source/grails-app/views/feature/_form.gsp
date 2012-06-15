@@ -23,4 +23,5 @@
     </label>
     <g:textField name="category" value="${featureInstance?.category}" size="40"/>
 </div>
+<g:hiddenField name="isDeleted" value="false"/>
 

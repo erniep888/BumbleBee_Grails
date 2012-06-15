@@ -9,8 +9,10 @@ class Feature implements Comparable<Feature> {
     SortedSet featurePhases  // ensures the featurePhases will be in DisplayOrder
 
     static constraints = {
-        name(unique: true, nullable: false)
+        name(unique: true, nullable: false, blank: false)
         description(nullable: true)
+        isDeleted(nullable:  false)
+        category(nullable: true)
     }
 
     static hasMany = [featurePhases: FeaturePhase]

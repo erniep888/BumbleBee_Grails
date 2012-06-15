@@ -12,20 +12,32 @@ class FeatureController {
         [featureInstance: new Feature()]
     }
 
-    def edit() {
-        [featureInstance: new Feature()]
+    def edit(long id) {
+        [featureInstance: Feature.findById(id)]
     }
 
-    def deleteWarn() {
-        [featureInstance: new Feature()]
+    def deleteWarn(long id) {
+        [featureInstance: Feature.findById(id)]
     }
 
-    def delete() {
-        [featureInstance: new Feature()]
+    def delete(long id) {
+        def feature = Feature.findById(id)
+        feature.delete(flush: true)
+        redirect(action: list())
     }
 
     def save() {
-        [featureInstance: new Feature()]
+        def feature = new Feature(params)
+        feature.validate()
+        if (feature?.hasErrors()){
+            if (!feature || !feature.id)
+                render(view: "create", model: [featureInstance: feature])
+            else
+                render(view: "edit", model: [featureInstance: feature])
+        } else {
+            feature.save(flush: true)
+            redirect(controller: "FeaturePhaseGeneral", params: [featureId: feature.id])
+        }
     }
 
 

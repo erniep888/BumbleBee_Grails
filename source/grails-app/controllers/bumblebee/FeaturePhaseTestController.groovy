@@ -7,8 +7,9 @@ class FeaturePhaseTestController {
 
     static defaultAction = "edit"
 
-    def edit(){
-
+    def edit(long featureId, long id) {
+        def feature = Feature.findById(featureId)
+        [featureInstance: feature]
     }
 
     def delete(){
