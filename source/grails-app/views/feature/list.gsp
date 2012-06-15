@@ -17,7 +17,9 @@
         </li>
     </ul>
 </div>
-
+<g:if test="${flash.message}">
+    <div class="errors" role="status">${flash.message}</div>
+</g:if>
 <div id="featureList">
     <table id="example">
         <thead>
@@ -26,7 +28,7 @@
                 <th>${message(code: 'feature.label', default: 'Feature')}</th>
                 <th>Description</th>
                 <th>Developer</th>
-                <th><g:message code="featurephase.tester.label" default="Tester"/> </th>
+                <th><g:message code="featurePhase.tester.label" default="Tester"/> </th>
                 <th>Work Effort (h)</th>
                 <th>Status</th>
                 <th>Completed</th>
@@ -37,9 +39,9 @@
             </tr>
         </thead>
         <tbody>
-            <g:set var="featureCount" value="1" />
+            <g:set var="featureCount" value="${1}" />
             <g:each in="${featureInstanceList}" var="feature">
-                <g:if test="${featureCount%1 == 1}">
+                <g:if test="${(featureCount%1) == 1}">
                     <tr class="odd">
                 </g:if>
                 <g:else>

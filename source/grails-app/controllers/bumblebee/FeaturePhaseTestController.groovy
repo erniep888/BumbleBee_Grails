@@ -5,6 +5,8 @@ import bumblebee.viewmodel.ArtifactUploadViewModel
 class FeaturePhaseTestController {
     def artifactService
 
+    static defaultAction = "edit"
+
     def edit(){
 
     }

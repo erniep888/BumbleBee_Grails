@@ -10,6 +10,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1{
+    width: 100%;
+    border-bottom: #006dba solid thin;
+    padding-bottom:3px;
+}
+h2{
     width: 96%;
     border-bottom: #006dba solid thin;
     padding-left: 10px;
@@ -83,11 +88,19 @@ a:hover, a:active {
 }
 
 h1 {
-	color: #b6b6c8;
-	font-weight: normal;
-	font-size: 1.25em;
-	margin: 0.8em 0 0.3em 0;
+    color: #017dc2;
+    font-weight: normal;
+    font-size: 1.25em;
+
 }
+
+h2 {
+    color: #b6b6c8;
+    font-weight: normal;
+    font-size: 0.9em;
+    margin: 0.8em 0 0.3em 0;
+}
+
 
 ul {
 	padding: 0;
@@ -114,6 +127,21 @@ img {
     text-decoration: none;
 }
 
+#phaseNav{
+    font-size: 0.8em;
+    letter-spacing: 1.5px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1.1em;
+    background-color: #fff;
+}
+
+#phaseNav .selected{
+    color: #b6b6b6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 #dashboardNav{
     font-size: 0.8em;
     padding-top: 0.5em;
@@ -126,6 +154,34 @@ img {
     color: #888;
     font-weight: bold;
     text-decoration: none;
+}
+
+#deleteLink {
+    float: right;
+    color: red;
+    font-size: 0.8em;
+    padding-right: 20px;
+}
+
+.ie7 table.featureInformation{
+    margin-left: 28px;
+    margin-bottom: 16px;
+}
+
+table.featureInformation{
+    padding-left: 28px;
+    padding-bottom: 16px;
+}
+
+table.featureInformation .labelColumn{
+    font-size: 0.9em;
+    color: #888;
+    width: 132px;
+}
+
+table.featureInformation .dataColumn{
+    font-size: 0.9em;
+    color: #017dc2;
 }
 
 #mock1{
@@ -198,8 +254,17 @@ img {
 
 .content h1 {
 	border-bottom: 1px solid #CCCCCC;
-	margin: 0.8em 1em 0.3em;
-	padding: 0 0.25em;
+	margin-top: 1em;
+    margin-bottom: 0.4em;
+    padding-left: 1em;
+    padding-right: -1em;
+    width: auto;
+}
+
+.content h2 {
+    border-bottom: 1px solid #CCCCCC;
+    margin: 1em 0em 0em 1.4em;
+    padding: 0 0.25em;
 }
 
 .nopadding{
@@ -358,7 +423,7 @@ img {
 
 fieldset,
 .property-list {
-	margin: 0.6em 1.25em 0 1.25em;
+	margin: 0.0em 1.25em 0 1.25em;
 	padding: 0.3em 1.8em 1.25em;
 	position: relative;
 	zoom: 1;
@@ -380,7 +445,7 @@ fieldset,
 .fieldcontain .property-label {
 	color: #666666;
 	text-align: left;
-    width:80px;
+    width:110px;
 }
 
 .fieldcontain .property-label {
@@ -414,8 +479,8 @@ select[multiple] {
 }
 
 textarea {
-	width: 250px;
-	height: 150px;
+	width: 400px;
+	height: 100px;
 	overflow: auto; /* IE always renders vertical scrollbar without this */
 	vertical-align: top;
 }
@@ -428,7 +493,7 @@ input[type=checkbox], input[type=radio] {
 
 input:focus, select:focus, textarea:focus {
 	background-color: #ffffff;
-	border: 1px solid #eeeeee;
+	border: 1px solid #888;
 	outline: 0;
 	   -moz-box-shadow: 0 0 0.5em #ffffff;
 	-webkit-box-shadow: 0 0 0.5em #ffffff;

@@ -28,6 +28,7 @@ class FeatureController {
         [featureInstance: new Feature()]
     }
 
+
     /***************** Partial View Actions Below ********************/
 
     def userList(Feature feature, String userType){
@@ -42,6 +43,6 @@ class FeatureController {
         for( uniqueUser in uniqueUserSet){
             users += uniqueUser + " "
         }
-        return users.trim()
+        render(users.trim())
     }
 }
