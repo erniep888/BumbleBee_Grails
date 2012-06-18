@@ -1,5 +1,6 @@
 import bumblebee.Phase
 import bumblebee.Feature
+import bumblebee.FeaturePhase
 
 class BootStrap {
 
@@ -24,8 +25,24 @@ class BootStrap {
     private void createFeature(){
         if (Feature.count() == 0){
             Feature feature = new Feature(category: "Inventory",
-                    description: "Inventory master", name: "R57-200", isDeleted: false)
-            feature.save()
+                    description: "Inventory master", name: "R57-200", isDeleted: false,
+                    featurePhases: new TreeSet<FeaturePhase>())
+            feature.save(flush: true)
+            def phase1 = Phase.findById(1)
+            def featurePhaseGeneral = new FeaturePhase(feature: feature, phase: phase1, status: "Not Started",
+                developer: "John Smith")
+            featurePhaseGeneral.save(flush: true)
+
+            feature.featurePhases.add(featurePhaseGeneral)
+            feature.save(flush: true)
         }
+    }
+
+    private Feature addGeneralFeaturePhase1(Feature feature){
+        def phase1 = Phase.findById(1)
+        def featurePhaseGeneral = new FeaturePhase(feature: feature,
+            comments: "No comments", developer: "John Doe", developmentWorkEffort: 1.0,
+            phase: phase1, tester: "Sally Smith", testWorkEffort: 2.0 )
+        feature.featurePhases.add(featurePhaseGeneral)
     }
 }

@@ -36,16 +36,18 @@ class FeatureController {
                 render(view: "edit", model: [featureInstance: feature])
         } else {
             feature.save(flush: true)
-            redirect(controller: "FeaturePhaseGeneral", params: [featureId: feature.id])
+            redirect(controller: "FeaturePhaseGeneral", params: [featureId: feature.id, id: 1])
         }
     }
 
 
     /***************** Partial View Actions Below ********************/
 
-    def userList(Feature feature, String userType){
+    def userList(){
+        def userType = request.getAttribute("userType")
+        def featureInstance = request.getAttribute("feature")
         SortedSet uniqueUserSet = new TreeSet<String>()
-        for(FeaturePhase featurePhase in feature.featurePhases){
+        for(FeaturePhase featurePhase in featureInstance.featurePhases){
             if (userType.equalsIgnoreCase("developer"))
                 uniqueUserSet.add(featurePhase.developer)
             else
@@ -56,5 +58,15 @@ class FeatureController {
             users += uniqueUser + " "
         }
         render(users.trim())
+    }
+
+    def workEffort(){
+        def featureInstance = request.getAttribute("feature")
+        def workEffort = 0.0d;
+        for(FeaturePhase featurePhase in featureInstance.featurePhases){
+            workEffort += (featurePhase.developmentWorkEffort) ? featurePhase.developmentWorkEffort : 0d
+            workEffort += (featurePhase.testWorkEffort) ? featurePhase.testWorkEffort : 0d
+        }
+        render(workEffort)
     }
 }

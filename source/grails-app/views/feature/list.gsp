@@ -24,35 +24,36 @@
     <table id="example">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>${message(code: 'feature.label', default: 'Feature')}</th>
-                <th>Description</th>
-                <th>Developer</th>
-                <th><g:message code="featurePhase.tester.label" default="Tester"/> </th>
-                <th>Work Effort (h)</th>
-                <th>Status</th>
-                <th>Completed</th>
-                <th>Bugs</th>
-                <th>Bug Status</th>
-                <th>Bug Severity</th>
-                <th>3rd Party Cases</th>
+                <th class="center">Id</th>
+                <th class="left">${message(code: 'feature.label', default: 'Feature')}</th>
+                <th class="left">Description</th>
+                <th class="left">Developer</th>
+                <th class="left"><g:message code="featurePhase.tester.label" default="Tester"/> </th>
+                <th class="center">Work Effort (h)</th>
+                <th class="center">Status</th>
+                <th class="center">Completed</th>
+                <th class="center">Bugs</th>
+                <th class="center">Bug Status</th>
+                <th class="center">Bug Severity</th>
+                <th class="center">3rd Party Cases</th>
             </tr>
         </thead>
         <tbody>
             <g:set var="featureCount" value="${1}" />
-            <g:each in="${featureInstanceList}" var="feature">
+            <g:each in="${featureInstanceList}" var="featureInstance">
                 <g:if test="${(featureCount%1) == 1}">
                     <tr class="odd">
                 </g:if>
                 <g:else>
                     <tr class="even">
                 </g:else>
-                    <td>${feature.id}</td>
-                    <td><g:link action="edit" id="${feature.id}">${feature.name}</g:link></td>
-                    <td>${feature.description}</td>
-                    <td class="center"><g:include action="userList" model="${[feature: feature, userType: "developer"]}"/></td>
-                    <td class="center"><g:include action="userList" model="${[feature: feature, userType: "tester"]}"/></td>
-                    <td class="center"></td>
+                    <td class="center">${featureInstance.id}</td>
+                    <td class="left"><g:link controller="featurePhaseGeneral" action="edit"
+                                params="[featureId: featureInstance.id]" id="${featureInstance.id}">${featureInstance.name}</g:link></td>
+                    <td class="left">${featureInstance.description}</td>
+                    <td class="left"><g:include action="userList" model="${[feature: featureInstance, userType: "developer"]}"/></td>
+                    <td class="left"><g:include action="userList" model="${[feature: featureInstance, userType: "tester"]}"/></td>
+                    <td class="center"><g:include action="workEffort" model="${[feature: featureInstance]}"/></td>
                     <td class="center"></td>
                     <td class="center"></td>
                     <td class="center"></td>

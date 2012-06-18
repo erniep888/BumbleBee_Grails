@@ -32,6 +32,10 @@ table.dataTable td.dataTables_empty {
 	text-align: center;
 }
 
+td.left, th.left {
+    text-align: left;
+}
+
 table.dataTable tr.odd { background-color: #fff; }
 table.dataTable tr.even { background-color: #eee; }
 

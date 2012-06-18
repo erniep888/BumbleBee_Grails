@@ -39,7 +39,7 @@
 
 <div class="nav" role="navigation">
     <ul>
-        <li><g:link class="list" action="list"><g:message code="default.list.label" args="[message(code: 'feature.label', default: 'Feature')]"/></g:link></li>
+        <li><g:link class="list" controller="feature" action="list"><g:message code="default.list.label" args="[message(code: 'feature.label', default: 'Feature')]"/></g:link></li>
     </ul>
 </div>
 

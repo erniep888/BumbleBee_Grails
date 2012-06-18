@@ -1,4 +1,6 @@
+<%@ page import="bumblebee.Feature" %>
 <%@ page import="bumblebee.FeaturePhase" %>
+
 
 <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'developer', 'error')} ">
     <label for="developer">
@@ -48,3 +50,5 @@
     </label>
     <g:textArea name="comments" value="${featurePhaseInstance?.comments}" cols="1" rows="1" />
 </div>
+<g:hiddenField name="id" value="${params.id}" />
+<g:hiddenField name="featureId" value="${params.featureId}" />
