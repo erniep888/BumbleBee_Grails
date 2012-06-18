@@ -21,8 +21,8 @@ class FeaturePhase implements Comparable<FeaturePhase> {
         phase(nullable: false)
         developer(nullable: true)
         tester(nullable: true)
-        developmentWorkEffort(nullable: true)
-        testWorkEffort(nullable: true)
+        developmentWorkEffort(nullable: true, scale: 1)
+        testWorkEffort(nullable: true, scale: 1)
         executionDate(nullable:  true)
         comments(nullable: true)
     }

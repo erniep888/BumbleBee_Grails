@@ -54,7 +54,7 @@
                     <td class="left"><g:include action="userList" model="${[feature: featureInstance, userType: "developer"]}"/></td>
                     <td class="left"><g:include action="userList" model="${[feature: featureInstance, userType: "tester"]}"/></td>
                     <td class="center"><g:include action="workEffort" model="${[feature: featureInstance]}"/></td>
-                    <td class="center"></td>
+                    <td class="center"><g:include action="featureStatus" model="${[feature: featureInstance]}"/></td>
                     <td class="center"></td>
                     <td class="center"></td>
                     <td class="center"></td>

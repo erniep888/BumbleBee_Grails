@@ -1,6 +1,10 @@
-<%@ page import="bumblebee.Feature" %>
+<%@ page import="java.text.SimpleDateFormat; bumblebee.Feature" %>
 <%@ page import="bumblebee.FeaturePhase" %>
+<%@ page import="bumblebee.FeatureStatusMap" %>
 
+<%
+    def simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy")
+%>
 
 <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'developer', 'error')} ">
     <label for="developer">
@@ -20,28 +24,30 @@
     <label for="developmentWorkEffort">
         <g:message code="featurePhase.developmentWorkEffort.label" default="Development Work Effort"/>
     </label>
-    <g:textField name="developmentWorkEffort" value="${featurePhaseInstance?.developmentWorkEffort}" size="40"/>
+    <g:textField name="developmentWorkEffort" value="${featurePhaseInstance?.developmentWorkEffort}" size="3"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'testWorkEffort', 'error')} ">
     <label for="testWorkEffort">
         <g:message code="featurePhase.testWorkEffort.label" default="Test Work Effort"/>
     </label>
-    <g:textField name="testWorkEffort" value="${featurePhaseInstance?.testWorkEffort}" size="40"/>
+    <g:textField name="testWorkEffort" value="${featurePhaseInstance?.testWorkEffort}" size="3"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'status', 'error')} ">
     <label for="status">
         <g:message code="featurePhase.status.label" default="Status"/>
     </label>
-    <g:textField name="status" value="${featurePhaseInstance?.status}" size="40"/>
+    <g:select name="status" value="${featurePhaseInstance?.status}"
+        from="${FeatureStatusMap.getAllStatusStrings()}"
+        noSelection="['':'not started']" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'executionDate', 'error')} ">
     <label for="executionDate">
         <g:message code="featurePhase.executionDate.label" default="Completed"/>
     </label>
-    <g:textField name="executionDate" value="${featurePhaseInstance?.executionDate}" size="40"/>
+    ${(featurePhaseInstance?.executionDate)?simpleDateFormat.format(featurePhaseInstance?.executionDate):'not complete'}
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'comments', 'error')} ">

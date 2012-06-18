@@ -8,7 +8,7 @@ class FeaturePhaseGeneralController {
         def feature = Feature.findById(featureId)
         if (!feature.featurePhases || feature.featurePhases.size() == 0){
             def phase = Phase.findById(id)
-            def featurePhaseGeneral = new FeaturePhase(feature: feature, phase: phase, status: "Not Started")
+            def featurePhaseGeneral = new FeaturePhase(feature: feature, phase: phase, status: "not started")
             featurePhaseGeneral.save(flush: true)
         }
         def selectedFeaturePhase = feature.featurePhases.find {it.phase.id == id}
@@ -22,7 +22,14 @@ class FeaturePhaseGeneralController {
 
         def existingFeaturePhase = FeaturePhase.findOrCreateWhere(phase: phase, feature: feature)
         if (!existingFeaturePhase.id)
-            existingFeaturePhase.status = "Not Started"
+            existingFeaturePhase.status = 'not started'
+        if (justPostedFeaturePhase.status == 'completed' && existingFeaturePhase.status != 'completed'){
+            existingFeaturePhase.status = 'completed'
+            existingFeaturePhase.executionDate = new Date()
+        } else if (justPostedFeaturePhase.status != existingFeaturePhase.status){
+            existingFeaturePhase.status = justPostedFeaturePhase.status
+            existingFeaturePhase.executionDate = null
+        }
 
         if (existingFeaturePhase){
             existingFeaturePhase.developer = justPostedFeaturePhase.developer
@@ -33,6 +40,7 @@ class FeaturePhaseGeneralController {
                 justPostedFeaturePhase.status : existingFeaturePhase.status
             existingFeaturePhase.comments = justPostedFeaturePhase.comments
         }
+
         existingFeaturePhase.validate()
         if (existingFeaturePhase?.hasErrors()){
             if (!existingFeaturePhase || !existingFeaturePhase.id)
@@ -42,7 +50,7 @@ class FeaturePhaseGeneralController {
         } else {
             feature.featurePhases.add(existingFeaturePhase)
             feature.save(flush: true)
-            justPostedFeaturePhase.save(flush: true)
+            existingFeaturePhase.save(flush: true)
             redirect(controller: "FeaturePhaseGeneral", action:"edit", params: [featureId: params.featureId, id: params.id])
         }
     }

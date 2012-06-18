@@ -47,17 +47,21 @@ class FeatureController {
         def userType = request.getAttribute("userType")
         def featureInstance = request.getAttribute("feature")
         SortedSet uniqueUserSet = new TreeSet<String>()
-        for(FeaturePhase featurePhase in featureInstance.featurePhases){
+        for(FeaturePhase featurePhase in featureInstance?.featurePhases){
             if (userType.equalsIgnoreCase("developer"))
-                uniqueUserSet.add(featurePhase.developer)
+                uniqueUserSet.add((featurePhase.developer)?featurePhase.developer:"")
             else
-                uniqueUserSet.add(featurePhase.tester)
+                uniqueUserSet.add((featurePhase.tester)?featurePhase.tester:"")
         }
         def users = ""
         for( uniqueUser in uniqueUserSet){
-            users += uniqueUser + " "
+            if (uniqueUser && uniqueUser.trim().length() > 0)
+                users += uniqueUser + ', '
         }
-        render(users.trim())
+        def userListWithTrailingComma = users.trim()
+        if (userListWithTrailingComma.length() > 0)
+            users = userListWithTrailingComma.substring(0, userListWithTrailingComma.length()-1)
+        render(users)
     }
 
     def workEffort(){
@@ -68,5 +72,25 @@ class FeatureController {
             workEffort += (featurePhase.testWorkEffort) ? featurePhase.testWorkEffort : 0d
         }
         render(workEffort)
+    }
+
+    def featureStatus(){
+        def featureInstance = request.getAttribute("feature")
+        def numberOfPhases = Phase.count()
+        def numberOfFeaturePhases = FeaturePhase.countByFeature(featureInstance)
+        def lowestPriorityStatus = FeatureStatus.createLowestPriorityStatus()
+        if (numberOfFeaturePhases == numberOfPhases)  {
+            lowestPriorityStatus = FeatureStatus.createHighestPriorityStatus()
+            for(FeaturePhase featurePhase in featureInstance.featurePhases){
+                def currentStatus = FeatureStatusMap.findByStatus(featurePhase.status)
+                if (lowestPriorityStatus.compareTo(currentStatus) > 0)
+                    lowestPriorityStatus = currentStatus
+            }
+        }
+        render(lowestPriorityStatus.status)
+    }
+
+    def completionStatus(){
+
     }
 }
