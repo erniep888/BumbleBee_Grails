@@ -49,7 +49,7 @@
                 </g:else>
                     <td class="center">${featureInstance.id}</td>
                     <td class="left"><g:link controller="featurePhaseGeneral" action="edit"
-                                params="[featureId: featureInstance.id]" id="${featureInstance.id}">${featureInstance.name}</g:link></td>
+                                params="[featureId: featureInstance.id]" id="${1}">${featureInstance.name}</g:link></td>
                     <td class="left">${featureInstance.description}</td>
                     <td class="left"><g:include action="userList" model="${[feature: featureInstance, userType: "developer"]}"/></td>
                     <td class="left"><g:include action="userList" model="${[feature: featureInstance, userType: "tester"]}"/></td>

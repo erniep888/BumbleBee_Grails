@@ -9,19 +9,26 @@ class FeaturePhaseTestController {
 
     def edit(long featureId, long id) {
         def feature = Feature.findById(featureId)
-        [featureInstance: feature]
+        if (!feature.featurePhases || feature.featurePhases.size() == 0){
+            def phase = Phase.findById(id)
+            def featurePhaseGeneral = new FeaturePhase(feature: feature, phase: phase, status: "not started")
+            featurePhaseGeneral.save(flush: true)
+        }
+        def selectedFeaturePhase = feature.featurePhases.find {it.phase.id == id}
+        [featureInstance: feature, featurePhaseInstance: selectedFeaturePhase]
     }
 
-    def delete(){
-
+    def deleteTest(){
+        long testId = params.id
+        long featurePhaseId = params.featurePhaseId
     }
 
     def save(){
 
     }
 
-    def view(){
-
+    def viewTest(){
+        long testId = params.id
     }
 
     def uploadForm(){
@@ -32,17 +39,17 @@ class FeaturePhaseTestController {
     def upload(ArtifactUploadViewModel artifactUploadViewModel) {
         if (!artifactUploadViewModel){
             flash.message = message(code: 'artifact.emptyFileUpload.message')
-            render(view: 'uploadForm')
+            redirect(view: 'edit')
             return
         }
 
         // create the Artifact
         Artifact artifact = new Artifact(
-                fileName: artifactUploadViewModel.contents.originalFilename,
+                fileName: artifactUploadViewModel.contents.getOriginalFilename(),
                 contentType: artifactUploadViewModel.contents.contentType,
-                size: artifactUploadViewModel.contents.size)
+                size: artifactUploadViewModel.contents.bytes.length)
 
-        artifactService.saveArtifact(artifact, artifactUploadViewModel.contents.bytes)
-        response.sendError(200, 'Done')
+        artifactService.saveObjectTestArtifact(artifact, artifactUploadViewModel.contents.bytes)
+        redirect(action: "edit", params: params)
     }
 }

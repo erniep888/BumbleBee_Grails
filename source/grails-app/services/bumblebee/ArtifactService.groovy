@@ -1,6 +1,7 @@
 package bumblebee
 
 import javax.annotation.PostConstruct
+import org.codehaus.groovy.grails.commons.GrailsApplication
 
 class ArtifactService {
 
@@ -16,7 +17,8 @@ class ArtifactService {
         library = "library"
         tests = grailsApplication.getMainContext().getMessage("feature.label", null, Locale.ENGLISH).toLowerCase() + "_tests"
         attachments = grailsApplication.getMainContext().getMessage("feature.label", null, Locale.ENGLISH).toLowerCase() + "_attachments"
-        rootFolder = File.separator + grailsApplication.getMainContext().getMessage("app.userfriendly.applicationAcronym", null, Locale.ENGLISH) + File.separator + "artifacts"
+        def rootDrive = grailsApplication.getMetadata()['app.root.drive']
+        rootFolder = rootDrive + File.separator + grailsApplication.getMainContext().getMessage("app.userfriendly.applicationAcronym", null, Locale.ENGLISH) + File.separator + "artifacts"
 
         subfolderDictionary = new HashMap<String, String>()
         def folderNames = new Vector<String>()
@@ -29,7 +31,7 @@ class ArtifactService {
 
         def rootFolderDir = new File(rootFolder)
         if (!rootFolderDir.exists()) {  // the root folder does not exist
-            rootFolderDir.mkdir()
+            rootFolderDir.mkdirs()
             for(def directory in subfolderDictionary.values()){
                 def subFolderDir = new File(directory)
                 if (!subFolderDir.exists())  // the sub folder does not exist
@@ -38,32 +40,45 @@ class ArtifactService {
         }
     }
 
-    def saveArtifact(Artifact artifact, byte[] bytes){
-        artifact.validate()
+    def saveLibraryArtifact(Artifact artifact, byte[] bytes )  {
+        return saveArtifact(artifact, bytes, library)
+    }
+
+    def saveObjectTestArtifact(Artifact artifact, byte[] bytes )  {
+        return saveArtifact(artifact, bytes, tests)
+    }
+
+    def saveObjectAttachmentArtifact(Artifact artifact, byte[] bytes )  {
+        return saveArtifact(artifact, bytes, attachments)
+    }
+
+    private Artifact saveArtifact(Artifact artifact, byte[] bytes, String folderName){
         if (!artifact.hasErrors()){
-            def existingArtifact = Artifact.findById(artifact?.id)
-            if (existingArtifact) {
-                existingArtifact.lock()
-                def existingFullPathAndFileName =
-                    existingArtifact.serverFilePath + File.separator + existingArtifact.serverFileName
-                def existingFile = new File(existingFullPathAndFileName)
-                if (existingFile.exists()){
-                    existingFile.delete()
+            if (artifact?.id){
+                def existingArtifact = Artifact.findById(artifact?.id)
+                if (existingArtifact) {
+                    existingArtifact.lock()
+                    def existingFullPathAndFileName =
+                        existingArtifact.serverFilePath + File.separator + existingArtifact.serverFileName
+                    def existingFile = new File(existingFullPathAndFileName)
+                    if (existingFile.exists()){
+                        existingFile.delete()
+                    }
+                    existingArtifact = storeArtifactFile(existingArtifact, bytes, folderName)
+                    existingArtifact.fileName = artifact.fileName
+                    existingArtifact.description = artifact.description
+                    existingArtifact.save(flush: true)
                 }
-                existingArtifact = storeArtifactFile(existingArtifact, bytes)
-                existingArtifact.fileName = artifact.fileName
-                existingArtifact.description = artifact.description
-                existingArtifact.save(flush: true)
-            }  else {
-                artifact = storeArtifactFile(artifact, bytes)
+            } else {
+                artifact = storeArtifactFile(artifact, bytes, folderName)
                 artifact.save(flush: true)
             }
         }
         return artifact
     }
 
-    private Artifact storeArtifactFile(Artifact artifact, byte[] bytes){
-        artifact.serverFilePath = subfolderDictionary[library]
+    private Artifact storeArtifactFile(Artifact artifact, byte[] bytes, String folderName){
+        artifact.serverFilePath = subfolderDictionary[folderName]
         artifact.serverFileName = UUID.randomUUID().toString()
         artifact.size = bytes.length
         def fullPathAndFileName = artifact.serverFilePath + File.separator + artifact.serverFileName

@@ -17,6 +17,8 @@ class Feature implements Comparable<Feature> {
 
     static hasMany = [featurePhases: FeaturePhase]
 
+    static belongsTo = [project: Project]
+
     def int compareTo(Feature feature){
         return this.name.compareTo(feature.name)
     }

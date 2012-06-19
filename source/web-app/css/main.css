@@ -267,6 +267,11 @@ table.featureInformation .dataColumn{
     padding: 0 0.25em;
 }
 
+.uploadContainer{
+    font-size: 0.9em;
+    padding: 1.5em;
+}
+
 .nopadding{
     padding: 0;
 }
@@ -310,6 +315,13 @@ table.featureInformation .dataColumn{
     padding-left: 0.9em;
 }
 
+.projectTitle{
+    float: right;
+    color: #017dc2;
+    padding-right: 12px;
+    padding-top: 6px;
+}
+
 #footerAppInfo{
     color: #999;
     text-align: right;
@@ -326,6 +338,27 @@ table.featureInformation .dataColumn{
 	top: 0;
 	text-indent: -9999px;
 }
+
+.fileList{
+    border:gray solid 1px;
+    width:520px;
+    height:300px;
+    overflow-y:scroll;
+}
+
+.width100{
+    width: 100px;
+}
+
+.width200{
+    width: 200px;
+}
+
+.vertAlignTop{
+    vertical-align: top;
+}
+
+
 
 /* NAVIGATION MENU */
 

@@ -5,7 +5,7 @@ class FeatureController {
     static defaultAction = "list"
 
     def list() {
-        [featureInstanceList: Feature.list()]
+        [featureInstanceList: Feature.findAll({isDeleted == false})]
     }
 
     def create() {
@@ -22,12 +22,14 @@ class FeatureController {
 
     def delete(long id) {
         def feature = Feature.findById(id)
-        feature.delete(flush: true)
+        feature.isDeleted = true
+        feature.save(flush: true)
         redirect(action: list())
     }
 
     def save() {
         def feature = new Feature(params)
+        feature.project = Project.findById(1)
         feature.validate()
         if (feature?.hasErrors()){
             if (!feature || !feature.id)
