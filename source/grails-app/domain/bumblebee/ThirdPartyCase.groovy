@@ -1,6 +1,9 @@
 package bumblebee
 
 class ThirdPartyCase implements Comparable<ThirdPartyCase> {
+    Date dateCreated
+    Date lastUpdated
+
     String caseIdentifier
     String status
     String description

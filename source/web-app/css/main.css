@@ -334,15 +334,15 @@ table.featureInformation .dataColumn{
 	text-indent: -9999px;
 }
 
-.uploadContainer{
+.listContainer {
     font-size: 0.9em;
     padding: 1.5em;
 }
 
-.uploadContainer .labelColumn{
+.listContainer .labelColumn{
     width: 8em;
 }
-.uploadContainer .uploadRow{
+.listContainer .uploadRow{
     padding-top: 1em;
 }
 
@@ -362,15 +362,19 @@ table.featureInformation .dataColumn{
     padding-left: 2em;
 }
 
-.fileList .nameColumn{
-    width: 24em;
-}
-
-.fileList .dateColumn{
+.linkNameColumn {
     width: 14em;
 }
 
-.fileList .actionColumn{
+.fileNameColumn {
+    width: 24em;
+}
+
+.dateColumn{
+    width: 14em;
+}
+
+.actionColumn{
     width: 10em;
 }
 
@@ -378,6 +382,31 @@ table.featureInformation .dataColumn{
     width: 10em;
 }
 
+.linkList{
+    border:gray solid 1px;
+    width:40em;
+    height:12em;
+    overflow-y:scroll;
+    font-size: 0.8em;
+}
+
+.linkEditDetails{
+    background-color: #eee;
+    padding: 1em;
+}
+
+form .linkEdit{
+
+}
+.linkEdit label{
+    width:4em;
+    padding-top: 1em;
+}
+
+.linkEdit #inNewWindow{
+    margin-top: 1em;
+    margin-left:4.6em;
+}
 
 .center{
     text-align: center;

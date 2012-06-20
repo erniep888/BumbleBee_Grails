@@ -1,6 +1,9 @@
 package bumblebee
 
 class Link implements Comparable<Link> {
+    Date dateCreated
+    Date lastUpdated
+
     String name
     String href
     Boolean inNewWindow
@@ -8,8 +11,8 @@ class Link implements Comparable<Link> {
     static belongsTo = [featurePhase : FeaturePhase]
 
     static constraints = {
-        name(nullable: false)
-        href(nullable: false)
+        name(nullable: false, blank: false)
+        href(nullable: false, blank: false, url: true)
         inNewWindow(nullable: false)
     }
 

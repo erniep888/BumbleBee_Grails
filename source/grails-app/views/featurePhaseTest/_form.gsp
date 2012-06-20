@@ -3,7 +3,7 @@
 <g:if test="${flash.message}">
     <div class="errors" role="status">${flash.message}</div>
 </g:if>
-<div class="uploadContainer">
+<div class="listContainer">
     <table border="0">
         <tr>
             <td class="vertAlignTop">Tests</td>
@@ -12,7 +12,7 @@
                     <table>
                         <g:each var="test" in="${featurePhaseInstance?.tests}">
                             <tr>
-                                <td class="fileListPadding nameColumn"><g:link action="viewTest" id="${test.id}">${test.fileName}</g:link></td>
+                                <td class="fileListPadding fileNameColumn"><g:link action="viewTest" id="${test.id}">${test.fileName}</g:link></td>
                                 <td class="dateColumn"><g:formatDate format="MM/dd/yyyy h:mm:ss a" date="${test?.lastUpdated}"/></td>
                                 <td class="center actionColumn"><g:link action="deleteTest" params="[featureId: params.featureId, id:params.id, artifactId:test.id]">Delete</g:link></td>
                                 <td class="fileListPadding sizeColumn">${Math.round(test.size / 1000)} KB</td>

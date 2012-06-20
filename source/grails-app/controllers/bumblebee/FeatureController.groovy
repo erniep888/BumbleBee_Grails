@@ -31,7 +31,7 @@ class FeatureController {
         def feature = new Feature(params)
         feature.project = Project.findById(1)
         feature.validate()
-        if (feature?.hasErrors()){
+        if (feature.hasErrors()){
             if (!feature || !feature.id)
                 render(view: "create", model: [featureInstance: feature])
             else
