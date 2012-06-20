@@ -267,11 +267,6 @@ table.featureInformation .dataColumn{
     padding: 0 0.25em;
 }
 
-.uploadContainer{
-    font-size: 0.9em;
-    padding: 1.5em;
-}
-
 .nopadding{
     padding: 0;
 }
@@ -339,20 +334,55 @@ table.featureInformation .dataColumn{
 	text-indent: -9999px;
 }
 
+.uploadContainer{
+    font-size: 0.9em;
+    padding: 1.5em;
+}
+
+.uploadContainer .labelColumn{
+    width: 8em;
+}
+.uploadContainer .uploadRow{
+    padding-top: 1em;
+}
+
+.uploadFileName{
+    width: 44em;
+}
+
 .fileList{
     border:gray solid 1px;
-    width:520px;
-    height:300px;
+    width:60em;
+    height:20em;
     overflow-y:scroll;
+    font-size: 0.8em;
 }
 
-.width100{
-    width: 100px;
+.fileListPadding{
+    padding-left: 2em;
 }
 
-.width200{
-    width: 200px;
+.fileList .nameColumn{
+    width: 24em;
 }
+
+.fileList .dateColumn{
+    width: 14em;
+}
+
+.fileList .actionColumn{
+    width: 10em;
+}
+
+.fileList .sizeColumn{
+    width: 10em;
+}
+
+
+.center{
+    text-align: center;
+}
+
 
 .vertAlignTop{
     vertical-align: top;

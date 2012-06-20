@@ -3,7 +3,7 @@ package bumblebee
 class FeatureFilters {
 
     def filters = {
-        allFeaturePhase(controller: 'featurePhase*', action: '*') {
+        allFeaturePhase(controller: 'featurePhase*', action: '*', actionExclude: 'viewTest') {
             before = {
                 if (!params || !params.featureId){
                     flash.message = "${grailsApplication.getMainContext().getMessage("feature.label", null, Locale.ENGLISH)} id must be supplied."

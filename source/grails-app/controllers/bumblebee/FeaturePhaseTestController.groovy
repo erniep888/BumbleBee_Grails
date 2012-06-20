@@ -1,6 +1,7 @@
 package bumblebee
 
 import bumblebee.viewmodel.ArtifactUploadViewModel
+import org.aspectj.weaver.ast.Test
 
 class FeaturePhaseTestController {
     def artifactService
@@ -14,32 +15,33 @@ class FeaturePhaseTestController {
             def featurePhaseGeneral = new FeaturePhase(feature: feature, phase: phase, status: "not started")
             featurePhaseGeneral.save(flush: true)
         }
-        def selectedFeaturePhase = feature.featurePhases.find {it.phase.id == id}
+        def selectedFeaturePhase = feature.featurePhases.find {it.phase.id == new Long(params.id)}
         [featureInstance: feature, featurePhaseInstance: selectedFeaturePhase]
     }
 
     def deleteTest(){
-        long testId = params.id
-        long featurePhaseId = params.featurePhaseId
-    }
+        def feature = Feature.findById(params.featureId)
+        def selectedFeaturePhase = feature.featurePhases.find {it.phase.id == new Long(params.id)}
+        Artifact test = Artifact.findById(params.artifactId)
 
-    def save(){
-
+        selectedFeaturePhase.tests.remove(test)
+        artifactService.deleteArtifact( test.id )
+        redirect(action:"edit", params: [id: params.id, featureId: params.featureId])
     }
 
     def viewTest(){
-        long testId = params.id
-    }
-
-    def uploadForm(){
-        def id = params.id
-        [id:id]
+        def testArtifact = Artifact.findById(params.id)
+        response.contentType = testArtifact.contentType
+        response.addHeader("Content-Disposition", "attachment; fileName=${testArtifact.fileName}")
+        response.addHeader("Content-Length", String.valueOf(testArtifact.size))
+        File file = new File(testArtifact.serverFilePath + File.separator + testArtifact.serverFileName)
+        response.outputStream << file.getBytes()
     }
 
     def upload(ArtifactUploadViewModel artifactUploadViewModel) {
-        if (!artifactUploadViewModel){
+        if (!artifactUploadViewModel || artifactUploadViewModel.contents.size == 0){
             flash.message = message(code: 'artifact.emptyFileUpload.message')
-            redirect(view: 'edit')
+            redirect(view: 'edit', params: params)
             return
         }
 
@@ -50,6 +52,10 @@ class FeaturePhaseTestController {
                 size: artifactUploadViewModel.contents.bytes.length)
 
         artifactService.saveObjectTestArtifact(artifact, artifactUploadViewModel.contents.bytes)
+        Feature feature = Feature.findById(params.featureId)
+        FeaturePhase selectedFeaturePhase = feature.featurePhases.find {it.phase.id == new Long(params.id)}
+        selectedFeaturePhase.tests.add(artifact)
+        selectedFeaturePhase.save(flush: true)
         redirect(action: "edit", params: params)
     }
 }

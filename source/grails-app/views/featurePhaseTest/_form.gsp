@@ -1,29 +1,21 @@
 <%@ page import="bumblebee.FeaturePhase" %>
 
+<g:if test="${flash.message}">
+    <div class="errors" role="status">${flash.message}</div>
+</g:if>
 <div class="uploadContainer">
     <table border="0">
         <tr>
-            <td class="width100">Upload Test</td>
-            <td>
-                <g:uploadForm name="testUpload" action="upload" controller="featurePhaseTest">
-                    <g:hiddenField name="id" value="${params.id}" />
-                    <g:hiddenField name="featureId" value="${params.featureId}" />
-                    <input name="contents" type="file" size="60"/>
-                    <input value="Upload" type="submit"/>
-                </g:uploadForm>
-            </td>
-        </tr>
-        <tr>
-            <td class="vertAlignTop width100">Tests</td>
+            <td class="vertAlignTop">Tests</td>
             <td>
                 <div class="fileList">
                     <table>
                         <g:each var="test" in="${featurePhaseInstance?.tests}">
                             <tr>
-                                <td class="width200"><g:link action="viewTest" id="${test.id}">${test.fileName}</g:link></td>
-                                <td><g:formatDate format="MM/dd/yyyy h:mm:ss a" date="${test?.lastUpdated}"/></td>
-                                <td><g:link action="deleteTest" params="[id:test.id,featurePhaseId:featurePhase.id]">Delete</g:link></td>
-                                <td class="width100">${Math.round(test.size / 1000)} kb</td>
+                                <td class="fileListPadding nameColumn"><g:link action="viewTest" id="${test.id}">${test.fileName}</g:link></td>
+                                <td class="dateColumn"><g:formatDate format="MM/dd/yyyy h:mm:ss a" date="${test?.lastUpdated}"/></td>
+                                <td class="center actionColumn"><g:link action="deleteTest" params="[featureId: params.featureId, id:params.id, artifactId:test.id]">Delete</g:link></td>
+                                <td class="fileListPadding sizeColumn">${Math.round(test.size / 1000)} KB</td>
                             </tr>
                         </g:each>
                     </table>
@@ -31,11 +23,14 @@
             </td>
         </tr>
         <tr>
-            <td></td>
-            <td>
-                <g:form controller="featurePhaseTest">
-                    <g:actionSubmit value="Done" action="edit"/>
-                </g:form>
+            <td class="labelColumn uploadRow">Upload Test</td>
+            <td class="uploadRow">
+                <g:uploadForm name="testUpload" action="upload" controller="featurePhaseTest">
+                    <g:hiddenField name="id" value="${params.id}" />
+                    <g:hiddenField name="featureId" value="${params.featureId}" />
+                    <input class="uploadFileName" name="contents" type="file"/>
+                    <input value="Upload" type="submit"/>
+                </g:uploadForm>
             </td>
         </tr>
     </table>

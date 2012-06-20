@@ -6,10 +6,12 @@ class FeaturePhaseGeneralController {
 
     def edit(long featureId, long id) {
         def feature = Feature.findById(featureId)
-        if (!feature.featurePhases || feature.featurePhases.size() == 0){
+        if (!feature?.featurePhases || feature?.featurePhases?.size() == 0){
             def phase = Phase.findById(id)
             def featurePhaseGeneral = new FeaturePhase(feature: feature, phase: phase, status: "not started")
             featurePhaseGeneral.save(flush: true)
+            feature.featurePhases.add(featurePhaseGeneral)
+            feature.save(flush: true)
         }
         def selectedFeaturePhase = feature.featurePhases.find {it.phase.id == id}
         [featureInstance: feature, featurePhaseInstance: selectedFeaturePhase]

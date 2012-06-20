@@ -77,6 +77,20 @@ class ArtifactService {
         return artifact
     }
 
+    public void deleteArtifact(long artifactId){
+        def existingArtifact = Artifact.findById(artifactId)
+        if (existingArtifact) {
+            existingArtifact.lock()
+            def existingFullPathAndFileName =
+                existingArtifact.serverFilePath + File.separator + existingArtifact.serverFileName
+            def existingFile = new File(existingFullPathAndFileName)
+            if (existingFile.exists()){
+                existingFile.delete()
+            }
+            existingArtifact.delete(flush: true)
+        }
+    }
+
     private Artifact storeArtifactFile(Artifact artifact, byte[] bytes, String folderName){
         artifact.serverFilePath = subfolderDictionary[folderName]
         artifact.serverFileName = UUID.randomUUID().toString()
@@ -88,8 +102,4 @@ class ArtifactService {
         return artifact
     }
 
-    def load(Artifact artifact) {
-        def fullPathAndFileName = artifact.serverFilePath + File.separator + artifact.serverFileName
-        return new FileInputStream(fullPathAndFileName)
-    }
 }
