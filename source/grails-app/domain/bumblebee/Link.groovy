@@ -12,7 +12,7 @@ class Link implements Comparable<Link> {
 
     static constraints = {
         name(nullable: false, blank: false)
-        href(nullable: false, blank: false, url: true)
+        href(nullable: false, blank: false)
         inNewWindow(nullable: false)
     }
 

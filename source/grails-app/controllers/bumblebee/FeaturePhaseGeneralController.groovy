@@ -5,39 +5,35 @@ class FeaturePhaseGeneralController extends FeaturePhaseController {
     def save() {
         def justPostedFeaturePhase = new FeaturePhase(params)
         def feature = Feature.findById(params.featureId)
-        def phase = Phase.findById(params.id)
 
-        def existingFeaturePhase = FeaturePhase.findOrCreateWhere(phase: phase, feature: feature)
-        if (!existingFeaturePhase.id)
-            existingFeaturePhase.status = 'not started'
-        if (justPostedFeaturePhase.status == 'completed' && existingFeaturePhase.status != 'completed'){
-            existingFeaturePhase.status = 'completed'
-            existingFeaturePhase.executionDate = new Date()
-        } else if (justPostedFeaturePhase.status != existingFeaturePhase.status){
-            existingFeaturePhase.status = justPostedFeaturePhase.status
-            existingFeaturePhase.executionDate = null
+        def selectedFeaturePhase = getOrSetSelectedFeaturePhase(feature, new Long(params.id))
+
+        if (justPostedFeaturePhase.status == 'completed' && selectedFeaturePhase.status != 'completed'){
+            selectedFeaturePhase.status = 'completed'
+            selectedFeaturePhase.executionDate = new Date()
+        } else if (justPostedFeaturePhase.status != selectedFeaturePhase.status){
+            selectedFeaturePhase.status = justPostedFeaturePhase.status
+            selectedFeaturePhase.executionDate = null
         }
 
-        if (existingFeaturePhase){
-            existingFeaturePhase.developer = justPostedFeaturePhase.developer
-            existingFeaturePhase.tester = justPostedFeaturePhase.tester
-            existingFeaturePhase.developmentWorkEffort = justPostedFeaturePhase.developmentWorkEffort
-            existingFeaturePhase.testWorkEffort = justPostedFeaturePhase.testWorkEffort
-            existingFeaturePhase.status = (justPostedFeaturePhase.status) ?
-                justPostedFeaturePhase.status : existingFeaturePhase.status
-            existingFeaturePhase.comments = justPostedFeaturePhase.comments
-        }
+        selectedFeaturePhase.developer = justPostedFeaturePhase.developer
+        selectedFeaturePhase.tester = justPostedFeaturePhase.tester
+        selectedFeaturePhase.developmentWorkEffort = justPostedFeaturePhase.developmentWorkEffort
+        selectedFeaturePhase.testWorkEffort = justPostedFeaturePhase.testWorkEffort
+        selectedFeaturePhase.status = (justPostedFeaturePhase.status) ?
+            justPostedFeaturePhase.status : selectedFeaturePhase.status
+        selectedFeaturePhase.isOffShore = (justPostedFeaturePhase.isOffShore) ?
+            justPostedFeaturePhase.isOffShore : false
+        selectedFeaturePhase.comments = justPostedFeaturePhase.comments
 
-        existingFeaturePhase.validate()
-        if (existingFeaturePhase?.hasErrors()){
-            if (!existingFeaturePhase || !existingFeaturePhase.id)
-                render(view: "create", model: [featurePhaseInstance: existingFeaturePhase], params: params)
+        selectedFeaturePhase.validate()
+        if (selectedFeaturePhase?.hasErrors()){
+            if (!selectedFeaturePhase || !selectedFeaturePhase.id)
+                render(view: "create", model: [featurePhaseInstance: selectedFeaturePhase], params: params)
             else
-                render(view: "edit", model: [featurePhaseInstance: existingFeaturePhase], params: params)
+                render(view: "edit", model: [featurePhaseInstance: selectedFeaturePhase], params: params)
         } else {
-            feature.featurePhases.add(existingFeaturePhase)
-            feature.save(flush: true)
-            existingFeaturePhase.save(flush: true)
+            selectedFeaturePhase.save(flush: true)
             redirect(controller: "FeaturePhaseGeneral", action:"edit", params: [featureId: params.featureId, id: params.id])
         }
     }

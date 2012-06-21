@@ -43,7 +43,7 @@
             </label>
             <g:select name="status" value="${featurePhaseInstance?.status}"
                       from="${FeatureStatusMap.getAllStatusStrings()}"
-                      noSelection="['': 'not started']"/>
+                      noSelection="${['not started':'Select One...']}"/>
         </div>
 
         <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'executionDate', 'error')} ">
@@ -51,6 +51,13 @@
                 <g:message code="featurePhase.executionDate.label" default="Completed"/>
             </label>
             ${(featurePhaseInstance?.executionDate) ? simpleDateFormat.format(featurePhaseInstance?.executionDate) : 'not complete'}
+        </div>
+
+        <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'isOffShore', 'error')} ">
+            <label for="isOffShore">
+                <g:message code="featurePhase.isOffShore.label" default="Is off shore?"/>
+            </label>
+            <g:checkBox name="isOffShore" value="${featurePhaseInstance?.isOffShore}" size="40"/>
         </div>
 
         <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'comments', 'error')} ">

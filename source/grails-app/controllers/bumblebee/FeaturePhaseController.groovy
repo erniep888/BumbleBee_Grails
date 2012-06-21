@@ -7,12 +7,19 @@ class FeaturePhaseController {
 
     def edit(long featureId, long id) {
         def feature = Feature.findById(featureId)
-        if (!feature.featurePhases || feature.featurePhases.size() == 0){
-            def phase = Phase.findById(id)
-            def featurePhaseGeneral = new FeaturePhase(feature: feature, phase: phase, status: "not started")
-            featurePhaseGeneral.save(flush: true)
-        }
-        def selectedFeaturePhase = feature.featurePhases.find {it.phase.id == new Long(params.id)}
+        def selectedFeaturePhase = getOrSetSelectedFeaturePhase(feature, id)
         [featureInstance: feature, featurePhaseInstance: selectedFeaturePhase]
+    }
+
+    protected FeaturePhase getOrSetSelectedFeaturePhase(Feature feature, long phaseId){
+        def phase = Phase.findById(phaseId)
+        def selectedFeaturePhase = FeaturePhase.findOrCreateWhere(phase: phase, feature: feature)
+        if (!selectedFeaturePhase.id){
+            selectedFeaturePhase.status = 'not started'
+            selectedFeaturePhase.save(flush: true)
+            feature.addToFeaturePhases(selectedFeaturePhase)
+            feature.save()
+        }
+        return selectedFeaturePhase
     }
 }

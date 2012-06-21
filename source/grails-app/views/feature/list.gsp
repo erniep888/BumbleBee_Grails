@@ -36,6 +36,7 @@
                 <th class="center">Bug Status</th>
                 <th class="center">Bug Severity</th>
                 <th class="center">3rd Party Cases</th>
+                <th class="center">Off Shore</th>
             </tr>
         </thead>
         <tbody>
@@ -55,17 +56,18 @@
                     <td class="left"><g:include action="userList" model="${[feature: featureInstance, userType: "tester"]}"/></td>
                     <td class="center"><g:include action="workEffort" model="${[feature: featureInstance]}"/></td>
                     <td class="center"><g:include action="featureStatus" model="${[feature: featureInstance]}"/></td>
+                    <td class="center"><g:include action="featureCompletion" model="${[feature: featureInstance]}"/></td>
                     <td class="center"></td>
                     <td class="center"></td>
                     <td class="center"></td>
                     <td class="center"></td>
-                    <td class="center"></td>
+                    <td class="center"><g:include action="offShore" model="${[feature: featureInstance]}"/></td>
                 </tr>
             </g:each>
         </tbody>
         <tfoot>
             <tr>
-                <th colspan="12"></th>
+                <th colspan="13"></th>
             </tr>
         </tfoot>
     </table>
@@ -76,7 +78,7 @@
         $('#example').dataTable({
             "aaSorting": [[0, "asc"]],
             "sPaginationType": "full_numbers",
-            "iDisplayLength" : 50
+            "iDisplayLength" : 25
             } );
     } );
 </script>

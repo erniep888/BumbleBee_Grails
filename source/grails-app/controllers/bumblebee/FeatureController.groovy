@@ -1,5 +1,7 @@
 package bumblebee
 
+import java.text.SimpleDateFormat
+
 class FeatureController {
 
     static defaultAction = "list"
@@ -92,7 +94,38 @@ class FeatureController {
         render(lowestPriorityStatus.status)
     }
 
-    def completionStatus(){
+    def featureCompletion(){
+        Date mostRecentCompletion = null;
+        def featureInstance = request.getAttribute("feature")
+        def numberOfPhases = Phase.count()
+        def numberOfFeaturePhases = FeaturePhase.countByFeature(featureInstance)
+        if (numberOfFeaturePhases == numberOfPhases)  {
 
+            for(FeaturePhase featurePhase in featureInstance.featurePhases){
+                if (!featurePhase.executionDate)
+                    break;
+                else if (!mostRecentCompletion)
+                    mostRecentCompletion = featurePhase.executionDate
+                else if (mostRecentCompletion.compareTo(featurePhase.executionDate) < 0)
+                    mostRecentCompletion = featurePhase.executionDate
+            }
+        }
+        if (mostRecentCompletion){
+            def simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy")
+            render(simpleDateFormat.format(mostRecentCompletion))
+        } else
+            render ''
+    }
+
+    def offShore(){
+        def featureInstance = request.getAttribute("feature")
+        String offShoreString = ""
+        for(FeaturePhase featurePhase in featureInstance.featurePhases){
+            if (featurePhase.isOffShore){
+                offShoreString = "off shore"
+                break;
+            }
+        }
+        render offShoreString
     }
 }

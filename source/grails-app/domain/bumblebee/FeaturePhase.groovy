@@ -8,6 +8,7 @@ class FeaturePhase implements Comparable<FeaturePhase> {
     Double testWorkEffort
     String status
     Date executionDate
+    Boolean isOffShore
     String comments
     SortedSet tests
     SortedSet artifacts
@@ -25,6 +26,7 @@ class FeaturePhase implements Comparable<FeaturePhase> {
         testWorkEffort(nullable: true, scale: 1)
         executionDate(nullable:  true)
         comments(nullable: true)
+        isOffShore(nullable: false)
     }
 
     static hasMany = [tests: Artifact, artifacts: Artifact,
