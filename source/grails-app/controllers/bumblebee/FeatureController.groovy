@@ -82,13 +82,12 @@ class FeatureController {
         def featureInstance = request.getAttribute("feature")
         def numberOfPhases = Phase.count()
         def numberOfFeaturePhases = FeaturePhase.countByFeature(featureInstance)
-        def lowestPriorityStatus = FeatureStatus.createLowestPriorityStatus()
+        def lowestPriorityStatus = FeaturePhaseStatus.createLowestPriorityStatus()
         if (numberOfFeaturePhases == numberOfPhases)  {
-            lowestPriorityStatus = FeatureStatus.createHighestPriorityStatus()
+            lowestPriorityStatus = FeaturePhaseStatus.createHighestPriorityStatus()
             for(FeaturePhase featurePhase in featureInstance.featurePhases){
-                def currentStatus = FeatureStatusMap.findByStatus(featurePhase.status)
-                if (lowestPriorityStatus.compareTo(currentStatus) > 0)
-                    lowestPriorityStatus = currentStatus
+                if (lowestPriorityStatus.compareTo(featurePhase.status) > 0)
+                    lowestPriorityStatus = featurePhase.status
             }
         }
         render(lowestPriorityStatus.status)

@@ -4,12 +4,14 @@ class FeaturePhaseGeneralController extends FeaturePhaseController {
 
     def save() {
         def justPostedFeaturePhase = new FeaturePhase(params)
+        justPostedFeaturePhase.status = FeaturePhaseStatus.findByStatus(params.status)
         def feature = Feature.findById(params.featureId)
 
         def selectedFeaturePhase = getOrSetSelectedFeaturePhase(feature, new Long(params.id))
 
-        if (justPostedFeaturePhase.status == 'completed' && selectedFeaturePhase.status != 'completed'){
-            selectedFeaturePhase.status = 'completed'
+        def completedStatus = FeaturePhaseStatus.findByStatus('completed')
+        if (justPostedFeaturePhase.status == completedStatus && selectedFeaturePhase.status != completedStatus){
+            selectedFeaturePhase.status = completedStatus
             selectedFeaturePhase.executionDate = new Date()
         } else if (justPostedFeaturePhase.status != selectedFeaturePhase.status){
             selectedFeaturePhase.status = justPostedFeaturePhase.status

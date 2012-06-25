@@ -36,10 +36,10 @@
         </g:else>
 
         <g:if test="${!featurePhaseMenuSelection || featurePhaseMenuSelection == 'cases'}">
-            <li><g:link class="selected" controller="FeaturePhaseCase" action="Edit" params="${params}"><g:message code="app.thirdparty.label"/> Cases</g:link></li>
+            <li><g:link class="selected" controller="FeaturePhaseCase" action="Edit" params="${params}">Third Party Cases</g:link></li>
         </g:if>
         <g:else>
-            <li><g:link controller="FeaturePhaseCase" action="Edit" params="${params}"><g:message code="app.thirdparty.label"/> Cases</g:link></li>
+            <li><g:link controller="FeaturePhaseCase" action="Edit" params="${params}">Third Party Cases</g:link></li>
         </g:else>
     </ul>
 </div>

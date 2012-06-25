@@ -6,7 +6,7 @@ class FeaturePhase implements Comparable<FeaturePhase> {
     String tester
     Double developmentWorkEffort
     Double testWorkEffort
-    String status
+    FeaturePhaseStatus status
     Date executionDate
     Boolean isOffShore
     String comments
@@ -14,7 +14,7 @@ class FeaturePhase implements Comparable<FeaturePhase> {
     SortedSet attachments
     SortedSet bugs
     SortedSet links
-    SortedSet thirdPartyCases
+    SortedSet cases
 
     static belongsTo = [feature : Feature]
 
@@ -27,10 +27,11 @@ class FeaturePhase implements Comparable<FeaturePhase> {
         executionDate(nullable:  true)
         comments(nullable: true)
         isOffShore(nullable: false)
+        status(nullable: false)
     }
 
     static hasMany = [tests: Artifact, attachments: Artifact,
-            bugs: MantisBugId, links: Link, thirdPartyCases: ThirdPartyCase]
+            bugs: MantisBugId, links: Link, cases: FeaturePhaseCase]
 
     static mapping = {
         phase fetch: 'join'

@@ -10,7 +10,14 @@
             <td class="labelColumn vertAlignTop">Links</td>
             <td>
                 <div class="linkList">
-                    <table>
+                    <table class="listTable">
+                        <thead class="listHeader">
+                        <tr>
+                            <td class="fileListPadding">Name</td>
+                            <td class="center">Last Updated</td>
+                            <td class="center">Actions</td>
+                        </tr>
+                        </thead>
                         <g:each var="link" in="${featurePhaseInstance?.links}">
                             <%
                                 String target = ""
@@ -20,7 +27,7 @@
                             %>
                             <tr>
                                 <td class="fileListPadding linkNameColumn"><a href="${link.href}" ${target}>${link.name}</a></td>
-                                <td class="dateColumn"><g:formatDate format="MM/dd/yyyy h:mm:ss a" date="${link?.lastUpdated}"/></td>
+                                <td class="center dateColumn"><g:formatDate format="MM/dd/yyyy h:mm a" date="${link?.lastUpdated}"/></td>
                                 <td class="center actionColumn">
                                     <g:link action="editLink" params="[featureId: params.featureId, id:params.id, linkId:link.id]">Edit</g:link>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -34,7 +41,7 @@
         </tr>
         <tr>
             <td class="vertAlignTop">Details</td>
-            <td class="linkEditDetails">
+            <td class="editDetails">
                 <g:form name="editLinks" action="save" controller="featurePhaseLink" >
                     <g:hiddenField name="id" value="${params.id}" />
                     <g:hiddenField name="featureId" value="${params.featureId}" />

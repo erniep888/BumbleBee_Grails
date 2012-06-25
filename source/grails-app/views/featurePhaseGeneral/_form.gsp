@@ -1,4 +1,4 @@
-<%@ page import="java.text.SimpleDateFormat; bumblebee.Feature" %>
+<%@ page import="bumblebee.FeaturePhaseStatus; bumblebee.FeatureStatus; java.text.SimpleDateFormat; bumblebee.Feature" %>
 <%@ page import="bumblebee.FeaturePhase" %>
 <%@ page import="bumblebee.FeatureStatusMap" %>
 
@@ -39,10 +39,10 @@
 
         <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'status', 'error')} ">
             <label for="status">
-                <g:message code="featurePhase.status.label" default="Status"/>
+                <g:message code="featurePhaseCase.status.label" default="Status"/>
             </label>
             <g:select name="status" value="${featurePhaseInstance?.status}"
-                      from="${FeatureStatusMap.getAllStatusStrings()}"
+                      from="${FeaturePhaseStatus.findAll().sort()}"
                       noSelection="${['not started':'Select One...']}"/>
         </div>
 

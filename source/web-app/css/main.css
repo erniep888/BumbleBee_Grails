@@ -249,6 +249,16 @@ table.featureInformation .dataColumn{
     font-size: 0.8em;
 }
 
+.listTable{
+    width: 100%
+}
+
+.listHeader{
+    background-color: #eee;
+    color: #777;
+
+}
+
 .content {
 }
 
@@ -359,11 +369,11 @@ table.featureInformation .dataColumn{
 }
 
 .fileListPadding{
-    padding-left: 2em;
+    padding-left: 1em;
 }
 
 .linkNameColumn {
-    width: 14em;
+    width: 12em;
 }
 
 .fileNameColumn {
@@ -371,7 +381,7 @@ table.featureInformation .dataColumn{
 }
 
 .dateColumn{
-    width: 14em;
+    width: 10em;
 }
 
 .actionColumn{
@@ -390,13 +400,33 @@ table.featureInformation .dataColumn{
     font-size: 0.8em;
 }
 
-.linkEditDetails{
+.vertMarginTen{
+    margin-top: 10px;
+}
+.editDetails {
     background-color: #eee;
     padding: 1em;
 }
 
-form .linkEdit{
+.listContainer .thirdPartyCases .labelColumn{
+    width: 128px;
 
+}
+
+.listContainer .thirdPartyCases .linkList{
+    width: 60em;
+}
+
+.listContainer .thirdPartyCases .editDetails{
+    width: 40em;
+}
+
+.listContainer .thirdPartyCases .caseVendor{
+    width: 4em;
+}
+
+.listContainer .thirdPartyCases .caseLastUpdated{
+    font-size: 1em;
 }
 
 .linkEdit label{
@@ -411,6 +441,10 @@ form .linkEdit{
 
 .center{
     text-align: center;
+}
+
+.caseTopPadding{
+    padding-top:0;
 }
 
 
@@ -548,6 +582,10 @@ fieldset,
 .fieldcontain .property-value {
 	display: block;
 	margin-left: 27%;
+}
+
+.fieldcontain .narrow{
+    width: 80px;
 }
 
 label {
