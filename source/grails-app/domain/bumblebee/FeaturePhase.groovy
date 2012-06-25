@@ -11,7 +11,7 @@ class FeaturePhase implements Comparable<FeaturePhase> {
     Boolean isOffShore
     String comments
     SortedSet tests
-    SortedSet artifacts
+    SortedSet attachments
     SortedSet bugs
     SortedSet links
     SortedSet thirdPartyCases
@@ -29,7 +29,7 @@ class FeaturePhase implements Comparable<FeaturePhase> {
         isOffShore(nullable: false)
     }
 
-    static hasMany = [tests: Artifact, artifacts: Artifact,
+    static hasMany = [tests: Artifact, attachments: Artifact,
             bugs: MantisBugId, links: Link, thirdPartyCases: ThirdPartyCase]
 
     static mapping = {

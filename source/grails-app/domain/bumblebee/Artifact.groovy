@@ -9,6 +9,7 @@ class Artifact implements Comparable<Artifact> {
     String serverFilePath
     String serverFileName
     String contentType
+    String tags
     Long size
 
     static constraints = {
@@ -17,6 +18,7 @@ class Artifact implements Comparable<Artifact> {
         serverFilePath(nullable:  false, blank: false)
         serverFileName(nullable: false, blank:  false)
         contentType(nullable:  false, blank: false)
+        tags(nullable:  true)
         size(nullable: false)
     }
 
