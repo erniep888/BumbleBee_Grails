@@ -31,7 +31,7 @@ class FeaturePhase implements Comparable<FeaturePhase> {
     }
 
     static hasMany = [tests: Artifact, attachments: Artifact,
-            bugs: MantisBugId, links: Link, cases: FeaturePhaseCase]
+            bugs: FeaturePhaseBug, links: Link, cases: FeaturePhaseCase]
 
     static mapping = {
         phase fetch: 'join'

@@ -1,8 +1,25 @@
 package bumblebee
 
 class FeatureFilters {
-
+    def mantisIntegrationService
     def filters = {
+        featurePhaseBug(controller: 'featurePhaseBug', action: 'edit|editBug'){
+            before = {
+
+            }
+            after = { Map model ->
+                SortedSet<MantisBugInformation> mantisBugs = new TreeSet<MantisBugInformation>()
+                if (model?.featurePhaseInstance){
+                    for (def featurePhaseBug in model.featurePhaseInstance.bugs) {
+                        mantisBugs.add(mantisIntegrationService.findMantisBugInformationById(featurePhaseBug.bugSystemId))
+                    }
+                }
+                model.mantisBugs = mantisBugs.sort()
+            }
+            afterView = { Exception e ->
+
+            }
+        }
         allFeaturePhase(controller: 'featurePhase*', action: '*', actionExclude: 'viewTest|viewAttachment') {
             before = {
                 if (!params || !params.featureId){

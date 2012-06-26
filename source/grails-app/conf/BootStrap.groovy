@@ -6,10 +6,12 @@ import bumblebee.Link
 import bumblebee.FeaturePhaseStatus
 import bumblebee.FeaturePhaseCaseStatus
 import bumblebee.Vendor
+import bumblebee.BugSystemSettings
 
 class BootStrap {
 
     def init = { servletContext ->
+        createBugSystemSettings()
         createPhases()
         createProject()
         createFeatureStatuses()
@@ -18,6 +20,14 @@ class BootStrap {
         createManyFeatures()
     }
     def destroy = {
+    }
+
+    private void createBugSystemSettings(){
+        if (BugSystemSettings.count() == 0) {
+            BugSystemSettings bugSystemSettings = new BugSystemSettings(
+                    systemName: "Mantis", bugAccessUrl: "http://mantis/view.php?id=")
+            bugSystemSettings.save(flush: true)
+        }
     }
 
     private void createPhases(){

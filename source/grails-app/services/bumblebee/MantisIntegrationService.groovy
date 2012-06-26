@@ -4,9 +4,9 @@ import org.springframework.context.ApplicationContextAware
 import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.springframework.context.ApplicationContext
 import org.springframework.beans.BeansException
-import bumblebee.MantisBugInformation
-import bumblebee.AuditActivity
+
 import org.springframework.jdbc.core.JdbcTemplate
+import org.springframework.dao.EmptyResultDataAccessException
 
 class MantisIntegrationService implements ApplicationContextAware {
     GrailsApplication grailsApplication
@@ -24,6 +24,8 @@ class MantisIntegrationService implements ApplicationContextAware {
         def sqlString = "select id, priority, severity, status, summary from mantis_bug_table where id = " + id
         try {
             map = jt.queryForMap(sqlString)
+        } catch (EmptyResultDataAccessException erdae){
+            throw new Exception("There is no bug in Mantis with that id.")
         } catch (Exception ex) {
             throw new Exception("Unable to connect to Mantis.")
         } finally {

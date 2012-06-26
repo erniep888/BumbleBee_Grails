@@ -11,13 +11,14 @@ class MantisBugInformation implements Comparable<MantisBugInformation>
     Short priority
     Map<Short, String> severityMap
     Map<Short,String> statusMap
+    Map<Short,String> priorityMap
 
     public MantisBugInformation(){
         fillSeverityMap()
         fillStatusMap()
+        fillPriorityMap()
     }
 
-    static transients = ["severityMap", "statusMap"]
 
     static MantisBugInformation createFromMap(def map) {
         def mantisBugInformation = new MantisBugInformation()
@@ -36,11 +37,15 @@ class MantisBugInformation implements Comparable<MantisBugInformation>
     }
 
     String getSeverityAsString(){
-        return severityMap[severity]
+        return severityMap[(int)severity]
     }
 
     String getStatusAsString(){
-        return statusMap[status]
+        return statusMap[(int)status]
+    }
+
+    String getPriorityAsString(){
+        return priorityMap[(int)priority]
     }
 
     int compareTo(MantisBugInformation mantisBugInformation){
@@ -70,5 +75,15 @@ class MantisBugInformation implements Comparable<MantisBugInformation>
         statusMap.put(70,"on hold")
         statusMap.put(80,"resolved")
         statusMap.put(90,"closed")
+    }
+
+    private void fillPriorityMap() {
+        priorityMap = new HashMap<Short,String>()
+        priorityMap.put(10,"none")
+        priorityMap.put(20,"low")
+        priorityMap.put(30,"normal")
+        priorityMap.put(40,"high")
+        priorityMap.put(50,"urgent")
+        priorityMap.put(60,"immediate")
     }
 }
