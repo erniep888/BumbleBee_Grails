@@ -62,7 +62,7 @@ class ActiveDirectoryService {
 
     private DirContext connectToActiveDirectory() throws NamingException {
         // Set up the environment for creating the initial context
-        ActiveDirectorySettings adSettings = ActiveDirectorySettings.get(1)
+        ActiveDirectorySettings adSettings = ActiveDirectorySettings.findById(1)
         Hashtable env = new Hashtable();
         env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
 

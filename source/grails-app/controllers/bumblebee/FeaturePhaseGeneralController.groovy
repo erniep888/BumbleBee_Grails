@@ -1,6 +1,7 @@
 package bumblebee
 
 class FeaturePhaseGeneralController extends FeaturePhaseController {
+    def activeDirectoryService
 
     def save() {
         def justPostedFeaturePhase = new FeaturePhase(params)
@@ -18,8 +19,9 @@ class FeaturePhaseGeneralController extends FeaturePhaseController {
             selectedFeaturePhase.executionDate = null
         }
 
-        selectedFeaturePhase.developer = justPostedFeaturePhase.developer
-        selectedFeaturePhase.tester = justPostedFeaturePhase.tester
+
+        selectedFeaturePhase.developer = (params.developer)?Worker.findByUsername(params.developer):null
+        selectedFeaturePhase.tester =  (params.tester)?Worker.findByUsername(params.tester):null
         selectedFeaturePhase.developmentWorkEffort = justPostedFeaturePhase.developmentWorkEffort
         selectedFeaturePhase.testWorkEffort = justPostedFeaturePhase.testWorkEffort
         selectedFeaturePhase.status = (justPostedFeaturePhase.status) ?

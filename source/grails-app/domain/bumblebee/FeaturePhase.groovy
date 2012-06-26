@@ -2,8 +2,8 @@ package bumblebee
 
 class FeaturePhase implements Comparable<FeaturePhase> {
     Phase phase
-    String developer
-    String tester
+    Worker developer
+    Worker tester
     Double developmentWorkEffort
     Double testWorkEffort
     FeaturePhaseStatus status

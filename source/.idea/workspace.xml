@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fdf7235-76a9-4cdc-8f14-da2ad6fda12a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/views/featurePhaseBug/_form.gsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/views/featurePhaseBug/edit.gsp" />
-      <change type="DELETED" beforePath="D:\Git\BumbleBee_Grails\source\grails-app\domain\bumblebee\MantisBugId.groovy" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/images/favicon.ico" afterPath="$PROJECT_DIR$/web-app/images/favicon.ico" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/images/logo.png" afterPath="$PROJECT_DIR$/web-app/images/logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/NtlmAuthConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/NtlmAuthConfig.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/bumblebee/FeatureFilters.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/bumblebee/FeatureFilters.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/spring/resources.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/spring/resources.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseBugController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseBugController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseGeneralController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseGeneralController.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/bumblebee/FeaturePhase.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/bumblebee/FeaturePhase.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/i18n/messages.properties" afterPath="$PROJECT_DIR$/grails-app/i18n/messages.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/bumblebee/MantisIntegrationService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/bumblebee/MantisIntegrationService.groovy" />
-      <change type="MOVED" beforePath="D:\Git\BumbleBee_Grails\source\grails-app\domain\bumblebee\MantisBugInformation.groovy" afterPath="$PROJECT_DIR$/src/groovy/bumblebee/MantisBugInformation.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/bumblebee/ActiveDirectoryService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/bumblebee/ActiveDirectoryService.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/featurePhaseGeneral/_form.gsp" afterPath="$PROJECT_DIR$/grails-app/views/featurePhaseGeneral/_form.gsp" />
     </list>
     <ignored path="BumbleBee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,40 +71,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_form.gsp" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/featurePhaseBug/_form.gsp">
+      <file leaf-file-name="Worker.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/Worker.groovy">
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="125" selection-start="1915" selection-end="1915" vertical-scroll-proportion="0.545283">
+            <state line="15" column="38" selection-start="315" selection-end="315" vertical-scroll-proportion="-5.9302325">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BootStrap.groovy" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BootStrap.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/conf/BootStrap.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="46" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="resources.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/conf/spring/resources.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="20" selection-start="163" selection-end="179" vertical-scroll-proportion="0.0">
+            <state line="49" column="51" selection-start="1741" selection-end="1741" vertical-scroll-proportion="0.73402417">
               <folding>
-                <element signature="e#0#66#0" expanded="true" />
+                <element signature="e#0#22#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FeaturePhaseBugController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseBugController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="33" selection-start="2442" selection-end="2442" vertical-scroll-proportion="-34.52174">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -119,37 +100,64 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="54" selection-start="37" selection-end="73" vertical-scroll-proportion="-0.7906977">
+            <state line="11" column="30" selection-start="285" selection-end="285" vertical-scroll-proportion="-2.1860466">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeaturePhaseBug.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/FeaturePhaseBug.groovy">
+      <file leaf-file-name="FeaturePhaseGeneralController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseGeneralController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="32" selection-start="2115" selection-end="2135" vertical-scroll-proportion="-16.043478">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActiveDirectoryService.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/bumblebee/ActiveDirectoryService.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="79" column="0" selection-start="3449" selection-end="3449" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/featurePhaseGeneral/_form.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="37" selection-start="353" selection-end="353" vertical-scroll-proportion="-1.1632653">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Feature.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/Feature.groovy">
           <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="59" selection-start="78" selection-end="78" vertical-scroll-proportion="-0.7906977">
+            <state line="22" column="8" selection-start="706" selection-end="746" vertical-scroll-proportion="-8.697675">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeatureFilters.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/conf/bumblebee/FeatureFilters.groovy">
+      <file leaf-file-name="FeatureController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="32" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
+            <state line="53" column="0" selection-start="1422" selection-end="1422" vertical-scroll-proportion="-2.1304348">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeaturePhaseLinkController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseLinkController.groovy">
+      <file leaf-file-name="list.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/feature/list.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="25" selection-start="883" selection-end="883" vertical-scroll-proportion="3.173913">
+            <state line="59" column="52" selection-start="3019" selection-end="3019" vertical-scroll-proportion="-3.554054">
               <folding />
             </state>
           </provider>
@@ -168,15 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web-app/css/main.css" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/domain/bumblebee/FeaturePhase.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/featurePhaseBug/edit.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/conf/bumblebee/HeaderFilters.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/domain/bumblebee/MantisSettings.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/domain/bumblebee/BugSystemSettings.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/i18n/messages.properties" />
         <option value="$PROJECT_DIR$/grails-app/conf/spring/resources.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/bumblebee/MantisIntegrationService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseBugController.groovy" />
@@ -184,6 +183,15 @@
         <option value="$PROJECT_DIR$/src/groovy/bumblebee/MantisBugInformation.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/featurePhaseBug/_form.gsp" />
         <option value="$PROJECT_DIR$/grails-app/conf/bumblebee/FeatureFilters.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/bumblebee/Administrators.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/bumblebee/Administrator.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/bumblebee/ActiveDirectoryService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/bumblebee/Worker.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/bumblebee/FeaturePhase.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseGeneralController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/featurePhaseGeneral/_form.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
       </list>
     </option>
   </component>
@@ -657,7 +665,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40838853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15491453" sideWeight="0.6666667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15491453" sideWeight="0.6666667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -665,7 +673,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18910256" sideWeight="0.6666667" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18910256" sideWeight="0.6666667" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -733,42 +741,67 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/i18n/messages.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="40" selection-start="4624" selection-end="4624" vertical-scroll-proportion="-25.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/BootStrap.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="46" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/spring/resources.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="20" selection-start="163" selection-end="179" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/bumblebee/MantisIntegrationService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="29" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseLinkController.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="25" selection-start="883" selection-end="883" vertical-scroll-proportion="3.173913">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/NtlmAuthConfig.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="26" selection-start="840" selection-end="863" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/groovy/bumblebee/ActiveDirectoryUserInformation.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="6" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/Artifact.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="4" selection-start="72" selection-end="109" vertical-scroll-proportion="-1.1860465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/Administrator.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="4" selection-start="189" selection-end="189" vertical-scroll-proportion="-2.7674417">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/Feature.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="8" selection-start="706" selection-end="746" vertical-scroll-proportion="-8.697675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/Grails2/grails-2.0.3/lib/org.springframework/spring-webmvc/jars/spring-webmvc-3.1.0.RELEASE.jar!/org/springframework/web/servlet/mvc/SimpleControllerHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="56" selection-start="481" selection-end="481" vertical-scroll-proportion="-6.8">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="0" selection-start="1422" selection-end="1422" vertical-scroll-proportion="-2.1304348">
           <folding />
         </state>
       </provider>
@@ -780,91 +813,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/Link.groovy">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="20" selection-start="64" selection-end="101" vertical-scroll-proportion="0.12686567">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/FeaturePhaseCase.groovy">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="6" selection-start="25" selection-end="25" vertical-scroll-proportion="0.063432835">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/Artifact.groovy">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="6" selection-start="25" selection-end="25" vertical-scroll-proportion="0.063432835">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/FeaturePhase.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="54" selection-start="37" selection-end="73" vertical-scroll-proportion="-0.7906977">
+        <state line="11" column="30" selection-start="285" selection-end="285" vertical-scroll-proportion="-2.1860466">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/FeaturePhaseBug.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/services/bumblebee/ActiveDirectoryService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="0" selection-start="3449" selection-end="3449" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/bumblebee/Worker.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="59" selection-start="78" selection-end="78" vertical-scroll-proportion="-0.7906977">
+        <state line="15" column="38" selection-start="315" selection-end="315" vertical-scroll-proportion="-5.9302325">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseController.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseGeneralController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="277" selection-end="277" vertical-scroll-proportion="0.31716418">
+        <state line="39" column="32" selection-start="2115" selection-end="2135" vertical-scroll-proportion="-16.043478">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseBugController.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/views/feature/list.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="33" selection-start="2442" selection-end="2442" vertical-scroll-proportion="-34.52174">
+        <state line="59" column="52" selection-start="3019" selection-end="3019" vertical-scroll-proportion="-3.554054">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/bumblebee/FeatureFilters.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/views/featurePhaseGeneral/_form.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="32" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
+        <state line="10" column="37" selection-start="353" selection-end="353" vertical-scroll-proportion="-1.1632653">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/groovy/bumblebee/MantisBugInformation.groovy">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/BootStrap.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="6" selection-start="130" selection-end="130" vertical-scroll-proportion="0.12686567">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/featurePhaseBug/_form.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="125" selection-start="1915" selection-end="1915" vertical-scroll-proportion="0.545283">
-          <folding />
+        <state line="49" column="51" selection-start="1741" selection-end="1741" vertical-scroll-proportion="0.73402417">
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-<%@ page import="bumblebee.FeaturePhaseStatus; bumblebee.FeatureStatus; java.text.SimpleDateFormat; bumblebee.Feature" %>
+<%@ page import="bumblebee.Worker; bumblebee.FeaturePhaseStatus; bumblebee.FeatureStatus; java.text.SimpleDateFormat; bumblebee.Feature" %>
 <%@ page import="bumblebee.FeaturePhase" %>
 <%@ page import="bumblebee.FeatureStatusMap" %>
 
@@ -10,17 +10,23 @@
     <fieldset class="form">
 
         <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'developer', 'error')} ">
-            <label for="developer">
+            <label for="featurePhase.developer">
                 <g:message code="featurePhase.developer.label" default="Developer"/>
             </label>
-            <g:textField name="developer" value="${featurePhaseInstance?.developer}" size="40"/>
+            <g:select name="featurePhase.developer" value="${featurePhaseInstance?.developer?.username}"
+                      from="${Worker.findAll().sort()}"
+                      optionKey="username"
+                      noSelection="${[null:'Select One...']}" />
         </div>
 
         <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'tester', 'error')} ">
             <label for="tester">
                 <g:message code="featurePhase.tester.label" default="Tester"/>
             </label>
-            <g:textField name="tester" value="${featurePhaseInstance?.tester}" size="40"/>
+            <g:select name="tester" value="${featurePhaseInstance?.tester?.username}"
+                      from="${Worker.findAll().sort()}"
+                      optionKey="username"
+                      noSelection="${[null:'Select One...']}" />
         </div>
 
         <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'developmentWorkEffort', 'error')} ">

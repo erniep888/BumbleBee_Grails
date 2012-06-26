@@ -7,16 +7,27 @@ import bumblebee.FeaturePhaseStatus
 import bumblebee.FeaturePhaseCaseStatus
 import bumblebee.Vendor
 import bumblebee.BugSystemSettings
+import bumblebee.ActiveDirectorySettings
+import bumblebee.Administrator
+import bumblebee.Worker
+import bumblebee.ActiveDirectoryService
+import bumblebee.ActiveDirectoryUserInformation
+import org.springframework.web.context.WebApplicationContext
+import org.springframework.web.context.support.WebApplicationContextUtils
 
 class BootStrap {
 
     def init = { servletContext ->
+        createActiveDirectorySettings()
         createBugSystemSettings()
         createPhases()
         createProject()
         createFeatureStatuses()
         createFeaturePhaseCaseStatuses()
         createVendors()
+        createWorkers(servletContext)
+        createAdministrators(servletContext)
+
         createManyFeatures()
     }
     def destroy = {
@@ -27,6 +38,39 @@ class BootStrap {
             BugSystemSettings bugSystemSettings = new BugSystemSettings(
                     systemName: "Mantis", bugAccessUrl: "http://mantis/view.php?id=")
             bugSystemSettings.save(flush: true)
+        }
+    }
+
+    private void createActiveDirectorySettings(){
+        if (ActiveDirectorySettings.count() == 0) {
+            ActiveDirectorySettings activeDirectorySettings = new ActiveDirectorySettings(
+                    hostname: 'ad', port: '389', bindDn: 'test@scrumtime.com',
+                    bindPassword: 'scrumtime1',
+                    keystorePath: /\\share1\jssecacerts/,
+                    ldapSearchString: "DC=scrumtime,DC=com"
+
+            )
+            activeDirectorySettings.save(flush: true)
+        }
+    }
+
+    private void createAdministrators(def servletContext){
+        if (Administrator.count() == 0){
+            WebApplicationContext appCtx = WebApplicationContextUtils.getWebApplicationContext(servletContext)
+            ActiveDirectoryService activeDirectoryService = appCtx.getBean('activeDirectoryService')
+            ActiveDirectoryUserInformation userInfo = activeDirectoryService.retrieveUserInformation('pascherk')
+            Administrator administrator1 = new Administrator(username: 'pascherk', fullName: userInfo.givenName + ' ' + userInfo.lastName)
+            administrator1.save(flush: true)
+        }
+    }
+
+    private void createWorkers(def servletContext){
+        if (Worker.count() == 0){
+            WebApplicationContext appCtx = WebApplicationContextUtils.getWebApplicationContext(servletContext)
+            ActiveDirectoryService activeDirectoryService = appCtx.getBean('activeDirectoryService')
+            ActiveDirectoryUserInformation userInfo = activeDirectoryService.retrieveUserInformation('pascherk')
+            Worker worker1 = new Worker(username: 'pascherk', fullName: userInfo.givenName + ' ' + userInfo.lastName)
+            worker1.save(flush: true)
         }
     }
 
@@ -81,7 +125,7 @@ class BootStrap {
                         featurePhases: new TreeSet<FeaturePhase>())
                 feature.save(flush: true)
                 def featurePhaseGeneral = new FeaturePhase(feature: feature, phase: phase1, status: FeaturePhaseStatus.findByPriority(10),
-                        developer: "John Smith", links: new TreeSet<Link>(), isOffShore: false)
+                        developer: Worker.findById(1) ,links: new TreeSet<Link>(), isOffShore: false)
                 featurePhaseGeneral.save(flush: true)
 
                 def link = new Link(name: "MyPortal", href: "http://myportal", inNewWindow: true, featurePhase: featurePhaseGeneral)

@@ -53,9 +53,9 @@ class FeatureController {
         SortedSet uniqueUserSet = new TreeSet<String>()
         for(FeaturePhase featurePhase in featureInstance?.featurePhases){
             if (userType.equalsIgnoreCase("developer"))
-                uniqueUserSet.add((featurePhase.developer)?featurePhase.developer:"")
+                uniqueUserSet.add((featurePhase.developer)?featurePhase.developer.fullName:"")
             else
-                uniqueUserSet.add((featurePhase.tester)?featurePhase.tester:"")
+                uniqueUserSet.add((featurePhase.tester)?featurePhase.tester.fullName:"")
         }
         def users = ""
         for( uniqueUser in uniqueUserSet){
