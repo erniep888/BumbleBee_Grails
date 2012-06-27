@@ -19,7 +19,7 @@ class UrlMappings {
                 id(matches: "\\d+")
             }
         }
-		"/"(view:"/index")
+		"/"(controller: "dashboard")
 		"500"(view:'/error')
 	}
 }

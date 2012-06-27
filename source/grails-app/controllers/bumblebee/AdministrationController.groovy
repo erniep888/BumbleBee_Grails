@@ -2,5 +2,9 @@ package bumblebee
 
 class AdministrationController {
 
-    def index() { }
+    static defaultAction = "edit"
+
+    def edit() {
+
+    }
 }

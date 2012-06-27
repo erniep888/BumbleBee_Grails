@@ -1,6 +1,5 @@
-<%@ page import="bumblebee.Worker; bumblebee.FeaturePhaseStatus; bumblebee.FeatureStatus; java.text.SimpleDateFormat; bumblebee.Feature" %>
+<%@ page import="bumblebee.Worker; bumblebee.FeaturePhaseStatus; java.text.SimpleDateFormat; bumblebee.Feature" %>
 <%@ page import="bumblebee.FeaturePhase" %>
-<%@ page import="bumblebee.FeatureStatusMap" %>
 
 <%
     def simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy")
@@ -10,10 +9,10 @@
     <fieldset class="form">
 
         <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'developer', 'error')} ">
-            <label for="featurePhase.developer">
+            <label for="developer">
                 <g:message code="featurePhase.developer.label" default="Developer"/>
             </label>
-            <g:select name="featurePhase.developer" value="${featurePhaseInstance?.developer?.username}"
+            <g:select name="developer" value="${featurePhaseInstance?.developer?.username}"
                       from="${Worker.findAll().sort()}"
                       optionKey="username"
                       noSelection="${[null:'Select One...']}" />

@@ -4,10 +4,10 @@
 	<info
 		organisation="org.grails.internal"
 		module="Bumblebee"
-		revision="0.1"
+		revision="0.7"
 		conf="default"
 		confs="default, build, compile, runtime, test, provided, docs"
-		date="20120613132858"/>
+		date="20120626170049"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>

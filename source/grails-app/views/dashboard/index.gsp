@@ -12,14 +12,29 @@
     <meta name="layout" content="main">
     <title><g:meta name="app.userfriendly.applicationAcronym"/> - Dashboard</title>
 </head>
+
 <body>
-    <div id="dashboardNav">
-        <a href="/" class="selected">By Phase</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="/">By Project</a>
-    </div>
-    <div id="mock1">
-        <img src="${resource(dir: 'images/mockups', file: 'Dashboard_Chart.png')}" alt="Dashboard"/>
-    </div>
+<div class="nav" role="navigation">
+    %{--<ul>--}%
+        %{--<li>--}%
+            %{--<g:link action="byPhase">--}%
+                %{--<g:message code="dashboard.menu.byPhase.label"/>--}%
+            %{--</g:link>--}%
+        %{--</li>--}%
+        %{--<li>--}%
+            %{--<g:link action="byProject">--}%
+                %{--<g:message code="dashboard.menu.byCategory.label" args="[message(code: 'feature.category.label', default: 'Project')]"/>--}%
+            %{--</g:link>--}%
+        %{--</li>--}%
+    %{--</ul>--}%
+</div>
+<g:if test="${flash.message}">
+    <div class="errors" role="status">${flash.message}</div>
+</g:if>
+
+
+<div id="mock1">
+    <img src="${resource(dir: 'images/mockups', file: 'Dashboard_Chart.png')}" alt="Dashboard"/>
+</div>
 </body>
 </html>

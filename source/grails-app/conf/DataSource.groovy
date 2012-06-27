@@ -13,8 +13,15 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE"
+//            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+//            url = "jdbc:h2:mem:devDb;MVCC=TRUE"
+            pooled = true
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+            dbCreate = "update"
+            url = "jdbc:mysql://seltec5test/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
+            username = "bumblebeeuser"
+            password = "bumbl3"
         }
 
     }
@@ -26,8 +33,13 @@ environments {
     }
     production {
         dataSource {
+            pooled = true
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
             dbCreate = "update"
-            url = "jdbc:h2:mem:testDb;MVCC=TRUE"
+            url = "jdbc:mysql://seltec5test/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
+            username = "bumblebeeuser"
+            password = "bumbl3"
         }
 //        dataSource {
 //            dbCreate = "update"
