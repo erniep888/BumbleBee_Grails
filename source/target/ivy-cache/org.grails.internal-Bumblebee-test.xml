@@ -7,7 +7,7 @@
 		revision="0.7"
 		conf="test"
 		confs="test"
-		date="20120627145219"/>
+		date="20120627165621"/>
 	<dependencies>
 		<module organisation="org.grails" name="grails-test">
 			<revision name="2.0.3" status="release" pubdate="20120611201519" resolver="cache" artresolver="cache" downloaded="false" searched="false" default="true" conf="default" position="88">

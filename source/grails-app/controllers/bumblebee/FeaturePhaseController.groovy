@@ -13,8 +13,9 @@ class FeaturePhaseController {
 
     protected FeaturePhase getOrSetSelectedFeaturePhase(Feature feature, long phaseId){
         def phase = Phase.findById(phaseId)
-        def selectedFeaturePhase = FeaturePhase.findOrCreateWhere(phase: phase, feature: feature, isOffShore: false)
+        def selectedFeaturePhase = FeaturePhase.findOrCreateWhere(phase: phase, feature: feature)
         if (!selectedFeaturePhase.id){
+            selectedFeaturePhase.isOffShore = false
             selectedFeaturePhase.status = FeaturePhaseStatus.findByStatus('not started')
             selectedFeaturePhase.save(flush: true)
             feature.addToFeaturePhases(selectedFeaturePhase)
