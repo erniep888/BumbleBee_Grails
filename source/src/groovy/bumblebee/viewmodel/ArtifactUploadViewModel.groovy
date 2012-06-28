@@ -5,7 +5,7 @@ import grails.validation.Validateable
 
 /**
  * Created with IntelliJ IDEA.
- * User: pascherk
+ * Contributor: pascherk
  * Date: 6/14/12
  * Time: 12:01 PM
  * To change this template use File | Settings | File Templates.

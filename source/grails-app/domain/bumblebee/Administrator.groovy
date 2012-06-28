@@ -8,10 +8,12 @@ class Administrator implements Comparable<Administrator> {
 
     String username
     String fullName
+    String emailAddress
 
     static constraints = {
         username(nullable: false, blank: false)
         fullName(nullable: false)
+        emailAddress(nullable: false, email: true)
     }
 
     int compareTo(Administrator administrator) {

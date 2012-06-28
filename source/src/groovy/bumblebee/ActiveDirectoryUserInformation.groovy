@@ -6,7 +6,7 @@ import javax.naming.directory.SearchResult
 
 /**
  * Created by IntelliJ IDEA.
- * User: pascherk
+ * Contributor: pascherk
  * Date: Nov 25, 2008
  * Time: 2:36:56 PM
  * To change this template use File | Settings | File Templates.
@@ -26,6 +26,7 @@ class ActiveDirectoryUserInformation {
     String emailAddress
     String mailNickName
     boolean successfulLoad
+    boolean allowAddToSystem
 
     static ActiveDirectoryUserInformation fromSearchResult(SearchResult searchResult) {
         ActiveDirectoryUserInformation activeDirectoryUserInformation = new ActiveDirectoryUserInformation()
@@ -58,6 +59,7 @@ class ActiveDirectoryUserInformation {
             activeDirectoryUserInformation.setLastName(snAttr.get().toString())
             Attribute initials = attrs.get("initials")
             activeDirectoryUserInformation.setMiddleInitial((initials != null) ? initials.get().toString() : null)
+            activeDirectoryUserInformation.allowAddToSystem = true
         } catch (Exception ex) {
             activeDirectoryUserInformation.successfulLoad = false
         }

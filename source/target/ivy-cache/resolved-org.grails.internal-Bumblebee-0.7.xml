@@ -4,7 +4,7 @@
 		module="Bumblebee"
 		revision="0.7"
 		status="release"
-		publication="20120627165620"
+		publication="20120628133503"
 		default="true"
 	/>
 	<configurations>

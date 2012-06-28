@@ -1,24 +1,26 @@
 package bumblebee
 
 //
-// A Worker is a user that can be assigned work.
-class Worker implements Comparable<Worker> {
+// A Contributor is a person that can be assigned work.
+class Contributor implements Comparable<Contributor> {
     Date dateCreated
     Date lastUpdated
 
     String username
     String fullName
+    String emailAddress
 
     static constraints = {
         username(nullable: false, blank: false)
         fullName(nullable: false)
+        emailAddress(nullable: false, email: true)
     }
 
     public String toString(){
         return fullName
     }
 
-    int compareTo(Worker worker) {
-        return this.username.compareTo(worker.username)
+    int compareTo(Contributor user) {
+        return this.username.compareTo(user.username)
     }
 }

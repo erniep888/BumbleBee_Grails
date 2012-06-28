@@ -67,5 +67,29 @@ class MenuFilters {
                 model?.featurePhaseMenuSelection = 'cases'
             }
         }
+
+        administrationContributor(controller: 'administrationContributor', action: '*'){
+            after = { Map model ->
+                model?.administrationMenuSelection = 'contributors'
+            }
+        }
+
+        administrationContributor(controller: 'administrationAdministrator', action: '*'){
+            after = { Map model ->
+                model?.administrationMenuSelection = 'administrators'
+            }
+        }
+
+        administrationContributor(controller: 'administrationActiveDirectory', action: '*'){
+            after = { Map model ->
+                model?.administrationMenuSelection = 'activeDirectory'
+            }
+        }
+
+        administrationContributor(controller: 'administrationDeletedObject', action: '*'){
+            after = { Map model ->
+                model?.administrationMenuSelection = 'deletedObjects'
+            }
+        }
     }
 }

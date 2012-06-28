@@ -22,10 +22,10 @@
         </g:else>
 
         <g:if test="${mainMenuSelection == 'administration'}">
-            <li><g:link class="administration selected" controller="Administration">Administration</g:link></li>
+            <li><g:link class="administration selected" controller="AdministrationContributor">Administration</g:link></li>
         </g:if>
         <g:else>
-            <li><g:link class="administration" controller="Administration">Administration</g:link></li>
+            <li><g:link class="administration" controller="AdministrationContributor">Administration</g:link></li>
         </g:else>
     </ul>
 </div>

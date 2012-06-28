@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  bumblebee.User: pascherk
+  bumblebee.Contributor: pascherk
   Date: 6/6/12
   Time: 5:09 PM
   To change this template use File | Settings | File Templates.

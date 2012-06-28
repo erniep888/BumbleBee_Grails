@@ -1,4 +1,4 @@
-<%@ page import="bumblebee.Worker; bumblebee.FeaturePhaseStatus; java.text.SimpleDateFormat; bumblebee.Feature" %>
+<%@ page import="bumblebee.Contributor; bumblebee.Contributor; bumblebee.FeaturePhaseStatus; java.text.SimpleDateFormat; bumblebee.Feature" %>
 <%@ page import="bumblebee.FeaturePhase" %>
 
 <%
@@ -13,7 +13,7 @@
                 <g:message code="featurePhase.developer.label" default="Developer"/>
             </label>
             <g:select name="developer" value="${featurePhaseInstance?.developer?.username}"
-                      from="${Worker.findAll().sort()}"
+                      from="${Contributor.findAll().sort()}"
                       optionKey="username"
                       noSelection="${[null:'Select One...']}" />
         </div>
@@ -23,7 +23,7 @@
                 <g:message code="featurePhase.tester.label" default="Tester"/>
             </label>
             <g:select name="tester" value="${featurePhaseInstance?.tester?.username}"
-                      from="${Worker.findAll().sort()}"
+                      from="${Contributor.findAll().sort()}"
                       optionKey="username"
                       noSelection="${[null:'Select One...']}" />
         </div>
