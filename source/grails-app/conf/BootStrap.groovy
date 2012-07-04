@@ -7,26 +7,21 @@ import bumblebee.FeaturePhaseStatus
 import bumblebee.FeaturePhaseCaseStatus
 import bumblebee.Vendor
 import bumblebee.BugSystemSettings
-import bumblebee.ActiveDirectorySettings
 import bumblebee.Administrator
-import bumblebee.Worker
-import bumblebee.ActiveDirectoryService
 import bumblebee.ActiveDirectoryUserInformation
 import org.springframework.web.context.WebApplicationContext
 import org.springframework.web.context.support.WebApplicationContextUtils
+import bumblebee.Contributor
 
 class BootStrap {
 
     def init = { servletContext ->
-        createActiveDirectorySettings()
         createBugSystemSettings()
         createPhases()
         createProject()
         createFeatureStatuses()
         createFeaturePhaseCaseStatuses()
         createVendors()
-        createWorkers(servletContext)
-        createAdministrators(servletContext)
 
         createManyFeatures()
     }
@@ -41,38 +36,21 @@ class BootStrap {
         }
     }
 
-    private void createActiveDirectorySettings(){
-        if (ActiveDirectorySettings.count() == 0) {
-            ActiveDirectorySettings activeDirectorySettings = new ActiveDirectorySettings(
-                    hostname: 'ad', port: '389', bindDn: 'test@scrumtime.com',
-                    bindPassword: 'scrumtime1',
-                    keystorePath: /\\share1\jssecacerts/,
-                    ldapSearchString: "DC=scrumtime,DC=com"
-
-            )
-            activeDirectorySettings.save(flush: true)
-        }
-    }
-
-    private void createAdministrators(def servletContext){
-        if (Administrator.count() == 0){
-            WebApplicationContext appCtx = WebApplicationContextUtils.getWebApplicationContext(servletContext)
-            ActiveDirectoryService activeDirectoryService = appCtx.getBean('activeDirectoryService')
-            ActiveDirectoryUserInformation userInfo = activeDirectoryService.retrieveUserInformation('pascherk')
-            Administrator administrator1 = new Administrator(username: 'pascherk', fullName: userInfo.givenName + ' ' + userInfo.lastName)
-            administrator1.save(flush: true)
-        }
-    }
-
-    private void createWorkers(def servletContext){
-        if (Worker.count() == 0){
-            WebApplicationContext appCtx = WebApplicationContextUtils.getWebApplicationContext(servletContext)
-            ActiveDirectoryService activeDirectoryService = appCtx.getBean('activeDirectoryService')
-            ActiveDirectoryUserInformation userInfo = activeDirectoryService.retrieveUserInformation('pascherk')
-            Worker worker1 = new Worker(username: 'pascherk', fullName: userInfo.givenName + ' ' + userInfo.lastName)
-            worker1.save(flush: true)
-        }
-    }
+//    private void createAdministrators(def servletContext){
+//        if (Role.count() == 0){
+//
+//            Administrator administrator1 = new Administrator(username: 'pascherk', fullName: userInfo.givenName + ' ' + userInfo.lastName)
+//            administrator1.save(flush: true)
+//        }
+//    }
+//
+//    private void createContributors(def servletContext){
+//        if (Contributor.count() == 0){
+//            WebApplicationContext appCtx = WebApplicationContextUtils.getWebApplicationContext(servletContext)
+//            Contributor contributor1 = new Contributor(username: 'pascherk', fullName: userInfo.givenName + ' ' + userInfo.lastName)
+//            contributor1.save(flush: true)
+//        }
+//    }
 
     private void createPhases(){
         if (Phase.count() == 0){

@@ -94,3 +94,11 @@ log4j = {
 
 
 //log4j.logger.org.springframework.security='off,stdout'
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'bumblebee.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'bumblebee.UserRole'
+grails.plugins.springsecurity.authority.className = 'bumblebee.Role'
+grails.plugins.springsecurity.rememberMe.persistent = true
+grails.plugins.springsecurity.rememberMe.persistentToken.domainClassName = 'bumblebee.PersistentLogin'
+
+grails.plugins.springsecurity.openid.domainClass = 'bumblebee.OpenID'
