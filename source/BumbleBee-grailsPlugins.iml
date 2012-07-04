@@ -30,7 +30,6 @@
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/jquery-1.7.1/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/jquery-1.7.1/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/mysql-connectorj-5.1.12" />
     <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/ntlm-auth-0.6" />
     <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/resources-1.1.6">
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/resources-1.1.6/src/java" isTestSource="false" />
@@ -49,11 +48,9 @@
       <library name="Grails User Library (BumbleBee-grailsPlugins)">
         <CLASSES>
           <root url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/ntlm-auth-0.6/lib" />
-          <root url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/mysql-connectorj-5.1.12/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/mysql-connectorj-5.1.12/lib" recursive="false" />
         <jarDirectory url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/ntlm-auth-0.6/lib" recursive="false" />
       </library>
     </orderEntry>

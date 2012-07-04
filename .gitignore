@@ -10,7 +10,7 @@ coverage-error.log
 /source/out
 
 
-/source/target/classes
+/source/target
 #        /source/target/stacktrace.log
 
 
