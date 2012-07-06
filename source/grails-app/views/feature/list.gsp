@@ -78,8 +78,11 @@
         $('#example').dataTable({
             "aaSorting": [[0, "asc"]],
             "sPaginationType": "full_numbers",
-            "iDisplayLength" : 25
+            "iDisplayLength" : 25 ,
+            "bStateSave": true
             } );
     } );
+
+
 </script>
 </body>

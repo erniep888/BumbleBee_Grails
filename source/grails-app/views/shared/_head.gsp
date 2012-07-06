@@ -18,4 +18,6 @@
     <g:layoutHead/>
     <r:require module="jquery"/>
     <r:layoutResources/>
+    <g:javascript src="jquery.cookie.js" />
+    <g:javascript src="filterManagement.js" />
 </head>
