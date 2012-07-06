@@ -1,6 +1,8 @@
 package bumblebee
 
 import java.text.SimpleDateFormat
+import groovy.xml.MarkupBuilder
+
 
 class FeatureController {
 
@@ -81,16 +83,19 @@ class FeatureController {
     def featureStatus(){
         def featureInstance = request.getAttribute("feature")
         def numberOfPhases = Phase.count()
-        def numberOfFeaturePhases = FeaturePhase.countByFeature(featureInstance)
-        def lowestPriorityStatus = FeaturePhaseStatus.createLowestPriorityStatus()
-        if (numberOfFeaturePhases == numberOfPhases)  {
-            lowestPriorityStatus = FeaturePhaseStatus.createHighestPriorityStatus()
-            for(FeaturePhase featurePhase in featureInstance.featurePhases){
-                if (lowestPriorityStatus.compareTo(featurePhase.status) > 0)
-                    lowestPriorityStatus = featurePhase.status
-            }
+        def status = ''
+        def phaseId = 1
+        for(Phase phase in Phase.findAll().sort()){
+            def featurePhase = FeaturePhase.findByFeatureAndPhase(featureInstance, phase)
+            if (featurePhase)
+                status += link(controller:'featurePhaseGeneral', action: 'edit', params: [featureId: featureInstance.id, id: featurePhase.phaseId] )
+                        {featurePhase.status.shortReference}  + ' '
+            else
+                status += link(controller:'featurePhaseGeneral', action: 'edit', params: [featureId: featureInstance.id, id: phaseId] )  {'a'} + ' '
+
+            phaseId++
         }
-        render(lowestPriorityStatus.status)
+        render(status.trim())
     }
 
     def featureCompletion(){
@@ -101,8 +106,10 @@ class FeatureController {
         if (numberOfFeaturePhases == numberOfPhases)  {
 
             for(FeaturePhase featurePhase in featureInstance.featurePhases){
-                if (!featurePhase.executionDate)
-                    break;
+                if (!featurePhase.executionDate){
+                    mostRecentCompletion = null
+                    break
+                }
                 else if (!mostRecentCompletion)
                     mostRecentCompletion = featurePhase.executionDate
                 else if (mostRecentCompletion.compareTo(featurePhase.executionDate) < 0)
@@ -114,6 +121,24 @@ class FeatureController {
             render(simpleDateFormat.format(mostRecentCompletion))
         } else
             render ''
+    }
+
+    def featureBugs(){
+        def result = ''
+
+        def phaseId = 1
+        def featureInstance = request.getAttribute("feature")
+        for(Phase phase in Phase.findAll().sort()){
+            def featurePhase = FeaturePhase.findByFeatureAndPhase(featureInstance, phase)
+            if (featurePhase)
+                result += link(controller:'featurePhaseBug', action: 'edit', params: [featureId: featureInstance.id, id: featurePhase.phaseId] )
+                        {FeaturePhaseBug.countByFeaturePhase(featurePhase)}  + ' '
+            else
+                result += link(controller:'featurePhaseBug', action: 'edit', params: [featureId: featureInstance.id, id: phaseId] )  {0} + ' '
+
+            phaseId++
+        }
+        render result.trim()
     }
 
     def offShore(){

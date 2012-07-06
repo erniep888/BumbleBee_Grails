@@ -1,7 +1,5 @@
 package bumblebee
 
-import groovy.xml.MarkupBuilder
-
 class AdministrationContributorController {
 
     static defaultAction = "list"

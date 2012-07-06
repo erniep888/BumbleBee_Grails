@@ -3,10 +3,12 @@ package bumblebee
 class FeaturePhaseStatus implements Comparable<FeaturePhaseStatus>{
 
     String status
+    String shortReference
     Integer priority
 
     static constraints = {
         status(nullable: false, blank: false)
+        shortReference (nullable:  false, blank: false)
         priority(nullable: false)
     }
 

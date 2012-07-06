@@ -48,7 +48,7 @@
             </label>
             <g:select name="status" value="${featurePhaseInstance?.status}"
                       from="${FeaturePhaseStatus.findAll().sort()}"
-                      noSelection="${['not started':'Select One...']}"/>
+                      noSelection="${['[a] not started':'Select One...']}"/>
         </div>
 
         <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'executionDate', 'error')} ">

@@ -10,8 +10,8 @@ class FeaturePhaseGeneralController extends FeaturePhaseController {
 
         def selectedFeaturePhase = getOrSetSelectedFeaturePhase(feature, new Long(params.id))
 
-        def completedStatus = FeaturePhaseStatus.findByStatus('completed')
-        if (justPostedFeaturePhase.status == completedStatus && selectedFeaturePhase.status != completedStatus){
+        def completedStatus = FeaturePhaseStatus.findByStatus('[h] completed')
+        if (justPostedFeaturePhase.status == completedStatus){
             selectedFeaturePhase.status = completedStatus
             selectedFeaturePhase.executionDate = new Date()
         } else if (justPostedFeaturePhase.status != selectedFeaturePhase.status){

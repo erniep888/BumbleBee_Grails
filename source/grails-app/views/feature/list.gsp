@@ -57,7 +57,7 @@
                     <td class="center"><g:include action="workEffort" model="${[feature: featureInstance]}"/></td>
                     <td class="center"><g:include action="featureStatus" model="${[feature: featureInstance]}"/></td>
                     <td class="center"><g:include action="featureCompletion" model="${[feature: featureInstance]}"/></td>
-                    <td class="center"></td>
+                    <td class="center"><g:include action="featureBugs" model="${[feature: featureInstance]}"/></td>
                     <td class="center"></td>
                     <td class="center"></td>
                     <td class="center"></td>
