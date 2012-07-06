@@ -80,12 +80,6 @@ class MenuFilters {
             }
         }
 
-        administrationContributor(controller: 'administrationActiveDirectory', action: '*'){
-            after = { Map model ->
-                model?.administrationMenuSelection = 'activeDirectory'
-            }
-        }
-
         administrationContributor(controller: 'administrationDeletedObject', action: '*'){
             after = { Map model ->
                 model?.administrationMenuSelection = 'deletedObjects'

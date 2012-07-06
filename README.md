@@ -34,3 +34,8 @@ A test case that is associated with a given feature/object and phase.
   
 Third Party Case Library
 The list of third party issues/cases that were opened as a result or in relation to the feature/object and phase.
+
+
+
+Refactoring:
+The user authentication and authorization needs to be refactored or entirely redesigned using an off-the-shelve plugin.  The current design was the result of requirements changes mid-development.

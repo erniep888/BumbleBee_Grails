@@ -13,15 +13,17 @@ hibernate {
 environments {
     development {
         dataSource {
-//            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-//            url = "jdbc:h2:mem:devDb;MVCC=TRUE"
-            pooled = true
-            driverClassName = "com.mysql.jdbc.Driver"
-            dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-            dbCreate = "update"
-            url = "jdbc:mysql://seltec5test/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
-            username = "bumblebeeuser"
-            password = "bumbl3"
+            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+            url = "jdbc:h2:mem:devDb;MVCC=TRUE"
+
+
+//            pooled = true
+//            driverClassName = "com.mysql.jdbc.Driver"
+//            dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+//            dbCreate = "update"
+//            url = "jdbc:mysql://seltec5test/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
+//            username = "bumblebeeuser"
+//            password = "bumbl3"
         }
 
     }
@@ -37,10 +39,22 @@ environments {
             driverClassName = "com.mysql.jdbc.Driver"
             dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
             dbCreate = "update"
-            url = "jdbc:mysql://seltec5test/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://raldorweb01/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
             username = "bumblebeeuser"
             password = "bumbl3"
+            properties {
+                //run the evictor every 30 minutes and evict any connections older than 30 minutes.
+                minEvictableIdleTimeMillis=1800000
+                timeBetweenEvictionRunsMillis=1800000
+                numTestsPerEvictionRun=3
+                //test the connection while its idle, before borrow and return it
+                testOnBorrow=true
+                testWhileIdle=true
+                testOnReturn=true
+                validationQuery="SELECT 1"
+            }
         }
+
 //        dataSource {
 //            dbCreate = "update"
 //            url = "jdbc:h2:prodDb;MVCC=TRUE"
