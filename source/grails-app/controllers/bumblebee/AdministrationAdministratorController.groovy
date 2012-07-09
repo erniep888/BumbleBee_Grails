@@ -41,7 +41,13 @@ class AdministrationAdministratorController {
         def administrator = Administrator.findById(id)
         if (administrator)
         {
-            administrator.delete(flush: true)
+            try{
+                administrator.delete(flush: true)
+            } catch (Exception ex){
+                flash.message = ex.message
+                redirect(action: "list", params: params)
+                return
+            }
             AuditActivity auditActivity = new AuditActivity(type: "user", description: "Administrator, {" +
                     administrator.username + "}, deleted by user, {" + request.remoteUser + "}.")
             auditActivity.save(flush: true)

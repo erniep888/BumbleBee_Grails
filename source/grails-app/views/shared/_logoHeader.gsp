@@ -5,7 +5,7 @@
             <td>
                 <div id="title">
                     <g:message code="app.userfriendly.applicationname" default=""/>
-                    <div id="login">Welcome, <%= request.remoteUser %></div>
+                    <div id="login">Welcome, <g:include controller="administrationContributor" action="getUsernameOrFullName"/></div>
                 </div>
             </td>
         </tr>
