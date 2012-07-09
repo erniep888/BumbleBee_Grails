@@ -32,7 +32,7 @@
                 <th class="center">Work Effort (h)</th>
                 <th class="center">Status</th>
                 <th class="center">Completed</th>
-                <th class="center">Bugs</th>
+                <th class="center">&nbsp;&nbsp;Bugs&nbsp;&nbsp;</th>
                 <th class="center">Bug Status</th>
                 <th class="center">Bug Severity</th>
                 <th class="center">3rd Party Cases</th>
