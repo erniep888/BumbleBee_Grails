@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="administration">
-    <g:render template="/shared/pageTitle" model="${"Administrators" }"/>
+    <g:render template="/shared/pageTitle" model="${ [pageTitle: "Administrators"] }"/>
 
 </head>
 <body>

@@ -3,8 +3,8 @@
 <html>
 <head>
     <meta name="layout" content="main">
-    <g:set var="entityName" value="${message(code: 'project.libraryAttachments.label', default: 'Library')}"/>
-    <title><g:message code="default.edit.label" args="[entityName]"/></title>
+
+    <g:render template="/shared/pageTitle" model="${ [pageTitle: "Library"] }"/>
 </head>
 
 <body>

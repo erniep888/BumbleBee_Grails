@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta name="layout" content="main">
-    <title><g:meta name="app.userfriendly.applicationAcronym"/> - Dashboard</title>
+    <g:render template="/shared/pageTitle" model="${ [pageTitle: "Dashboard"] }"/>
 </head>
 
 <body>

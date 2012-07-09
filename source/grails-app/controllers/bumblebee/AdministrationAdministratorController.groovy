@@ -40,7 +40,12 @@ class AdministrationAdministratorController {
     def delete(long id){
         def administrator = Administrator.findById(id)
         if (administrator)
+        {
             administrator.delete(flush: true)
+            AuditActivity auditActivity = new AuditActivity(type: "user", description: "Administrator, {" +
+                    administrator.username + "}, deleted by user, {" + request.remoteUser + "}.")
+            auditActivity.save(flush: true)
+        }
         redirect(action: "list", params: params)
     }
 
@@ -54,6 +59,9 @@ class AdministrationAdministratorController {
             return
         } else {
             administrator.save(flush: true)
+            AuditActivity auditActivity = new AuditActivity(type: "user", description: "New administrator, {" +
+                    administrator.username + "}, added by user, {" + request.remoteUser + "}.")
+            auditActivity.save(flush: true)
         }
         redirect(action: "list", params: [givenName: params.givenName])
     }

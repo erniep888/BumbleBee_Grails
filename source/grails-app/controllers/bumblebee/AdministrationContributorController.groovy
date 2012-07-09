@@ -39,8 +39,12 @@ class AdministrationContributorController {
 
     def delete(long id){
         def contributor = Contributor.findById(id)
-        if (contributor)
+        if (contributor){
             contributor.delete(flush: true)
+            AuditActivity auditActivity = new AuditActivity(type: "user", description: "Contributor, {" +
+                    contributor.username + "}, deleted by user, {" + request.remoteUser + "}.")
+            auditActivity.save(flush: true)
+        }
         redirect(action: "list", params: params)
     }
 
@@ -54,6 +58,9 @@ class AdministrationContributorController {
             return
         } else {
             contributor.save(flush: true)
+            AuditActivity auditActivity = new AuditActivity(type: "user", description: "New contributor, {" +
+                contributor.username + "}, added by user, {" + request.remoteUser + "}.")
+            auditActivity.save(flush: true)
         }
         redirect(action: "list", params: [givenName: params.givenName])
     }

@@ -1,7 +1,7 @@
 <%@ page import="bumblebee.Feature" %>
 <head>
     <meta name="layout" content="main"/>
-    <g:render template="/shared/pageTitle" model="${ [pageTitle: message(code: 'feature.label', default: 'Feature')] }"/>
+    <g:render template="/shared/pageTitle" model="${ [pageTitle: message(code: 'feature.label', default: 'Feature') + 's']  }"/>
 </head>
 
 <body>
