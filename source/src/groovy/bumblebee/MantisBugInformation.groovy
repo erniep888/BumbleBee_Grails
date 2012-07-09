@@ -48,9 +48,27 @@ class MantisBugInformation implements Comparable<MantisBugInformation>
         return priorityMap[(int)priority]
     }
 
+
     int compareTo(MantisBugInformation mantisBugInformation){
         return this.id.compareTo(mantisBugInformation.id)
     }
+
+    static MantisBugInformation getLeastCompleteStatus(MantisBugInformation mantisBugInformation1,
+        MantisBugInformation mantisBugInformation2){
+        if (mantisBugInformation1.status > mantisBugInformation2.status)
+            return mantisBugInformation1
+        else
+            return mantisBugInformation2
+    }
+
+    static MantisBugInformation getWorstSeverity(MantisBugInformation mantisBugInformation1,
+                                                 MantisBugInformation mantisBugInformation2){
+        if (mantisBugInformation1.severity > mantisBugInformation2.severity)
+            return mantisBugInformation1
+        else
+            return mantisBugInformation2
+    }
+
 
     private void fillSeverityMap() {
         severityMap = new HashMap<Short, String>()

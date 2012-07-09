@@ -1,10 +1,11 @@
 package bumblebee
 
 import java.text.SimpleDateFormat
-import groovy.xml.MarkupBuilder
 
 
 class FeatureController {
+
+    def mantisIntegrationService
 
     static defaultAction = "list"
 
@@ -135,6 +136,72 @@ class FeatureController {
                         {FeaturePhaseBug.countByFeaturePhase(featurePhase)}  + ' '
             else
                 result += link(controller:'featurePhaseBug', action: 'edit', params: [featureId: featureInstance.id, id: phaseId] )  {0} + ' '
+
+            phaseId++
+        }
+        render result.trim()
+    }
+
+    def featureBugStatus(){
+        def result = ''
+        def featureInstance = request.getAttribute("feature")
+        MantisBugInformation leastCompleteBug = null
+        for(Phase phase in Phase.findAll().sort()){
+            def featurePhase = FeaturePhase.findByFeatureAndPhase(featureInstance, phase)
+            if (featurePhase){
+                if (featurePhase.bugs != null && featurePhase.bugs.size() > 0){
+                    for (FeaturePhaseBug bug in featurePhase.bugs) {
+                        def bugInformation = mantisIntegrationService.findMantisBugInformationById(bug.bugSystemId)
+                        if (leastCompleteBug == null)
+                            leastCompleteBug = bugInformation
+                        else
+                            leastCompleteBug = MantisBugInformation.getLeastCompleteStatus(leastCompleteBug, bugInformation)
+                    }
+                }
+            }
+        }
+
+        if (leastCompleteBug != null)
+            result = leastCompleteBug.statusAsString
+        render result.trim()
+    }
+
+    def featureBugSeverity(){
+        def result = ''
+        def featureInstance = request.getAttribute("feature")
+        MantisBugInformation mostServereBug = null
+        for(Phase phase in Phase.findAll().sort()){
+            def featurePhase = FeaturePhase.findByFeatureAndPhase(featureInstance, phase)
+            if (featurePhase){
+                if (featurePhase.bugs != null && featurePhase.bugs.size() > 0){
+                    for (FeaturePhaseBug bug in featurePhase.bugs) {
+                        def bugInformation = mantisIntegrationService.findMantisBugInformationById(bug.bugSystemId)
+                        if (mostServereBug == null)
+                            mostServereBug = bugInformation
+                        else
+                            mostServereBug = MantisBugInformation.getWorstSeverity(mostServereBug, bugInformation)
+                    }
+                }
+            }
+        }
+
+        if (mostServereBug != null)
+            result = mostServereBug.severityAsString
+        render result.trim()
+    }
+
+    def featureThirdPartyCases(){
+        def result = ''
+
+        def phaseId = 1
+        def featureInstance = request.getAttribute("feature")
+        for(Phase phase in Phase.findAll().sort()){
+            def featurePhase = FeaturePhase.findByFeatureAndPhase(featureInstance, phase)
+            if (featurePhase)
+                result += link(controller:'featurePhaseCase', action: 'edit', params: [featureId: featureInstance.id, id: featurePhase.phaseId] )
+                        {FeaturePhaseCase.countByFeaturePhase(featurePhase)}  + ' '
+            else
+                result += link(controller:'featurePhaseCase', action: 'edit', params: [featureId: featureInstance.id, id: phaseId] )  {0} + ' '
 
             phaseId++
         }

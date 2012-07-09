@@ -58,9 +58,9 @@
                     <td class="center"><g:include action="featureStatus" model="${[feature: featureInstance]}"/></td>
                     <td class="center"><g:include action="featureCompletion" model="${[feature: featureInstance]}"/></td>
                     <td class="center"><g:include action="featureBugs" model="${[feature: featureInstance]}"/></td>
-                    <td class="center"></td>
-                    <td class="center"></td>
-                    <td class="center"></td>
+                    <td class="center"><g:include action="featureBugStatus" model="${[feature: featureInstance]}"/></td>
+                    <td class="center"><g:include action="featureBugSeverity" model="${[feature: featureInstance]}"/></td>
+                    <td class="center"><g:include action="featureThirdPartyCases" model="${[feature: featureInstance]}"/></td>
                     <td class="center"><g:include action="offShore" model="${[feature: featureInstance]}"/></td>
                 </tr>
             </g:each>
