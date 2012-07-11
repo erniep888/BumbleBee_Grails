@@ -41,7 +41,7 @@
         </td>
         <td>
             <div style="text-align: center;">Status Complete/Incomplete By <g:message code="feature.category.label"/></div>
-            <div id="chart2" style="height: 750px; width: 450px;">
+            <div id="chart2" style="height: 250px; width: 450px;">
             </div>
         </td>
     </tr>
@@ -94,13 +94,13 @@
         var statusCompleteByCategory = $('#statusCompleteByCategory').text()
         $.getJSON(statusCompleteByCategory + '?'+ Math.round(new Date().getTime()), function(countsByCategory) {
             var
-                    d1 = [[0, 3], [4, 8], [8, 2], [9, 3]], // First data series
-                    d2 = [[0, 2], [4, 3], [8, 8], [9, 4]], // Second data series
+                    d1 = [[0, 3], [3, 8], [6, 2], [9, 3]], // First data series
+                    d2 = [[0, 2], [3, 2], [6, 1], [9, 4]], // Second data series
                     i, graph;
 
             // Draw Graph
-            graph = Flotr.draw(container, [ d1, d2 ], {
-                lines: {
+            graph = Flotr.draw(document.getElementById('chart2'), [ d1, d2 ], {
+                bars: {
                     show : true,
                     stacked: true
                 },
