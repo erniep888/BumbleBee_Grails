@@ -32,9 +32,91 @@
     <div class="errors" role="status">${flash.message}</div>
 </g:if>
 
+<table>
+    <tr>
+        <td style="padding:2em;">
+            <div style="text-align: center;"><g:message code="feature.label"/> Status</div>
+            <div id="chart1" style="height: 250px; width: 450px;">
+            </div>
+        </td>
+        <td>
+            <div style="text-align: center;">Status Complete/Incomplete By <g:message code="feature.category.label"/></div>
+            <div id="chart2" style="height: 750px; width: 450px;">
+            </div>
+        </td>
+    </tr>
+</table>
 
-<div id="mock1">
-    <img src="${resource(dir: 'images/mockups', file: 'Dashboard_Chart.png')}" alt="Dashboard"/>
-</div>
+
+<!--[if lte IE 9]><g:javascript src="flotr2.ie.min.js"/><![endif]-->
+<g:javascript src="flotr2.min.js"/>
+<div id="allFeatureStatusCountLink" style="display: none"><g:createLink controller="dashboard" action="allFeatureStatusCount"/></div>
+<div id="statusCompleteByCategory" style="display: none"><g:createLink controller="dashboard" action="statusCompleteByCategory"/></div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var allFeatureStatusCountLink = $('#allFeatureStatusCountLink').text()
+
+        $.getJSON(allFeatureStatusCountLink + '?'+ Math.round(new Date().getTime()), function(allCounts) {
+            Flotr.draw(document.getElementById('chart1'), allCounts.counts,
+            {
+                HtmlText : false,
+                grid : {
+                    verticalLines : false,
+                    horizontalLines : false,
+                    backgroundColor : {
+                        colors : [[0,'#fff'], [1,'#ccc']],
+                        start : 'top',
+                        end : 'bottom'
+                    }
+
+                },
+                xaxis : { showLabels : false },
+                yaxis : { showLabels : false },
+                pie : {
+                    show : true,
+                    explode : 5
+                },
+                mouse : {
+                    track : true,
+                    relative: true,
+                    trackDecimals: 0,
+                    trackFormatter: function(obj){ return 'Count = ' + obj.y; }
+                },
+                legend : {
+                    position : 'sw',
+                    backgroundColor : '#ddd'
+                }
+            });
+        });
+
+
+        var statusCompleteByCategory = $('#statusCompleteByCategory').text()
+        $.getJSON(statusCompleteByCategory + '?'+ Math.round(new Date().getTime()), function(countsByCategory) {
+            var
+                    d1 = [[0, 3], [4, 8], [8, 2], [9, 3]], // First data series
+                    d2 = [[0, 2], [4, 3], [8, 8], [9, 4]], // Second data series
+                    i, graph;
+
+            // Draw Graph
+            graph = Flotr.draw(container, [ d1, d2 ], {
+                lines: {
+                    show : true,
+                    stacked: true
+                },
+                xaxis: {
+                    minorTickFreq: 4
+                },
+                grid: {
+                    minorVerticalLines: true
+                }
+            });
+        });
+    });
+
+
+
+</script>
 </body>
+
 </html>
