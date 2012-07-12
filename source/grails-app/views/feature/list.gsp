@@ -25,6 +25,7 @@
         <thead>
             <tr>
                 <th class="center">Id</th>
+                <th class="center">${message(code: 'feature.module.label', default: 'Module')}</th>
                 <th class="left">${message(code: 'feature.label', default: 'Feature')}</th>
                 <th class="left">Description</th>
                 <th class="left">Developer</th>
@@ -36,7 +37,6 @@
                 <th class="center">Bug Status</th>
                 <th class="center">Bug Severity</th>
                 <th class="center">3rd Party Cases</th>
-                <th class="center">Off Shore</th>
             </tr>
         </thead>
         <tbody>
@@ -49,6 +49,7 @@
                     <tr class="even">
                 </g:else>
                     <td class="center">${featureInstance.id}</td>
+                    <td class="center">${featureInstance.module}</td>
                     <td class="left"><g:link controller="featurePhaseGeneral" action="edit"
                                 params="[featureId: featureInstance.id]" id="${1}">${featureInstance.name}</g:link></td>
                     <td class="left">${featureInstance.description}</td>
@@ -61,7 +62,6 @@
                     <td class="center"><g:include action="featureBugStatus" model="${[feature: featureInstance]}"/></td>
                     <td class="center"><g:include action="featureBugSeverity" model="${[feature: featureInstance]}"/></td>
                     <td class="center"><g:include action="featureThirdPartyCases" model="${[feature: featureInstance]}"/></td>
-                    <td class="center"><g:include action="offShore" model="${[feature: featureInstance]}"/></td>
                 </tr>
             </g:each>
         </tbody>

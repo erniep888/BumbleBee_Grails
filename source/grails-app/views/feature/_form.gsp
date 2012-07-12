@@ -23,5 +23,13 @@
     </label>
     <g:textField name="category" value="${featureInstance?.category}" size="40"/>
 </div>
+<div class="fieldcontain ${hasErrors(bean: featureInstance, field: 'module', 'error')} ">
+    <label for="module">
+        <g:message code="feature.module.label" default="Module"/>
+
+    </label>
+    <g:textField name="module" value="${featureInstance?.module}" size="40"/>
+</div>
+
 <g:hiddenField name="isDeleted" value="false"/>
 

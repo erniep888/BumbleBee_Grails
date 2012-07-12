@@ -8,7 +8,6 @@ class FeaturePhase implements Comparable<FeaturePhase> {
     Double testWorkEffort
     FeaturePhaseStatus status
     Date executionDate
-    Boolean isOffShore
     String comments
     SortedSet tests
     SortedSet attachments
@@ -26,7 +25,6 @@ class FeaturePhase implements Comparable<FeaturePhase> {
         testWorkEffort(nullable: true, scale: 1)
         executionDate(nullable:  true)
         comments(nullable: true)
-        isOffShore(nullable: false)
         status(nullable: false)
     }
 

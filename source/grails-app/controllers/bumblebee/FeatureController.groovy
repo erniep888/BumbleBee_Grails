@@ -208,16 +208,5 @@ class FeatureController {
         render result.trim()
     }
 
-    def offShore(){
-        def featureInstance = request.getAttribute("feature")
-        String offShoreString = ""
-        for(FeaturePhase featurePhase in featureInstance.featurePhases){
-            if (featurePhase.isOffShore){
-                offShoreString = "off shore"
-                break;
-            }
-        }
-        render offShoreString
-    }
 
 }

@@ -26,8 +26,6 @@ class FeaturePhaseGeneralController extends FeaturePhaseController {
         selectedFeaturePhase.testWorkEffort = justPostedFeaturePhase.testWorkEffort
         selectedFeaturePhase.status = (justPostedFeaturePhase.status) ?
             justPostedFeaturePhase.status : selectedFeaturePhase.status
-        selectedFeaturePhase.isOffShore = (justPostedFeaturePhase.isOffShore) ?
-            justPostedFeaturePhase.isOffShore : false
         selectedFeaturePhase.comments = justPostedFeaturePhase.comments
 
         selectedFeaturePhase.validate()

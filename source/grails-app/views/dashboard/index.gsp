@@ -93,22 +93,54 @@
 
         var statusCompleteByCategory = $('#statusCompleteByCategory').text()
         $.getJSON(statusCompleteByCategory + '?'+ Math.round(new Date().getTime()), function(countsByCategory) {
-            var
-                    d1 = [[0, 3], [3, 8], [6, 2], [9, 3]], // First data series
-                    d2 = [[0, 2], [3, 2], [6, 1], [9, 4]], // Second data series
-                    i, graph;
 
-            // Draw Graph
-            graph = Flotr.draw(document.getElementById('chart2'), [ d1, d2 ], {
-                bars: {
-                    show : true,
-                    stacked: true
+            var
+                    d1 = [],
+                    d2 = [],
+                    graph, i;
+
+            for (i = 0; i < 10; i+=3) {
+                d1.push([i, Math.random()*10]);
+                d2.push([i, Math.random()*10]);
+            }
+            graph = Flotr.draw(document.getElementById('chart2'),
+                    countsByCategory.counts,
+//                    [
+//                        { data : d1, label : 'Complete' },
+//                        { data : d2, label : 'Incomplete' }
+//                    ],
+            {
+                HtmlText : false,
+                grid : {
+                    verticalLines : false,
+                    horizontalLines : false,
+                    backgroundColor : {
+                        colors : [[0,'#fff'], [1,'#ccc']],
+                        start : 'top',
+                        end : 'bottom'
+                    }
+
                 },
-                xaxis: {
-                    minorTickFreq: 4
+                xaxis : {
+                    showLabels : true,
+                    labelsAngle: -45,
+                    ticks: [[0, 'Finance - AR-Auto Cash'], [2, 'Distribution - Seltec Billing'], [4, 'Maintenance - Interfaces/Core']]
                 },
-                grid: {
-                    minorVerticalLines: true
+                yaxis : { showLabels : true },
+                bars : {
+                    show: true,
+                    stacked: true,
+                    horizontal: false
+                },
+                mouse : {
+                    track : true,
+                    relative: true,
+                    trackDecimals: 0,
+                    trackFormatter: function(obj){ return 'Count = ' + obj.y; }
+                },
+                legend : {
+                    position : 'nw',
+                    backgroundColor : '#ddd'
                 }
             });
         });
