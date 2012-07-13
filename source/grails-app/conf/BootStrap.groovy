@@ -9,7 +9,6 @@ import bumblebee.Vendor
 import bumblebee.BugSystemSettings
 import bumblebee.ActiveDirectorySettings
 import bumblebee.Administrator
-import bumblebee.Worker
 import bumblebee.ActiveDirectoryService
 import bumblebee.ActiveDirectoryUserInformation
 import org.springframework.web.context.WebApplicationContext
@@ -25,10 +24,9 @@ class BootStrap {
         createFeatureStatuses()
         createFeaturePhaseCaseStatuses()
         createVendors()
-        createWorkers(servletContext)
-        createAdministrators(servletContext)
+        //createAdministrators(servletContext)
 
-        createManyFeatures()
+
     }
     def destroy = {
     }
@@ -64,15 +62,6 @@ class BootStrap {
         }
     }
 
-    private void createWorkers(def servletContext){
-        if (Worker.count() == 0){
-            WebApplicationContext appCtx = WebApplicationContextUtils.getWebApplicationContext(servletContext)
-            ActiveDirectoryService activeDirectoryService = appCtx.getBean('activeDirectoryService')
-            ActiveDirectoryUserInformation userInfo = activeDirectoryService.retrieveUserInformation('pascherk')
-            Worker worker1 = new Worker(username: 'pascherk', fullName: userInfo.givenName + ' ' + userInfo.lastName)
-            worker1.save(flush: true)
-        }
-    }
 
     private void createPhases(){
         if (Phase.count() == 0){
@@ -115,31 +104,7 @@ class BootStrap {
         }
     }
 
-    private void createManyFeatures(){
-        if (Feature.count() == 0){
-            def phase1 = Phase.findById(1)
-            def project = Project.findById(1)
-            for(int i = 0; i < 100; i++){
-                Feature feature = new Feature(project: project, category: "Inventory",
-                        description: "Inventory master " + i, name: "R57204" + i, isDeleted: false,
-                        featurePhases: new TreeSet<FeaturePhase>())
-                feature.save(flush: true)
-                def featurePhaseGeneral = new FeaturePhase(feature: feature, phase: phase1, status: FeaturePhaseStatus.findByPriority(10),
-                        developer: Worker.findById(1) ,links: new TreeSet<Link>(), isOffShore: false)
-                featurePhaseGeneral.save(flush: true)
-
-                def link = new Link(name: "MyPortal", href: "http://myportal", inNewWindow: true, featurePhase: featurePhaseGeneral)
-                link.save()
-                featurePhaseGeneral.links.add(link)
-                featurePhaseGeneral.save(flush: true)
-
-                feature.featurePhases.add(featurePhaseGeneral)
-                feature.save(flush: true)
-            }
-        }
-    }
-
-
+    
 
     private void createFeaturePhaseCaseStatuses(){
         if (FeaturePhaseCaseStatus.count() == 0){
