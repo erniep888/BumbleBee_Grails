@@ -9,9 +9,10 @@ coverage-error.log
 /source/web-app/WEB-INF/classes
 /source/out
 
-
+/source/target
 /source/target/classes
-#        /source/target/stacktrace.log
+/source/target/stacktrace.log
+
 
 
 

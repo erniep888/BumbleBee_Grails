@@ -86,37 +86,38 @@ class AdministrationContributorController {
     /***************** Partial View Actions Below ********************/
 
     def getUsernameOrFullName(){
-        def user = request.remoteUser
+//        
+//				def user = request.remoteUser
 
-        if (!session.currentUser){
-            if (user.contains("MARTINMARIETTA\\"))
-                user = user.substring("MARTINMARIETTA\\".length())
+//        if (!session.currentUser){
+//            if (user.contains("MARTINMARIETTA\\"))
+//                user = user.substring("MARTINMARIETTA\\".length())
+//
+//            def contributor = Contributor.findByUsername(user)
+//            if (!contributor){
+//                def nonContributor = NonContributor.findByUsername(user)
+//                if (!nonContributor){
+//                    ActiveDirectoryUserInformation activeDirectoryUserInformation = activeDirectoryService.retrieveUserInformation(user)
+//                    if (activeDirectoryUserInformation) {
+//                        nonContributor = new NonContributor(fullName: activeDirectoryUserInformation.givenName + " " + activeDirectoryUserInformation.lastName,
+//                                username: activeDirectoryUserInformation.userPrincipalName, emailAddress: activeDirectoryUserInformation.emailAddress)
+//                        nonContributor.save(flush: true)
+//                        AuditActivity auditActivity = new AuditActivity(type: "user", description: "New non-contributor, {" +
+//                                nonContributor.username + "}, added by virtue of system access.")
+//                        auditActivity.save(flush: true)
+//                        user = activeDirectoryUserInformation.givenName + " " + activeDirectoryUserInformation.lastName
+//                    }
+//                } else
+//                    user = nonContributor.fullName
+//            } else
+//                user = contributor.fullName
+//
+//            AuditActivity auditActivity = new AuditActivity(type: "user", description: "User login: {" + user + "}.")
+//            auditActivity.save(flush: true)
+//            session.currentUser = user
+//        }  else
+//            user = session.currentUser
 
-            def contributor = Contributor.findByUsername(user)
-            if (!contributor){
-                def nonContributor = NonContributor.findByUsername(user)
-                if (!nonContributor){
-                    ActiveDirectoryUserInformation activeDirectoryUserInformation = activeDirectoryService.retrieveUserInformation(user)
-                    if (activeDirectoryUserInformation) {
-                        nonContributor = new NonContributor(fullName: activeDirectoryUserInformation.givenName + " " + activeDirectoryUserInformation.lastName,
-                                username: activeDirectoryUserInformation.userPrincipalName, emailAddress: activeDirectoryUserInformation.emailAddress)
-                        nonContributor.save(flush: true)
-                        AuditActivity auditActivity = new AuditActivity(type: "user", description: "New non-contributor, {" +
-                                nonContributor.username + "}, added by virtue of system access.")
-                        auditActivity.save(flush: true)
-                        user = activeDirectoryUserInformation.givenName + " " + activeDirectoryUserInformation.lastName
-                    }
-                } else
-                    user = nonContributor.fullName
-            } else
-                user = contributor.fullName
-
-            AuditActivity auditActivity = new AuditActivity(type: "user", description: "User login: {" + user + "}.")
-            auditActivity.save(flush: true)
-            session.currentUser = user
-        }  else
-            user = session.currentUser
-
-        render user
+        render 'Bob'
     }
 }

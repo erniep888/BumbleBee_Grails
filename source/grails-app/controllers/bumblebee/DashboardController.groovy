@@ -1,5 +1,8 @@
 package bumblebee
 
+//import grails.plugins.springsecurity.Secured
+
+
 class DashboardController {
 
     def index() { }
