@@ -10,6 +10,7 @@ coverage-error.log
 /source/out
 
 /source/target
+/source/target-eclipse
 /source/target/classes
 /source/target/stacktrace.log
 
