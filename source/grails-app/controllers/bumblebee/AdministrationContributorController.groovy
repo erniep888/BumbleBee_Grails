@@ -1,7 +1,8 @@
 package bumblebee
 
 class AdministrationContributorController {
-
+	def springSecurityService
+	
     static defaultAction = "list"
 
     def activeDirectoryService
@@ -87,7 +88,17 @@ class AdministrationContributorController {
 
     def getUsernameOrFullName(){
 //        
-//				def user = request.remoteUser
+		def user = springSecurityService.currentUser
+		String username = 'bob'
+		if (user){
+			if (user.username){
+				username = user.username
+				def dbUser = UserDetail.findByUsername(username)
+				username = dbUser.firstName + ' ' + dbUser.lastName
+			}
+			else
+				username = 'non contributor'
+		} 
 
 //        if (!session.currentUser){
 //            if (user.contains("MARTINMARIETTA\\"))
@@ -118,6 +129,6 @@ class AdministrationContributorController {
 //        }  else
 //            user = session.currentUser
 
-        render 'Bob'
+        render username
     }
 }

@@ -10,6 +10,9 @@ import bumblebee.BugSystemSettings
 import bumblebee.ActiveDirectorySettings
 import bumblebee.Administrator
 import bumblebee.ActiveDirectoryService
+import bumblebee.UserDetail
+import bumblebee.UserRole
+import bumblebee.Role
 import bumblebee.ActiveDirectoryUserInformation
 import org.springframework.web.context.WebApplicationContext
 import org.springframework.web.context.support.WebApplicationContextUtils
@@ -24,11 +27,23 @@ class BootStrap {
         createFeatureStatuses()
         createFeaturePhaseCaseStatuses()
         createVendors()
+		createUser()
         //createAdministrators(servletContext)
 
     }
     def destroy = {
     }
+	
+	private void createUser(){
+		def contributorRole = Role.findByAuthority('ROLE_CONTRIBUTOR')?: new Role(authority: 'ROLE_CONTRIBUTOR').save(failOnError: true)
+		def administratorRole = Role.findByAuthority('ROLE_ADMINISTRATOR')?: new Role(authority: 'ROLE_ADMINISTRATOR').save(failOnError: true)
+		def user = UserDetail.findByUsername('pascherk')?:
+			new UserDetail(username: 'pascherk', password: 'test1', enabled: true, 
+				accountExpired: false, accountLocked: false, passwordExpired: false, 
+				firstName: 'Ernie', lastName: 'Paschall').save(failOnError: true)
+		if (!user.authorities.contains(contributorRole))
+			UserRole.create(user, contributorRole, true)
+	}
 	
 	private void createBugSystemSettings(){
 		if (BugSystemSettings.count() == 0) {

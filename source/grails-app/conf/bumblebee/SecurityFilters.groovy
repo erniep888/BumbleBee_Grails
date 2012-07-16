@@ -1,13 +1,21 @@
 package bumblebee
 
 class SecurityFilters {
-
+	def springSecurityService
+	
     def filters = {
         all(controller:'*', action:'*') {
             before = {
-//                if (!session.user ){
-//                    redirect(url: "http://www.google.com")
-//                }
+				def auth = springSecurityService.authentication
+				if (auth){
+					String username = auth.principal
+				} 
+				else {
+					
+				}
+				
+				
+			               
             }
             after = { Map model ->
 
