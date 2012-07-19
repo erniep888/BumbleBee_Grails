@@ -7,7 +7,7 @@
 		revision="0.9"
 		conf="build"
 		confs="build"
-		date="20120711173406"/>
+		date="20120719143856"/>
 	<dependencies>
 		<module organisation="org.grails" name="grails-plugin-tomcat">
 			<revision name="2.0.3" status="release" pubdate="20120611201516" resolver="cache" artresolver="cache" downloaded="false" searched="false" default="true" conf="default" position="32">

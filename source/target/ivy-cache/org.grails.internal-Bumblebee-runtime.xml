@@ -7,7 +7,7 @@
 		revision="0.9"
 		conf="runtime"
 		confs="runtime"
-		date="20120711173408"/>
+		date="20120719143857"/>
 	<dependencies>
 		<module organisation="org.hibernate" name="hibernate-ehcache">
 			<revision name="3.6.10.Final" status="release" pubdate="20120214013056" resolver="cache" artresolver="cache" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="85">

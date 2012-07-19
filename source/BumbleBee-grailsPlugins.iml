@@ -48,8 +48,8 @@
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (BumbleBee-grailsPlugins)">
         <CLASSES>
-          <root url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/ntlm-auth-0.6/lib" />
           <root url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/mysql-connectorj-5.1.12/lib" />
+          <root url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/ntlm-auth-0.6/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

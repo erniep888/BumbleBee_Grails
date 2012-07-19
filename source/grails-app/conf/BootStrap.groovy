@@ -9,7 +9,7 @@ import bumblebee.Vendor
 import bumblebee.BugSystemSettings
 import bumblebee.ActiveDirectorySettings
 import bumblebee.Administrator
-import bumblebee.Worker
+import bumblebee.Contributor
 import bumblebee.ActiveDirectoryService
 import bumblebee.ActiveDirectoryUserInformation
 import org.springframework.web.context.WebApplicationContext
@@ -65,12 +65,12 @@ class BootStrap {
     }
 
     private void createWorkers(def servletContext){
-        if (Worker.count() == 0){
+        if (Contributor.count() == 0){
             WebApplicationContext appCtx = WebApplicationContextUtils.getWebApplicationContext(servletContext)
             ActiveDirectoryService activeDirectoryService = appCtx.getBean('activeDirectoryService')
             ActiveDirectoryUserInformation userInfo = activeDirectoryService.retrieveUserInformation('pascherk')
-            Worker worker1 = new Worker(username: 'pascherk', fullName: userInfo.givenName + ' ' + userInfo.lastName)
-            worker1.save(flush: true)
+            Contributor contributor = new Contributor(username: 'pascherk', fullName: userInfo.givenName + ' ' + userInfo.lastName)
+            contributor.save(flush: true)
         }
     }
 
