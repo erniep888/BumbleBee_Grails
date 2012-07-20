@@ -58,6 +58,13 @@
             ${(featurePhaseInstance?.executionDate) ? simpleDateFormat.format(featurePhaseInstance?.executionDate) : 'not complete'}
         </div>
 
+        <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'isOffShore', 'error')} ">
+            <label for="isOffShore">
+                <g:message code="featurePhase.isOffShore.label" default="Is off shore?"/>
+            </label>
+            <g:checkBox name="isOffShore" value="${featurePhaseInstance?.isOffShore}" size="40"/>
+        </div>
+
         <div class="fieldcontain ${hasErrors(bean: featurePhaseInstance, field: 'comments', 'error')} ">
             <label for="comments">
                 <g:message code="featurePhase.comments.label" default="Comments"/>
