@@ -40,30 +40,30 @@
             </tr>
         </thead>
         <tbody>
-            <g:set var="featureCount" value="${1}" />
-            <g:each in="${featureInstanceList}" var="featureInstance">
-                <g:if test="${(featureCount%1) == 1}">
-                    <tr class="odd">
-                </g:if>
-                <g:else>
-                    <tr class="even">
-                </g:else>
-                    <td class="center">${featureInstance.id}</td>
-                    <td class="center">${featureInstance.module}</td>
-                    <td class="left"><g:link controller="featurePhaseGeneral" action="edit"
-                                params="[featureId: featureInstance.id]" id="${1}">${featureInstance.name}</g:link></td>
-                    <td class="left">${featureInstance.description}</td>
-                    <td class="left"><g:include action="userList" model="${[feature: featureInstance, userType: "developer"]}"/></td>
-                    <td class="left"><g:include action="userList" model="${[feature: featureInstance, userType: "tester"]}"/></td>
-                    <td class="center"><g:include action="workEffort" model="${[feature: featureInstance]}"/></td>
-                    <td class="center"><g:include action="featureStatus" model="${[feature: featureInstance]}"/></td>
-                    <td class="center"><g:include action="featureCompletion" model="${[feature: featureInstance]}"/></td>
-                    <td class="center"><g:include action="featureBugs" model="${[feature: featureInstance]}"/></td>
-                    <td class="center"><g:include action="featureBugStatus" model="${[feature: featureInstance]}"/></td>
-                    <td class="center"><g:include action="featureBugSeverity" model="${[feature: featureInstance]}"/></td>
-                    <td class="center"><g:include action="featureThirdPartyCases" model="${[feature: featureInstance]}"/></td>
-                </tr>
-            </g:each>
+            %{--<g:set var="featureCount" value="${1}" />--}%
+            %{--<g:each in="${featureInstanceList}" var="featureInstance">--}%
+                %{--<g:if test="${(featureCount%1) == 1}">--}%
+                    %{--<tr class="odd">--}%
+                %{--</g:if>--}%
+                %{--<g:else>--}%
+                    %{--<tr class="even">--}%
+                %{--</g:else>--}%
+                    %{--<td class="center">${featureInstance.id}</td>--}%
+                    %{--<td class="center">${featureInstance.module}</td>--}%
+                    %{--<td class="left"><g:link controller="featurePhaseGeneral" action="edit"--}%
+                                %{--params="[featureId: featureInstance.id]" id="${1}">${featureInstance.name}</g:link></td>--}%
+                    %{--<td class="left">${featureInstance.description}</td>--}%
+                    %{--<td class="left"><g:include action="userList" model="${[feature: featureInstance, userType: "developer"]}"/></td>--}%
+                    %{--<td class="left"><g:include action="userList" model="${[feature: featureInstance, userType: "tester"]}"/></td>--}%
+                    %{--<td class="center"><g:include action="workEffort" model="${[feature: featureInstance]}"/></td>--}%
+                    %{--<td class="center"><g:include action="featureStatus" model="${[feature: featureInstance]}"/></td>--}%
+                    %{--<td class="center"><g:include action="featureCompletion" model="${[feature: featureInstance]}"/></td>--}%
+                    %{--<td class="center"><g:include action="featureBugs" model="${[feature: featureInstance]}"/></td>--}%
+                    %{--<td class="center"><g:include action="featureBugStatus" model="${[feature: featureInstance]}"/></td>--}%
+                    %{--<td class="center"><g:include action="featureBugSeverity" model="${[feature: featureInstance]}"/></td>--}%
+                    %{--<td class="center"><g:include action="featureThirdPartyCases" model="${[feature: featureInstance]}"/></td>--}%
+                %{--</tr>--}%
+            %{--</g:each>--}%
         </tbody>
         <tfoot>
             <tr>
@@ -72,14 +72,24 @@
         </tfoot>
     </table>
 </div>
+<div id="target"></div>
 
+<div id="allFeaturesLink" style="display: none"><g:createLink controller="feature" action="allFeatures"/></div>
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
+        var allFeaturesLink = $('#allFeaturesLink').text() + '?'+ Math.round(new Date().getTime());
+        $('#target').text( allFeaturesLink );
         $('#example').dataTable({
-            "aaSorting": [[0, "asc"]],
-            "sPaginationType": "full_numbers",
-            "iDisplayLength" : 25 ,
-            "bStateSave": true
+            //"aaSorting": [[0, "asc"]],
+            //"sPaginationType": "full_numbers",
+            //"iDisplayLength" : 25 ,
+            "ajaxSource" :  allFeaturesLink,
+            "aoColumns": [
+                {"mDataProp": "id"},
+                {"mDataProp": "module"}
+            ],
+            "bStateSave": true,
+            "bRetrieve" : true
             } );
     } );
 

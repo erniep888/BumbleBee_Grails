@@ -1,6 +1,8 @@
 package bumblebee
 
 import java.text.SimpleDateFormat
+import grails.converters.JSON
+import org.codehaus.groovy.grails.web.json.JSONObject
 
 
 class FeatureController {
@@ -45,6 +47,17 @@ class FeatureController {
             feature.save(flush: true)
             redirect(controller: "FeaturePhaseGeneral", params: [featureId: feature.id, id: 1])
         }
+    }
+
+    /***************** Partial View Actions Below ********************/
+    def allFeatures() {
+        def featureRow = [
+                id: 1,
+                module: 'test module'
+        ]
+        def features = [aaData:[featureRow]]
+
+        render features as JSON
     }
 
 
