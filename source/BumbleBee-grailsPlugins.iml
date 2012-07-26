@@ -18,6 +18,10 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
+    <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/cache-ehcache-1.0.0">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/cache-ehcache-1.0.0/src/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/cache-ehcache-1.0.0/src/groovy" isTestSource="false" />
+    </content>
     <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/hibernate-2.0.3">
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/hibernate-2.0.3/grails-app/i18n" isTestSource="false" />
     </content>
@@ -30,13 +34,18 @@
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/jquery-1.7.1/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/jquery-1.7.1/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/mysql-connectorj-5.1.12" />
-    <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/ntlm-auth-0.6" />
     <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/resources-1.1.6">
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/resources-1.1.6/src/java" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/resources-1.1.6/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/resources-1.1.6/grails-app/i18n" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/resources-1.1.6/grails-app/taglib" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/spring-security-core-1.2.7.1">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/spring-security-core-1.2.7.1/src/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/spring-security-core-1.2.7.1/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/spring-security-core-1.2.7.1/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/spring-security-core-1.2.7.1/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/spring-security-core-1.2.7.1/grails-app/taglib" isTestSource="false" />
     </content>
     <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/tomcat-2.0.3" />
     <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/webxml-1.4.1">
@@ -47,14 +56,9 @@
     <orderEntry type="library" scope="PROVIDED" name="grails-2.0.3" level="application" />
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (BumbleBee-grailsPlugins)">
-        <CLASSES>
-          <root url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/mysql-connectorj-5.1.12/lib" />
-          <root url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/ntlm-auth-0.6/lib" />
-        </CLASSES>
+        <CLASSES />
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/mysql-connectorj-5.1.12/lib" recursive="false" />
-        <jarDirectory url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/ntlm-auth-0.6/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>
