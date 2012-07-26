@@ -2,8 +2,6 @@ package bumblebee
 
 import java.text.SimpleDateFormat
 import grails.converters.JSON
-import org.codehaus.groovy.grails.web.json.JSONObject
-
 
 class FeatureController {
 
@@ -12,7 +10,7 @@ class FeatureController {
     static defaultAction = "list"
 
     def list() {
-        [featureInstanceList: Feature.findAll({isDeleted == false})]
+        //[featureInstanceList: Feature.findAll({isDeleted == false})]
     }
 
     def create() {
@@ -51,21 +49,46 @@ class FeatureController {
 
     /***************** Partial View Actions Below ********************/
     def allFeatures() {
-        def featureRow = [
-                id: 1,
-                module: 'test module'
-        ]
-        def features = [aaData:[featureRow]]
+        def featureRows
+        def features = Feature.findAll({isDeleted == false})
 
-        render features as JSON
+        for (def feature in features.listIterator()){
+            def featureRow = [
+                    id: '<div class="font-small">' + feature.id + '</div>',
+                    module: '<div class="font-small">' + feature.module + '</div>',
+                    feature: '<div class="font-medium">' + buildNameAndLink(feature) + '</div>',
+                    description: buildDescription(feature),
+                    developer: buildUserList('developer', feature),
+                    sme: buildUserList('sme', feature),
+                    workEffort: createDoubleNumericOutput(buildWorkEffort(feature)),
+                    status: buildStatusList(feature),
+                    completed: buildCompletionDate(feature),
+                    bugs: buildFeatureBugList(feature),
+                    bugStatus: buildStatusList(feature),
+                    bugSeverity: buildFeatureBugSeverityMaximum(feature),
+                    thirdPartyCases: buildThirdPartyCases(feature)
+            ]
+            if (!featureRows)
+                featureRows = [aaData:[featureRow]]
+            else
+                featureRows.aaData.add(featureRow)
+        }
+
+        render featureRows as JSON
     }
 
+    private String createDoubleNumericOutput(double number){
+        return '<div class="center">' + number + '</div>'
+    }
 
-    /***************** Partial View Actions Below ********************/
+    private String buildNameAndLink(Feature featureInstance){
+        return link(controller:'featurePhaseGeneral', action: 'edit', params: [featureId: featureInstance.id, id: 1]) {featureInstance.name}
+    }
 
-    def userList(){
-        def userType = request.getAttribute("userType")
-        def featureInstance = request.getAttribute("feature")
+    private String buildDescription(Feature featureInstance){
+        return '<div class="font-small">' + featureInstance.description + '</div>'
+    }
+    private String buildUserList(String userType, Feature featureInstance){
         SortedSet uniqueUserSet = new TreeSet<String>()
         for(FeaturePhase featurePhase in featureInstance?.featurePhases){
             if (userType.equalsIgnoreCase("developer"))
@@ -81,21 +104,19 @@ class FeatureController {
         def userListWithTrailingComma = users.trim()
         if (userListWithTrailingComma.length() > 0)
             users = userListWithTrailingComma.substring(0, userListWithTrailingComma.length()-1)
-        render(users)
+        return '<div class="font-small">' + users + '</div>'
     }
 
-    def workEffort(){
-        def featureInstance = request.getAttribute("feature")
-        def workEffort = 0.0d;
+    private double buildWorkEffort(Feature featureInstance){
+        def workEffort = 0.0d
         for(FeaturePhase featurePhase in featureInstance.featurePhases){
             workEffort += (featurePhase.developmentWorkEffort) ? featurePhase.developmentWorkEffort : 0d
             workEffort += (featurePhase.testWorkEffort) ? featurePhase.testWorkEffort : 0d
         }
-        render(workEffort)
+        return workEffort
     }
 
-    def featureStatus(){
-        def featureInstance = request.getAttribute("feature")
+    private String buildStatusList(Feature featureInstance){
         def numberOfPhases = Phase.count()
         def status = ''
         def phaseId = 1
@@ -109,12 +130,12 @@ class FeatureController {
 
             phaseId++
         }
-        render(status.trim())
+        return '<div class="center font-medium">' + status.trim() + '</div>'
     }
 
-    def featureCompletion(){
+    private String buildCompletionDate(Feature featureInstance){
         Date mostRecentCompletion = null;
-        def featureInstance = request.getAttribute("feature")
+        def completionDate = ''
         def numberOfPhases = Phase.count()
         def numberOfFeaturePhases = FeaturePhase.countByFeature(featureInstance)
         if (numberOfFeaturePhases == numberOfPhases)  {
@@ -132,16 +153,15 @@ class FeatureController {
         }
         if (mostRecentCompletion){
             def simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy")
-            render(simpleDateFormat.format(mostRecentCompletion))
-        } else
-            render ''
+            completionDate = simpleDateFormat.format(mostRecentCompletion)
+        }
+        return '<div class="center font-small">' + completionDate + '</div>'
     }
 
-    def featureBugs(){
+    private String buildFeatureBugList(Feature featureInstance){
         def result = ''
 
         def phaseId = 1
-        def featureInstance = request.getAttribute("feature")
         for(Phase phase in Phase.findAll().sort()){
             def featurePhase = FeaturePhase.findByFeatureAndPhase(featureInstance, phase)
             if (featurePhase)
@@ -152,12 +172,11 @@ class FeatureController {
 
             phaseId++
         }
-        render result.trim()
+        return '<div class="center font-medium">' + result.trim() + '</div>'
     }
 
-    def featureBugStatus(){
+    private String buildFeatureBugStatusList(Feature featureInstance){
         def result = ''
-        def featureInstance = request.getAttribute("feature")
         MantisBugInformation leastCompleteBug = null
         for(Phase phase in Phase.findAll().sort()){
             def featurePhase = FeaturePhase.findByFeatureAndPhase(featureInstance, phase)
@@ -173,15 +192,13 @@ class FeatureController {
                 }
             }
         }
-
         if (leastCompleteBug != null)
             result = leastCompleteBug.statusAsString
-        render result.trim()
+        return '<div class="center font-medium">' + result.trim() + '</div>'
     }
 
-    def featureBugSeverity(){
+    private String buildFeatureBugSeverityMaximum(Feature featureInstance){
         def result = ''
-        def featureInstance = request.getAttribute("feature")
         MantisBugInformation mostServereBug = null
         for(Phase phase in Phase.findAll().sort()){
             def featurePhase = FeaturePhase.findByFeatureAndPhase(featureInstance, phase)
@@ -200,14 +217,13 @@ class FeatureController {
 
         if (mostServereBug != null)
             result = mostServereBug.severityAsString
-        render result.trim()
+        return '<div class="center font-small">' + result.trim() + '</div>'
     }
 
-    def featureThirdPartyCases(){
+    private String buildThirdPartyCases(Feature featureInstance){
         def result = ''
 
         def phaseId = 1
-        def featureInstance = request.getAttribute("feature")
         for(Phase phase in Phase.findAll().sort()){
             def featurePhase = FeaturePhase.findByFeatureAndPhase(featureInstance, phase)
             if (featurePhase)
@@ -218,7 +234,49 @@ class FeatureController {
 
             phaseId++
         }
-        render result.trim()
+        return '<div class="center font-medium">' + result.trim() + '</div>'
+    }
+    /***************** Partial View Actions Below ********************/
+
+    def userList(){
+        def userType = request.getAttribute("userType")
+        def featureInstance = request.getAttribute("feature")
+        render(buildUserList(userType, featureInstance))
+    }
+
+    def workEffort(){
+        def featureInstance = request.getAttribute("feature")
+        render(buildWorkEffort(featureInstance))
+    }
+
+    def featureStatus(){
+        def featureInstance = request.getAttribute("feature")
+        render(buildStatusList(featureInstance))
+    }
+
+    def featureCompletion(){
+        def featureInstance = request.getAttribute("feature")
+        render(buildCompletionDate(featureInstance))
+    }
+
+    def featureBugs(){
+        def featureInstance = request.getAttribute("feature")
+        render buildFeatureBugList(featureInstance)
+    }
+
+    def featureBugStatus(){
+        def featureInstance = request.getAttribute("feature")
+        render buildFeatureBugStatusList(featureInstance)
+    }
+
+    def featureBugSeverity(){
+        def featureInstance = request.getAttribute("feature")
+        render buildFeatureBugSeverityMaximum(featureInstance)
+    }
+
+    def featureThirdPartyCases(){
+        def featureInstance = request.getAttribute("feature")
+        render buildThirdPartyCases(featureInstance)
     }
 
 

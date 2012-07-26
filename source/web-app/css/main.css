@@ -275,6 +275,14 @@ table.featureInformation .dataColumn{
 
 }
 
+.font-medium{
+    font-size: 1.0em;
+}
+.font-small{
+    font-size: 0.9em;
+}
+
+
 .content {
 }
 

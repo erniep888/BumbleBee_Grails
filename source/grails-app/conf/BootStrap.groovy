@@ -14,6 +14,7 @@ import bumblebee.ActiveDirectoryService
 import bumblebee.ActiveDirectoryUserInformation
 import org.springframework.web.context.WebApplicationContext
 import org.springframework.web.context.support.WebApplicationContextUtils
+import bumblebee.Contributor
 
 class BootStrap {
 
@@ -25,10 +26,10 @@ class BootStrap {
         createFeatureStatuses()
         createFeaturePhaseCaseStatuses()
         createVendors()
-        createWorkers(servletContext)
-        createAdministrators(servletContext)
-
-        createManyFeatures()
+        //createContributors(servletContext)
+        //createAdministrators(servletContext)
+        loadFeaturesFromCSV(servletContext)
+        //createManyFeatures()
     }
     def destroy = {
     }
@@ -44,10 +45,10 @@ class BootStrap {
     private void createActiveDirectorySettings(){
         if (ActiveDirectorySettings.count() == 0) {
             ActiveDirectorySettings activeDirectorySettings = new ActiveDirectorySettings(
-                    hostname: 'ad', port: '389', bindDn: 'test@scrumtime.com',
-                    bindPassword: 'scrumtime1',
-                    keystorePath: /\\share1\jssecacerts/,
-                    ldapSearchString: "DC=scrumtime,DC=com"
+                    hostname: 'ldap', port: '389', bindDn: 'oversightdorservice@martinmarietta.com',
+                    bindPassword: 'oversightdorservice1',
+                    keystorePath: /\\raleigh2\ERP&amp;OPS\Projects\Daily Operating Report\Development\certificates\jssecacerts/,
+                    ldapSearchString: "DC=martinmarietta,DC=com"
 
             )
             activeDirectorySettings.save(flush: true)
@@ -59,18 +60,20 @@ class BootStrap {
             WebApplicationContext appCtx = WebApplicationContextUtils.getWebApplicationContext(servletContext)
             ActiveDirectoryService activeDirectoryService = appCtx.getBean('activeDirectoryService')
             ActiveDirectoryUserInformation userInfo = activeDirectoryService.retrieveUserInformation('pascherk')
-            Administrator administrator1 = new Administrator(username: 'pascherk', fullName: userInfo.givenName + ' ' + userInfo.lastName)
-            administrator1.save(flush: true)
+            Administrator administrator = new Administrator(username: 'pascherk',
+                    fullName: userInfo.givenName + ' ' + userInfo.lastName, emailAddress: userInfo.emailAddress)
+            administrator.save(flush: true)
         }
     }
 
-    private void createWorkers(def servletContext){
+    private void createContributors(def servletContext){
         if (Contributor.count() == 0){
             WebApplicationContext appCtx = WebApplicationContextUtils.getWebApplicationContext(servletContext)
             ActiveDirectoryService activeDirectoryService = appCtx.getBean('activeDirectoryService')
             ActiveDirectoryUserInformation userInfo = activeDirectoryService.retrieveUserInformation('pascherk')
-            Contributor contributor = new Contributor(username: 'pascherk', fullName: userInfo.givenName + ' ' + userInfo.lastName)
-            contributor.save(flush: true)
+            Contributor contributor1 = new Contributor(username: 'pascherk',
+                    fullName: userInfo.givenName + ' ' + userInfo.lastName, emailAddress: userInfo.emailAddress)
+            contributor1.save(flush: true)
         }
     }
 
@@ -96,21 +99,21 @@ class BootStrap {
 
     private void createFeatureStatuses(){
         if (FeaturePhaseStatus.count() == 0){
-            def featureStatus10 = new FeaturePhaseStatus(priority: 10, status: "not started")
+            def featureStatus10 = new FeaturePhaseStatus(priority: 10, shortReference: "a", status: "[a] not started")
             featureStatus10.save()
-            def featureStatus20 = new FeaturePhaseStatus(priority: 20, status: "in development")
+            def featureStatus20 = new FeaturePhaseStatus(priority: 20, shortReference: "b", status: "[b] in development")
             featureStatus20.save()
-            def featureStatus30 = new FeaturePhaseStatus(priority: 30, status: "ready for production")
+            def featureStatus30 = new FeaturePhaseStatus(priority: 30, shortReference: "c", status: "[c] ready for production")
             featureStatus30.save()
-            def featureStatus40 = new FeaturePhaseStatus(priority: 40, status: "in rework")
+            def featureStatus40 = new FeaturePhaseStatus(priority: 40, shortReference: "d", status: "[d] in rework")
             featureStatus40.save()
-            def featureStatus50 = new FeaturePhaseStatus(priority: 50, status: "ready for test")
+            def featureStatus50 = new FeaturePhaseStatus(priority: 50, shortReference: "e", status: "[e] ready for test")
             featureStatus50.save()
-            def featureStatus60 = new FeaturePhaseStatus(priority: 60, status: "in test")
+            def featureStatus60 = new FeaturePhaseStatus(priority: 60, shortReference: "f", status: "[f] in test")
             featureStatus60.save()
-            def featureStatus70 = new FeaturePhaseStatus(priority: 70, status: "failed")
+            def featureStatus70 = new FeaturePhaseStatus(priority: 70, shortReference: "g", status: "[g] failed")
             featureStatus70.save()
-            def featureStatus80 = new FeaturePhaseStatus(priority: 80, status: "completed")
+            def featureStatus80 = new FeaturePhaseStatus(priority: 80, shortReference: "h", status: "[h] completed")
             featureStatus80.save(flush: true)
         }
     }
@@ -119,13 +122,13 @@ class BootStrap {
         if (Feature.count() == 0){
             def phase1 = Phase.findById(1)
             def project = Project.findById(1)
-            for(int i = 0; i < 100; i++){
+            for(int i = 0; i < 10; i++){
                 Feature feature = new Feature(project: project, category: "Inventory",
                         description: "Inventory master " + i, name: "R57204" + i, isDeleted: false,
-                        featurePhases: new TreeSet<FeaturePhase>())
+                        featurePhases: new TreeSet<FeaturePhase>(), module: "Inventory")
                 feature.save(flush: true)
                 def featurePhaseGeneral = new FeaturePhase(feature: feature, phase: phase1, status: FeaturePhaseStatus.findByPriority(10),
-                        developer: Worker.findById(1) ,links: new TreeSet<Link>(), isOffShore: false)
+                        developer: Contributor.findById(1) ,links: new TreeSet<Link>())
                 featurePhaseGeneral.save(flush: true)
 
                 def link = new Link(name: "MyPortal", href: "http://myportal", inNewWindow: true, featurePhase: featurePhaseGeneral)
@@ -139,6 +142,62 @@ class BootStrap {
         }
     }
 
+    private void loadFeaturesFromCSV(def servletContext){
+        WebApplicationContext appCtx = WebApplicationContextUtils.getWebApplicationContext(servletContext)
+        ActiveDirectoryService activeDirectoryService = appCtx.getBean('activeDirectoryService')
+
+
+        def phase1 = Phase.findById(1)
+        def project = Project.findById(1)
+        int x = 1
+        try{
+            new File("d:/Grails-Work/Sims_Upload.csv").splitEachLine(",") {fields ->
+                Feature feature = new Feature(project: project, category: fields[2],
+                        description: fields[1], name: fields[0], isDeleted: false,
+                        featurePhases: new TreeSet<FeaturePhase>(), module: fields[3])
+                feature.save(flush: true)
+                def comments = fields[4]
+                def offshore = (fields[5] == 'S')
+
+                def developer =(Contributor.findByFullName(fields[6]))?:null
+                if (developer == null){
+                    def names = fields[6].split()
+                    List<ActiveDirectoryUserInformation> userInfos = activeDirectoryService.findUsers('',names[0], names[1] )
+                    if (userInfos.size() == 1){
+                        def contributor = new Contributor(username: userInfos.first().userPrincipalName,
+                                fullName: fields[6], emailAddress: userInfos.first().emailAddress)
+                        contributor.save(flush: true)
+                        developer = contributor
+                    }
+                }
+                def sme = (Contributor.findByFullName(fields[7]))?:null
+                if (sme == null){
+                    def names = fields[7].split()
+                    List<ActiveDirectoryUserInformation> userInfos = activeDirectoryService.findUsers('',names[0], names[1] )
+                    if (userInfos.size() == 1){
+                        def contributor = new Contributor(username: userInfos.first().userPrincipalName,
+                                fullName: fields[7], emailAddress: userInfos.first().emailAddress)
+                        contributor.save(flush: true)
+                        sme = contributor
+                    }
+                }
+                def devEffort = fields[8]
+                def testEffort = fields[9]
+                def featurePhaseGeneral = new FeaturePhase(feature: feature, phase: phase1, status: FeaturePhaseStatus.findByPriority(10),
+                        developer: developer, tester: sme, devEffort: devEffort, testEffort: testEffort, isOffShore: offshore, comments: comments)
+                featurePhaseGeneral.validate()
+                featurePhaseGeneral.save(flush: true)
+
+                feature.featurePhases.add(featurePhaseGeneral)
+                feature.save(flush: true)
+//                if (x.equals(270))
+//                    target = x
+                x++
+            }
+        } catch (Exception ex){
+            System.out.println(ex);
+        }
+    }
 
 
     private void createFeaturePhaseCaseStatuses(){

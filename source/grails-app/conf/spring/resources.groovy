@@ -1,11 +1,11 @@
 import org.springframework.jdbc.datasource.DriverManagerDataSource
 // Place your Spring DSL code here
 beans = {
-    dataSourceMantis = {
+    dataSourceMantis(DriverManagerDataSource) {
         driverClassName = "com.mysql.jdbc.Driver"
-        url = "jdbc:mysql://test/mantis"
+        url = "jdbc:mysql://ralappphp01t/mantis"
         username = "readonly"
-        password = "readonly1"
+        password = "r3ad0nly"
     }
 
 }
