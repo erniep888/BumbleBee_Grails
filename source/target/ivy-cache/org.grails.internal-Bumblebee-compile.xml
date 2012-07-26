@@ -7,31 +7,8 @@
 		revision="0.9"
 		conf="compile"
 		confs="compile"
-		date="20120726171919"/>
+		date="20120726191612"/>
 	<dependencies>
-		<module organisation="org.grails.plugins" name="cache">
-			<revision name="1.0.0" status="release" pubdate="20120704192536" resolver="cache" artresolver="cache" homepage="http://grails.org/plugin/cache" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="54">
-				<license name="Apache License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="no" details="" size="2928" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.grails.plugins\cache\ivy-1.0.0.xml" searched="false" origin-is-local="false" origin-location="http://plugins.grails.org/grails-cache/tags/RELEASE_1_0_0/cache-1.0.0.pom"/>
-				<caller organisation="org.grails.internal" name="Bumblebee" conf="default, compile" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="0.9"/>
-				<artifacts>
-					<artifact name="cache" type="zip" ext="zip" status="no" details="" size="66720" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.grails.plugins\cache\zips\cache-1.0.0.zip">
-						<origin-location is-local="false" location="http://plugins.grails.org/grails-cache/tags/RELEASE_1_0_0/grails-cache-1.0.0.zip"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.grails.plugins" name="webxml">
-			<revision name="1.4.1" status="release" pubdate="20120611201517" resolver="cache" artresolver="cache" downloaded="false" searched="false" default="true" conf="default, master(*), compile(*), runtime(*)" position="55">
-				<metadata-artifact status="no" details="" size="424" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.grails.plugins\webxml\ivy-1.4.1.xml" searched="false" origin-is-local="false" origin-location="UNKNOWN"/>
-				<caller organisation="org.grails.plugins" name="cache" conf="default, compile, runtime, master" rev="1.4.1" rev-constraint-default="1.4.1" rev-constraint-dynamic="1.4.1" callerrev="1.0.0"/>
-				<artifacts>
-					<artifact name="webxml" type="zip" ext="zip" status="no" details="" size="10699" time="0" location="C:\Git\BumbleBee_Grails\source\target\ivy-cache\org.grails.plugins\webxml\zips\webxml-1.4.1.zip">
-						<origin-location is-local="true" location="C:\Java\Grails\grails-2.0.3\plugins\webxml-1.4.1.zip"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
 		<module organisation="org.grails" name="grails-datastore-simple">
 			<revision name="1.0.4.RELEASE" status="release" pubdate="20120402155041" resolver="cache" artresolver="cache" homepage="http://grails.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="53">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
