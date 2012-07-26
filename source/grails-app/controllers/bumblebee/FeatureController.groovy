@@ -2,6 +2,7 @@ package bumblebee
 
 import java.text.SimpleDateFormat
 import grails.converters.JSON
+import grails.plugin.cache.Cacheable
 
 class FeatureController {
 
@@ -48,6 +49,7 @@ class FeatureController {
     }
 
     /***************** Partial View Actions Below ********************/
+    @Cacheable('featureList')
     def allFeatures() {
         def featureRows
         def features = Feature.findAll({isDeleted == false})

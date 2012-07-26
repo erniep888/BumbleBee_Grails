@@ -4,7 +4,7 @@
 		module="Bumblebee"
 		revision="0.9"
 		status="release"
-		publication="20120726171917"
+		publication="20120726191610"
 		default="true"
 	/>
 	<configurations>
@@ -652,6 +652,12 @@
 			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
+		<dependency org="org.grails.plugins" name="cache" rev="1.0.0" force="true" conf="runtime->default">
+			<artifact name="cache" type="zip" ext="zip" conf=""/>
+			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
+			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
+			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
 		<dependency org="org.apache.tomcat" name="tomcat-catalina-ant" rev="7.0.25" transitive="false" conf="build->default">
 			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
@@ -750,12 +756,6 @@
 			<exclude org="net.sf.ehcache" module="ehcache-core" name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
 		<dependency org="net.sf.ehcache" name="ehcache-core" rev="2.4.6" conf="runtime->default">
-			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-		</dependency>
-		<dependency org="org.grails.plugins" name="cache" rev="1.0.0" conf="compile->default">
-			<artifact name="cache" type="zip" ext="zip" conf=""/>
 			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
