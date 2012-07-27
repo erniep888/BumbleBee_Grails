@@ -18,12 +18,6 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/cache-1.0.0">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/cache-1.0.0/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/cache-1.0.0/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/cache-1.0.0/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/cache-1.0.0/grails-app/taglib" isTestSource="false" />
-    </content>
     <content url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/cache-ehcache-1.0.0">
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/cache-ehcache-1.0.0/src/java" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.3/projects/Bumblebee/plugins/cache-ehcache-1.0.0/src/groovy" isTestSource="false" />
