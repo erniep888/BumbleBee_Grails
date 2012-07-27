@@ -7,7 +7,7 @@
 		revision="0.9"
 		conf="provided"
 		confs="provided"
-		date="20120726191611"/>
+		date="20120727104524"/>
 	<dependencies>
 		<module organisation="org.grails.plugins" name="webxml">
 			<revision name="1.4.1" status="release" pubdate="20120611201517" resolver="cache" artresolver="cache" downloaded="false" searched="false" default="true" conf="default" position="3">
