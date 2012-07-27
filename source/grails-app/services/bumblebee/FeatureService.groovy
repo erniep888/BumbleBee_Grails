@@ -1,88 +1,12 @@
 package bumblebee
 
-import java.text.SimpleDateFormat
 import grails.converters.JSON
-import org.springframework.cache.annotation.Cacheable
+import java.text.SimpleDateFormat
 
-class FeatureController {
+class FeatureService {
+    static transactional = false
 
-    def mantisIntegrationService
-    def springcacheService
-    def featureService
-
-    def featureListJsonKey = 'featureListJson'
-    def jsonRefreshDate = 'jsonRefreshDate'
-
-    static defaultAction = "list"
-
-    def list() {
-        //[featureInstanceList: Feature.findAll({isDeleted == false})]
-    }
-
-    def create() {
-        [featureInstance: new Feature()]
-    }
-
-    def edit(long id) {
-        [featureInstance: Feature.findById(id)]
-    }
-
-    def deleteWarn(long id) {
-        [featureInstance: Feature.findById(id)]
-    }
-
-    def delete(long id) {
-        def feature = Feature.findById(id)
-        feature.isDeleted = true
-        feature.save(flush: true)
-        session.putValue(jsonRefreshDate, new Date())
-        redirect(action: list())
-    }
-
-    def save() {
-        def feature = new Feature(params)
-        feature.project = Project.findById(1)
-        feature.validate()
-        if (feature.hasErrors()){
-            if (!feature || !feature.id)
-                render(view: "create", model: [featureInstance: feature])
-            else
-                render(view: "edit", model: [featureInstance: feature])
-        } else {
-            feature.save(flush: true)
-            session.putValue(jsonRefreshDate, new Date())
-            redirect(controller: "FeaturePhaseGeneral", params: [featureId: feature.id, id: 1])
-        }
-    }
-
-    /***************** Partial View Actions Below ********************/
-    def allFeatures() {
-        // TODO: this is not the proper way to cache the json result, but the spring-cache was not working in a timely fashion
-        JSON featureListJson
-        Date jsonRefresh = session.getAt(jsonRefreshDate)
-        if (jsonRefresh){
-            def now = new Date()
-            if (now.after(jsonRefresh)){
-                featureListJson = loadFeatureListIntoSession()
-            } else {
-                featureListJson = session.getAt(featureListJsonKey)
-            }
-        }  else {
-            featureListJson = loadFeatureListIntoSession(featureListJsonKey, jsonRefreshDate)
-        }
-        render(featureListJson)
-    }
-
-    public JSON loadFeatureListIntoSession(){
-        Calendar calendar = Calendar.getInstance()
-        def featureListJson = getFeatureList()
-        session.putValue(featureListJsonKey, featureListJson )
-        calendar.add(Calendar.MINUTE, 15)
-        session.putValue(jsonRefreshDate, calendar.time)
-        return featureListJson
-    }
-
-    private JSON getFeatureList(){
+    public JSON getFeatureList(){
         def featureRows
         def features = Feature.findAll({isDeleted == false})
 
@@ -109,6 +33,7 @@ class FeatureController {
         }
         return featureRows as JSON
     }
+
 
     private String createDoubleNumericOutput(double number){
         return '<div class="center">' + number + '</div>'
@@ -269,48 +194,4 @@ class FeatureController {
         }
         return '<div class="center font-medium">' + result.trim() + '</div>'
     }
-    /***************** Partial View Actions Below ********************/
-
-    def userList(){
-        def userType = request.getAttribute("userType")
-        def featureInstance = request.getAttribute("feature")
-        render(buildUserList(userType, featureInstance))
-    }
-
-    def workEffort(){
-        def featureInstance = request.getAttribute("feature")
-        render(buildWorkEffort(featureInstance))
-    }
-
-    def featureStatus(){
-        def featureInstance = request.getAttribute("feature")
-        render(buildStatusList(featureInstance))
-    }
-
-    def featureCompletion(){
-        def featureInstance = request.getAttribute("feature")
-        render(buildCompletionDate(featureInstance))
-    }
-
-    def featureBugs(){
-        def featureInstance = request.getAttribute("feature")
-        render buildFeatureBugList(featureInstance)
-    }
-
-    def featureBugStatus(){
-        def featureInstance = request.getAttribute("feature")
-        render buildFeatureBugStatusList(featureInstance)
-    }
-
-    def featureBugSeverity(){
-        def featureInstance = request.getAttribute("feature")
-        render buildFeatureBugSeverityMaximum(featureInstance)
-    }
-
-    def featureThirdPartyCases(){
-        def featureInstance = request.getAttribute("feature")
-        render buildThirdPartyCases(featureInstance)
-    }
-
-
 }

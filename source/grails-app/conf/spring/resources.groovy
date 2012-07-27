@@ -1,4 +1,5 @@
 import org.springframework.jdbc.datasource.DriverManagerDataSource
+import org.springframework.cache.ehcache.EhCacheFactoryBean
 // Place your Spring DSL code here
 beans = {
     dataSourceMantis(DriverManagerDataSource) {

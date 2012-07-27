@@ -55,7 +55,7 @@
 <g:javascript src="jquery.dataTables.js"/>
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
-        var allFeaturesLink = $('#allFeaturesLink').text() + '?'+ Math.round(new Date().getTime());
+        var allFeaturesLink = $('#allFeaturesLink').text(); // + '?'+ Math.round(new Date().getTime());
         $('#example').dataTable({
             "aaSorting": [[0, "asc"]],
             "sPaginationType": "full_numbers",
