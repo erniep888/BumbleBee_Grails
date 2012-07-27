@@ -2,7 +2,7 @@ package bumblebee
 
 import java.text.SimpleDateFormat
 import grails.converters.JSON
-import grails.plugin.cache.Cacheable
+import org.springframework.cache.annotation.Cacheable
 
 class FeatureController {
 

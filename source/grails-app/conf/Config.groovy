@@ -94,3 +94,13 @@ log4j = {
 
 
 //log4j.logger.org.springframework.security='off,stdout'
+
+grails.cache.config = {
+    cache {
+        name 'featureList'
+        external false
+        overflowToDisk true
+        maxElementsInMemory 10000
+        maxElementsOnDisk 10000000
+    }
+}

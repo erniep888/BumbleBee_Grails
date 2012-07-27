@@ -28,7 +28,7 @@ class BootStrap {
         createVendors()
         //createContributors(servletContext)
         //createAdministrators(servletContext)
-        loadFeaturesFromCSV(servletContext)
+        //loadFeaturesFromCSV(servletContext)
         //createManyFeatures()
     }
     def destroy = {

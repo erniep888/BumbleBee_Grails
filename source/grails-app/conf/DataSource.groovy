@@ -20,7 +20,7 @@ environments {
             pooled = true
             driverClassName = "com.mysql.jdbc.Driver"
             dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-            dbCreate = "create-drop"
+            dbCreate = "update"
             url = "jdbc:mysql://localhost/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
             username = "bumblebeeuser"
             password = "bumbl3"
