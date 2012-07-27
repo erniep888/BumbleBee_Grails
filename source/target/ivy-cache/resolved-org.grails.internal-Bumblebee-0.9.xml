@@ -4,7 +4,7 @@
 		module="Bumblebee"
 		revision="0.9"
 		status="release"
-		publication="20120727130605"
+		publication="20120727132628"
 		default="true"
 	/>
 	<configurations>
@@ -628,18 +628,6 @@
 			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
-		<dependency org="org.grails.plugins" name="springcache" rev="1.3.1" force="true" conf="runtime->default">
-			<artifact name="springcache" type="zip" ext="zip" conf=""/>
-			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-		</dependency>
-		<dependency org="org.grails.plugins" name="mysql-connectorj" rev="5.1.12" force="true" conf="runtime->default">
-			<artifact name="mysql-connectorj" type="zip" ext="zip" conf=""/>
-			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-		</dependency>
 		<dependency org="org.grails.plugins" name="jdbc-pool" rev="1.0.9.3" force="true" conf="runtime->default">
 			<artifact name="jdbc-pool" type="zip" ext="zip" conf=""/>
 			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
@@ -652,14 +640,8 @@
 			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
-		<dependency org="org.grails.plugins" name="cache-ehcache" rev="1.0.0" force="true" conf="runtime->default">
-			<artifact name="cache-ehcache" type="zip" ext="zip" conf=""/>
-			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-		</dependency>
-		<dependency org="org.grails.plugins" name="cache" rev="1.0.0" force="true" conf="runtime->default">
-			<artifact name="cache" type="zip" ext="zip" conf=""/>
+		<dependency org="org.grails.plugins" name="mysql-connectorj" rev="5.1.12" force="true" conf="runtime->default">
+			<artifact name="mysql-connectorj" type="zip" ext="zip" conf=""/>
 			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
@@ -698,13 +680,6 @@
 			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-		</dependency>
-		<dependency org="net.sf.ehcache" name="ehcache-web" rev="2.0.3" conf="runtime->default">
-			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="*" module="ehcache-core" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="*" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
 		<dependency org="org.grails.plugins" name="webxml" rev="1.4.1" conf="provided->default">
 			<artifact name="webxml" type="zip" ext="zip" conf=""/>
@@ -767,11 +742,6 @@
 			<exclude org="org.hibernate" module="hibernate-core" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="net.sf.ehcache" module="ehcache" name="*" type="*" ext="*" conf="" matcher="exact"/>
 			<exclude org="net.sf.ehcache" module="ehcache-core" name="*" type="*" ext="*" conf="" matcher="exact"/>
-		</dependency>
-		<dependency org="net.sf.ehcache" name="ehcache-core" rev="2.4.6" conf="runtime->default">
-			<exclude org="xml-apis" module="xml-apis" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xml-apis" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
-			<exclude org="xerces" module="xmlParserAPIs" name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
 	</dependencies>
 </ivy-module>

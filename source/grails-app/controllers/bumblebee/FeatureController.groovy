@@ -2,13 +2,10 @@ package bumblebee
 
 import java.text.SimpleDateFormat
 import grails.converters.JSON
-import org.springframework.cache.annotation.Cacheable
 
 class FeatureController {
 
     def mantisIntegrationService
-    def springcacheService
-    def featureService
 
     def featureListJsonKey = 'featureListJson'
     def jsonRefreshDate = 'jsonRefreshDate'
@@ -68,7 +65,7 @@ class FeatureController {
                 featureListJson = session.getAt(featureListJsonKey)
             }
         }  else {
-            featureListJson = loadFeatureListIntoSession(featureListJsonKey, jsonRefreshDate)
+            featureListJson = loadFeatureListIntoSession()
         }
         render(featureListJson)
     }
