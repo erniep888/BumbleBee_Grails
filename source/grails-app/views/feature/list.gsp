@@ -78,7 +78,8 @@
             ],
             "bStateSave": true,
             "bRetrieve" : true,
-            "bProcessing" : true
+            "bProcessing" : true,
+            "bServerSide" : true
         } );
     } );
 

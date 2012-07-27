@@ -6,6 +6,7 @@ import grails.converters.JSON
 class FeatureController {
 
     def mantisIntegrationService
+    def cacheService
 
     def featureListJsonKey = 'featureListJson'
     def jsonRefreshDate = 'jsonRefreshDate'
@@ -13,7 +14,9 @@ class FeatureController {
     static defaultAction = "list"
 
     def list() {
-        //[featureInstanceList: Feature.findAll({isDeleted == false})]
+        if (cacheService.lookup == null) {
+            cacheService.lookup = {loadFeatureList()}
+        }
     }
 
     def create() {
@@ -32,7 +35,7 @@ class FeatureController {
         def feature = Feature.findById(id)
         feature.isDeleted = true
         feature.save(flush: true)
-        session.putValue(jsonRefreshDate, new Date())
+        cacheService.invalidate()
         redirect(action: list())
     }
 
@@ -47,41 +50,48 @@ class FeatureController {
                 render(view: "edit", model: [featureInstance: feature])
         } else {
             feature.save(flush: true)
-            session.putValue(jsonRefreshDate, new Date())
+            cacheService.invalidate()
             redirect(controller: "FeaturePhaseGeneral", params: [featureId: feature.id, id: 1])
         }
     }
 
+    def refreshFeatureList(){
+        cacheService.invalidate()
+        redirect(action: list())
+    }
+
     /***************** Partial View Actions Below ********************/
     def allFeatures() {
-        // TODO: this is not the proper way to cache the json result, but the spring-cache was not working in a timely fashion
-        JSON featureListJson
-        Date jsonRefresh = session.getAt(jsonRefreshDate)
-        if (jsonRefresh){
-            def now = new Date()
-            if (now.after(jsonRefresh)){
-                featureListJson = loadFeatureListIntoSession()
-            } else {
-                featureListJson = session.getAt(featureListJsonKey)
-            }
-        }  else {
-            featureListJson = loadFeatureListIntoSession()
-        }
+        // TODO: this is not the proper way to cache the json result, but the spring-cache was not working
+        System.out.println(params)
+        JSON featureListJson = cacheService.get(featureListJsonKey)
+//        Date jsonRefresh = cacheService.get(jsonRefreshDate)
+//        if (jsonRefresh){
+//            def now = new Date()
+//            if (now.after(jsonRefresh)){
+//                featureListJson = loadFeatureListIntoSession()
+//            } else {
+//                featureListJson = cacheService.get(featureListJsonKey)
+//            }
+//        }  else {
+//            featureListJson = loadFeatureListIntoSession()
+//        }
+
         render(featureListJson)
     }
 
-    public JSON loadFeatureListIntoSession(){
+    public JSON loadFeatureList(){
         Calendar calendar = Calendar.getInstance()
         def featureListJson = getFeatureList()
-        session.putValue(featureListJsonKey, featureListJson )
-        calendar.add(Calendar.MINUTE, 15)
-        session.putValue(jsonRefreshDate, calendar.time)
+        //cacheService.set(featureListJsonKey, featureListJson )
+        //calendar.add(Calendar.MINUTE, 120)
+        //cacheService.set(jsonRefreshDate, calendar.time)
         return featureListJson
     }
 
     private JSON getFeatureList(){
         def featureRows
-        def features = Feature.findAll({isDeleted == false})
+        def features = Feature.findAllByIsDeleted(false, [max: 10, offset: 20])
 
         for (def feature in features.listIterator()){
             def featureRow = [

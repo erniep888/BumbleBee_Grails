@@ -6,7 +6,7 @@ dataSource {
 }
 hibernate {
     cache.use_second_level_cache = true
-    cache.use_query_cache = true
+    cache.use_query_cache = false
     cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'
 }
 // environment specific settings
@@ -21,7 +21,7 @@ environments {
             driverClassName = "com.mysql.jdbc.Driver"
             dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
             dbCreate = "update"
-            url = "jdbc:mysql://localhost/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://raldorweb01/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
             username = "bumblebeeuser"
             password = "bumbl3"
             properties {

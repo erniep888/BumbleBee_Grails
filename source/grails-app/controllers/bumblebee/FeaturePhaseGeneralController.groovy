@@ -2,6 +2,7 @@ package bumblebee
 
 class FeaturePhaseGeneralController extends FeaturePhaseController {
     def activeDirectoryService
+    def cacheService
 
     def save() {
         def justPostedFeaturePhase = new FeaturePhase(params)
@@ -36,6 +37,7 @@ class FeaturePhaseGeneralController extends FeaturePhaseController {
                 render(view: "edit", model: [featurePhaseInstance: selectedFeaturePhase], params: params)
         } else {
             selectedFeaturePhase.save(flush: true)
+            cacheService.invalidate()
             redirect(controller: "FeaturePhaseGeneral", action:"edit", params: [featureId: params.featureId, id: params.id])
         }
     }

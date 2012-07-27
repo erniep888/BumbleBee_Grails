@@ -2,6 +2,7 @@ package bumblebee
 
 class FeaturePhaseBugController extends FeaturePhaseController{
     def mantisIntegrationService
+    def cacheService
 
     def editBug(long featureId, long bugId, long id) {
         def feature = Feature.findById(params.featureId)
@@ -49,12 +50,14 @@ class FeaturePhaseBugController extends FeaturePhaseController{
             if (existingBug){     // it does exist
                 existingBug.bugSystemId = postedFeaturePhaseBug.bugSystemId
                 existingBug.save(flush: true)
+                cacheService.invalidate()
             } else {         // it is new
                 postedFeaturePhaseBug.save(flush: true)
                 if (!selectedFeaturePhase.bugs)
                     selectedFeaturePhase.bugs = new TreeSet<FeaturePhaseBug>()
                 selectedFeaturePhase.bugs.add(postedFeaturePhaseBug)
                 selectedFeaturePhase.save(flush: true)
+                cacheService.invalidate()
             }
             redirect(action: "edit", params: params)
         }
