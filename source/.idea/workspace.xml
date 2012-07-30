@@ -5,10 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/images/favicon.ico" afterPath="$PROJECT_DIR$/web-app/images/favicon.ico" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/images/logo.png" afterPath="$PROJECT_DIR$/web-app/images/logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseBugController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseBugController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseCaseController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseCaseController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/bumblebee/CacheService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/bumblebee/CacheService.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/feature/list.gsp" afterPath="$PROJECT_DIR$/grails-app/views/feature/list.gsp" />
     </list>
     <ignored path="BumbleBee.iws" />
@@ -68,82 +64,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FeaturePhaseBugController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseBugController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="71" selection-start="1248" selection-end="1248" vertical-scroll-proportion="-17.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FeaturePhaseAttachmentController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseAttachmentController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="6" selection-start="77" selection-end="77" vertical-scroll-proportion="-2.9565217">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FeaturePhaseCaseController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseCaseController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="51" selection-start="1448" selection-end="1448" vertical-scroll-proportion="-10.521739">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FeaturePhaseController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="472" selection-end="472" vertical-scroll-proportion="-9.652174">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CacheService.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/services/bumblebee/CacheService.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="39" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.gsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="list.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/feature/list.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="62" selection-start="3381" selection-end="3381" vertical-scroll-proportion="0.610586">
+            <state line="82" column="58" selection-start="3050" selection-end="3050" vertical-scroll-proportion="1.7346939">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeaturePhaseGeneralController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseGeneralController.groovy">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web-app/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="21" selection-start="139" selection-end="139" vertical-scroll-proportion="11.086957">
+            <state line="486" column="7" selection-start="7462" selection-end="7468" vertical-scroll-proportion="-7.04">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeaturePhaseLinkController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseLinkController.groovy">
+      <file leaf-file-name="FeatureController.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="46" selection-start="857" selection-end="857" vertical-scroll-proportion="-14.043478">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FeaturePhaseTestController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseTestController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="6" selection-start="112" selection-end="112" vertical-scroll-proportion="-2.9565217">
+            <state line="119" column="49" selection-start="3685" selection-end="3685" vertical-scroll-proportion="0.1373913">
               <folding />
             </state>
           </provider>
@@ -172,12 +114,12 @@
         <option value="$PROJECT_DIR$/grails-app/views/administrationDeletedObject/list.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/administrationDeletedObject/_form.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/bumblebee/AdministrationDeletedObjectController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseBugController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseCaseController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeaturePhaseController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/bumblebee/CacheService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/feature/list.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy" />
       </list>
     </option>
   </component>
@@ -582,13 +524,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/views/administrationDeletedObject/list.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="81" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/administrationDeletedObject/_form.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="36" selection-start="757" selection-end="758" vertical-scroll-proportion="0.0">
@@ -616,13 +551,6 @@
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/AdministrationDeletedObjectController.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="0" selection-start="907" selection-end="907" vertical-scroll-proportion="-22.913044">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="43" selection-start="8927" selection-end="8927" vertical-scroll-proportion="0.44821092">
           <folding />
         </state>
       </provider>
@@ -690,9 +618,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="486" column="7" selection-start="7462" selection-end="7468" vertical-scroll-proportion="-7.04">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/feature/list.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="62" selection-start="3381" selection-end="3381" vertical-scroll-proportion="0.610586">
+        <state line="82" column="58" selection-start="3050" selection-end="3050" vertical-scroll-proportion="1.7346939">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/bumblebee/FeatureController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="49" selection-start="3685" selection-end="3685" vertical-scroll-proportion="0.1373913">
           <folding />
         </state>
       </provider>

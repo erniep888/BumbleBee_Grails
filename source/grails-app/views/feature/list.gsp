@@ -81,13 +81,13 @@
             "iDisplayLength" : 25 ,
             "sAjaxSource" :  allFeaturesLink,
             "aoColumns": [
-                {"mDataProp": "id", "sType": "numeric"},
+                {"mDataProp": "id", "sType": "numeric", "sClass": "center"},
                 {"mDataProp": "feature"},
                 {"mDataProp": "module"},
                 {"mDataProp": "description"},
                 {"mDataProp": "developer"},
                 {"mDataProp": "sme"},
-                {"mDataProp": "workEffort", "sType": "numeric"},
+                {"mDataProp": "workEffort", "sType": "numeric", "sClass": "center"},
                 {"mDataProp": "status"},
                 {"mDataProp": "completed"},
                 {"mDataProp": "bugs"},
@@ -113,13 +113,13 @@
                 "iDisplayLength" : 25 ,
                 "sAjaxSource" :  allFeaturesLink,
                 "aoColumns": [
-                    {"mDataProp": "id"},
+                    {"mDataProp": "id", "sType": "numeric", "sClass": "center"},
                     {"mDataProp": "feature"},
                     {"mDataProp": "module"},
                     {"mDataProp": "description"},
                     {"mDataProp": "developer"},
                     {"mDataProp": "sme"},
-                    {"mDataProp": "workEffort"}
+                    {"mDataProp": "workEffort", "sType": "numeric", "sClass": "center"}
                 ],
                 "bStateSave": true,
                 //"bRetrieve" : true,

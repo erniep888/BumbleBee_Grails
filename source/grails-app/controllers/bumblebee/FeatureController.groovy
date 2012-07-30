@@ -96,7 +96,7 @@ class FeatureController {
 
         for (def feature in features.listIterator()){
             def featureRow = [
-                    id: '<div class="font-small">' + feature.id + '</div>',
+                    id:  feature.id,
                     module: '<div class="font-small">' + feature.module + '</div>',
                     feature: '<div class="font-medium">' + buildNameAndLink(feature) + '</div>',
                     description: buildDescription(feature),
@@ -118,7 +118,7 @@ class FeatureController {
 
         for (def feature in features.listIterator()){
             def featureRow = [
-                    id: '<div class="font-small">' + feature.id + '</div>',
+                    id: feature.id,
                     module: '<div class="font-small">' + feature.module + '</div>',
                     feature: '<div class="font-medium">' + buildNameAndLink(feature) + '</div>',
                     description: buildDescription(feature),
@@ -141,7 +141,7 @@ class FeatureController {
     }
 
     private String createDoubleNumericOutput(double number){
-        return '<div class="center">' + number + '</div>'
+        return number
     }
 
     private String buildNameAndLink(Feature featureInstance){
