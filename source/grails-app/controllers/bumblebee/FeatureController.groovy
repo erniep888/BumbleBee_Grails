@@ -2,21 +2,18 @@ package bumblebee
 
 import java.text.SimpleDateFormat
 import grails.converters.JSON
+import javax.annotation.PostConstruct
 
 class FeatureController {
 
     def mantisIntegrationService
     def cacheService
 
-    def featureListJsonKey = 'featureListJson'
-    def jsonRefreshDate = 'jsonRefreshDate'
+    static String FEATURELIST_JSON_KEY = 'featureListJson'
 
     static defaultAction = "list"
 
     def list() {
-        if (cacheService.lookup == null) {
-            cacheService.lookup = {loadFeatureList()}
-        }
     }
 
     def create() {
@@ -31,11 +28,20 @@ class FeatureController {
         [featureInstance: Feature.findById(id)]
     }
 
+    def details(){
+        def detailsOn = session['detailsOn']
+        if (detailsOn)
+            session['detailsOn'] = false
+        else
+            session['detailsOn'] = true
+        redirect(action: list())
+    }
+
     def delete(long id) {
         def feature = Feature.findById(id)
         feature.isDeleted = true
         feature.save(flush: true)
-        cacheService.invalidate()
+        cacheService.invalidate(FEATURELIST_JSON_KEY)
         redirect(action: list())
     }
 
@@ -50,48 +56,65 @@ class FeatureController {
                 render(view: "edit", model: [featureInstance: feature])
         } else {
             feature.save(flush: true)
-            cacheService.invalidate()
+            cacheService.invalidate(FEATURELIST_JSON_KEY)
             redirect(controller: "FeaturePhaseGeneral", params: [featureId: feature.id, id: 1])
         }
     }
 
     def refreshFeatureList(){
-        cacheService.invalidate()
+        cacheService.invalidate(FEATURELIST_JSON_KEY)
         redirect(action: list())
     }
 
     /***************** Partial View Actions Below ********************/
     def allFeatures() {
         // TODO: this is not the proper way to cache the json result, but the spring-cache was not working
-        System.out.println(params)
-        JSON featureListJson = cacheService.get(featureListJsonKey)
-//        Date jsonRefresh = cacheService.get(jsonRefreshDate)
-//        if (jsonRefresh){
-//            def now = new Date()
-//            if (now.after(jsonRefresh)){
-//                featureListJson = loadFeatureListIntoSession()
-//            } else {
-//                featureListJson = cacheService.get(featureListJsonKey)
-//            }
-//        }  else {
-//            featureListJson = loadFeatureListIntoSession()
-//        }
+        JSON featureListJson
+        def detailsOn = session['detailsOn']
+        if (detailsOn){
+            if (cacheService.isValid(FEATURELIST_JSON_KEY))
+                featureListJson = cacheService.get(FEATURELIST_JSON_KEY)
+            else {
+                featureListJson = getFeatureListWithDetails()
+                cacheService.set(FEATURELIST_JSON_KEY, featureListJson)
+            }
+        }  else {
+            featureListJson = getFeatureList()
+        }
 
         render(featureListJson)
     }
 
-    public JSON loadFeatureList(){
-        Calendar calendar = Calendar.getInstance()
-        def featureListJson = getFeatureList()
-        //cacheService.set(featureListJsonKey, featureListJson )
-        //calendar.add(Calendar.MINUTE, 120)
-        //cacheService.set(jsonRefreshDate, calendar.time)
-        return featureListJson
-    }
+//    public JSON loadFeatureList(){
+//        def featureListJson = getFeatureList()
+//        return featureListJson
+//    }
 
     private JSON getFeatureList(){
         def featureRows
-        def features = Feature.findAllByIsDeleted(false, [max: 10, offset: 20])
+        def features = Feature.findAllByIsDeleted(false)
+
+        for (def feature in features.listIterator()){
+            def featureRow = [
+                    id: '<div class="font-small">' + feature.id + '</div>',
+                    module: '<div class="font-small">' + feature.module + '</div>',
+                    feature: '<div class="font-medium">' + buildNameAndLink(feature) + '</div>',
+                    description: buildDescription(feature),
+                    developer: buildUserList('developer', feature),
+                    sme: buildUserList('sme', feature),
+                    workEffort: createDoubleNumericOutput(buildWorkEffort(feature))
+            ]
+            if (!featureRows)
+                featureRows = [aaData:[featureRow]]
+            else
+                featureRows.aaData.add(featureRow)
+        }
+        return featureRows as JSON
+    }
+
+    private JSON getFeatureListWithDetails(){
+        def featureRows
+        def features = Feature.findAllByIsDeleted(false)
 
         for (def feature in features.listIterator()){
             def featureRow = [

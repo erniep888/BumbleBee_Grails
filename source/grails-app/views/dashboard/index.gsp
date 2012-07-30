@@ -39,11 +39,11 @@
             <div id="chart1" style="height: 250px; width: 450px;">
             </div>
         </td>
-        <td>
-            <div style="text-align: center;">Status Complete/Incomplete By <g:message code="feature.category.label"/></div>
-            <div id="chart2" style="height: 250px; width: 450px;">
-            </div>
-        </td>
+        %{--<td>--}%
+            %{--<div style="text-align: center;">Status Complete/Incomplete By <g:message code="feature.category.label"/></div>--}%
+            %{--<div id="chart2" style="height: 250px; width: 450px;">--}%
+            %{--</div>--}%
+        %{--</td>--}%
     </tr>
 </table>
 
@@ -91,59 +91,59 @@
         });
 
 
-        var statusCompleteByCategory = $('#statusCompleteByCategory').text()
-        $.getJSON(statusCompleteByCategory + '?'+ Math.round(new Date().getTime()), function(countsByCategory) {
-
-            var
-                    d1 = [],
-                    d2 = [],
-                    graph, i;
-
-            for (i = 0; i < 10; i+=3) {
-                d1.push([i, Math.random()*10]);
-                d2.push([i, Math.random()*10]);
-            }
-            graph = Flotr.draw(document.getElementById('chart2'),
-                    countsByCategory.counts,
-//                    [
-//                        { data : d1, label : 'Complete' },
-//                        { data : d2, label : 'Incomplete' }
-//                    ],
-            {
-                HtmlText : false,
-                grid : {
-                    verticalLines : false,
-                    horizontalLines : false,
-                    backgroundColor : {
-                        colors : [[0,'#fff'], [1,'#ccc']],
-                        start : 'top',
-                        end : 'bottom'
-                    }
-
-                },
-                xaxis : {
-                    showLabels : true,
-                    labelsAngle: -45,
-                    ticks: [[0, 'Finance - AR-Auto Cash'], [2, 'Distribution - Seltec Billing'], [4, 'Maintenance - Interfaces/Core']]
-                },
-                yaxis : { showLabels : true },
-                bars : {
-                    show: true,
-                    stacked: true,
-                    horizontal: false
-                },
-                mouse : {
-                    track : true,
-                    relative: true,
-                    trackDecimals: 0,
-                    trackFormatter: function(obj){ return 'Count = ' + obj.y; }
-                },
-                legend : {
-                    position : 'nw',
-                    backgroundColor : '#ddd'
-                }
-            });
-        });
+//        var statusCompleteByCategory = $('#statusCompleteByCategory').text()
+//        $.getJSON(statusCompleteByCategory + '?'+ Math.round(new Date().getTime()), function(countsByCategory) {
+//
+//            var
+//                    d1 = [],
+//                    d2 = [],
+//                    graph, i;
+//
+//            for (i = 0; i < 10; i+=3) {
+//                d1.push([i, Math.random()*10]);
+//                d2.push([i, Math.random()*10]);
+//            }
+//            graph = Flotr.draw(document.getElementById('chart2'),
+//                    countsByCategory.counts,
+////                    [
+////                        { data : d1, label : 'Complete' },
+////                        { data : d2, label : 'Incomplete' }
+////                    ],
+//            {
+//                HtmlText : false,
+//                grid : {
+//                    verticalLines : false,
+//                    horizontalLines : false,
+//                    backgroundColor : {
+//                        colors : [[0,'#fff'], [1,'#ccc']],
+//                        start : 'top',
+//                        end : 'bottom'
+//                    }
+//
+//                },
+//                xaxis : {
+//                    showLabels : true,
+//                    labelsAngle: -45,
+//                    ticks: [[0, 'Finance - AR-Auto Cash'], [2, 'Distribution - Seltec Billing'], [4, 'Maintenance - Interfaces/Core']]
+//                },
+//                yaxis : { showLabels : true },
+//                bars : {
+//                    show: true,
+//                    stacked: true,
+//                    horizontal: false
+//                },
+//                mouse : {
+//                    track : true,
+//                    relative: true,
+//                    trackDecimals: 0,
+//                    trackFormatter: function(obj){ return 'Count = ' + obj.y; }
+//                },
+//                legend : {
+//                    position : 'nw',
+//                    backgroundColor : '#ddd'
+//                }
+//            });
+//        });
     });
 
 

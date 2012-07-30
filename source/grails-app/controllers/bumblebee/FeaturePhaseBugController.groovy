@@ -50,14 +50,14 @@ class FeaturePhaseBugController extends FeaturePhaseController{
             if (existingBug){     // it does exist
                 existingBug.bugSystemId = postedFeaturePhaseBug.bugSystemId
                 existingBug.save(flush: true)
-                cacheService.invalidate()
+                cacheService.invalidate(FeatureController.FEATURELIST_JSON_KEY)
             } else {         // it is new
                 postedFeaturePhaseBug.save(flush: true)
                 if (!selectedFeaturePhase.bugs)
                     selectedFeaturePhase.bugs = new TreeSet<FeaturePhaseBug>()
                 selectedFeaturePhase.bugs.add(postedFeaturePhaseBug)
                 selectedFeaturePhase.save(flush: true)
-                cacheService.invalidate()
+                cacheService.invalidate(FeatureController.FEATURELIST_JSON_KEY)
             }
             redirect(action: "edit", params: params)
         }

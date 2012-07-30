@@ -28,6 +28,7 @@ class FeaturePhaseGeneralController extends FeaturePhaseController {
         selectedFeaturePhase.status = (justPostedFeaturePhase.status) ?
             justPostedFeaturePhase.status : selectedFeaturePhase.status
         selectedFeaturePhase.comments = justPostedFeaturePhase.comments
+        selectedFeaturePhase.isOffShore = (params.isOffShore)?true:false
 
         selectedFeaturePhase.validate()
         if (selectedFeaturePhase?.hasErrors()){
@@ -37,7 +38,7 @@ class FeaturePhaseGeneralController extends FeaturePhaseController {
                 render(view: "edit", model: [featurePhaseInstance: selectedFeaturePhase], params: params)
         } else {
             selectedFeaturePhase.save(flush: true)
-            cacheService.invalidate()
+            cacheService.invalidate(FeatureController.FEATURELIST_JSON_KEY)
             redirect(controller: "FeaturePhaseGeneral", action:"edit", params: [featureId: params.featureId, id: params.id])
         }
     }
