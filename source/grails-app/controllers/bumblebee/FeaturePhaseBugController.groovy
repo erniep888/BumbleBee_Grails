@@ -23,6 +23,7 @@ class FeaturePhaseBugController extends FeaturePhaseController{
         def featurePhaseBug = FeaturePhaseBug.findById(bugId)
         selectedFeaturePhase.cases.remove(featurePhaseBug)
         featurePhaseBug.delete(flush: true)
+        cacheService.invalidate(FeatureController.FEATURELIST_JSON_KEY)
         redirect(action: "edit", params: params)
     }
 

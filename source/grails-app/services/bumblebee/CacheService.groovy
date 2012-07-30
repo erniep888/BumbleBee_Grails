@@ -7,7 +7,7 @@ import java.lang.reflect.Method
 class CacheService {
 
     boolean transactional = true
-    static int timeToLiveInSeconds = 120
+    static int timeToLiveInSeconds = 180
 
     HashMap<String, Date> lastUpdatePerEntry = new HashMap<String, Date>()
     HashMap<String, Object> cache = new HashMap<String, Object>()

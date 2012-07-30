@@ -1,6 +1,7 @@
 package bumblebee
 
 class FeaturePhaseCaseController extends FeaturePhaseController{
+    def cacheService
 
     def editCase(long featureId, long caseId, long id) {
         def feature = Feature.findById(params.featureId)
@@ -18,6 +19,7 @@ class FeaturePhaseCaseController extends FeaturePhaseController{
         def featurePhaseCase = FeaturePhaseCase.findById(caseId)
         selectedFeaturePhase.cases.remove(featurePhaseCase)
         featurePhaseCase.delete(flush: true)
+        cacheService.invalidate(FeatureController.FEATURELIST_JSON_KEY)
         redirect(action: "edit", params: params)
     }
 
@@ -44,12 +46,14 @@ class FeaturePhaseCaseController extends FeaturePhaseController{
                 existingCase.vendor = postedFeaturePhaseCase.vendor
                 existingCase.description = postedFeaturePhaseCase.description
                 existingCase.save(flush: true)
+                cacheService.invalidate(FeatureController.FEATURELIST_JSON_KEY)
             } else {
                 postedFeaturePhaseCase.save(flush: true)
                 if (!selectedFeaturePhase.cases)
                     selectedFeaturePhase.cases = new TreeSet<FeaturePhaseCase>()
                 selectedFeaturePhase.cases.add(postedFeaturePhaseCase)
                 selectedFeaturePhase.save(flush: true)
+                cacheService.invalidate(FeatureController.FEATURELIST_JSON_KEY)
             }
             redirect(action: "edit", params: params)
         }

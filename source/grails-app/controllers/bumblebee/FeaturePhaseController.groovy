@@ -2,6 +2,7 @@ package bumblebee
 
 class FeaturePhaseController {
     def artifactService
+    def cacheService
 
     static defaultAction = "edit"
 
@@ -16,6 +17,7 @@ class FeaturePhaseController {
         def selectedFeaturePhase = FeaturePhase.findOrCreateWhere(phase: phase, feature: feature)
         if (!selectedFeaturePhase.id){
             selectedFeaturePhase.status = FeaturePhaseStatus.findByStatus('[a] not started')
+            selectedFeaturePhase.isOffShore = false
             selectedFeaturePhase.save(flush: true)
             feature.addToFeaturePhases(selectedFeaturePhase)
             feature.save()

@@ -128,7 +128,7 @@ class FeatureController {
                     status: buildStatusList(feature),
                     completed: buildCompletionDate(feature),
                     bugs: buildFeatureBugList(feature),
-                    bugStatus: buildStatusList(feature),
+                    bugStatus: buildFeatureBugStatusList(feature),
                     bugSeverity: buildFeatureBugSeverityMaximum(feature),
                     thirdPartyCases: buildThirdPartyCases(feature)
             ]
