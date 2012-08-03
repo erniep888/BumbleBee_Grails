@@ -4,9 +4,9 @@ import org.springframework.cache.ehcache.EhCacheFactoryBean
 beans = {
     dataSourceMantis(DriverManagerDataSource) {
         driverClassName = "com.mysql.jdbc.Driver"
-        url = "jdbc:mysql://ralappphp01t/mantis"
-        username = "readonly"
-        password = "r3ad0nly"
+        url = "jdbc:mysql://mantis/mantis"
+        username = "test"
+        password = "test1"
     }
 
 }

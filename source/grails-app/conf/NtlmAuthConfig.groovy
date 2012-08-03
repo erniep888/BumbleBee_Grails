@@ -20,10 +20,10 @@ active = true
 active = false
 
 jcifs {
-	http.domainController = '10.100.2.1' // ip address of ldap/AD server ... or use jcifs.netbios.wins
-	smb.client.domain = 'martinmarietta.com'   // scrumtime.com
-	smb.client.username = 'oversightdorservice@martinmarietta.com'    // admin@scrumtime.com
-	smb.client.password = 'oversightdorservice1'                      // test01
+	http.domainController = '10.100.20.10' // ip address of ldap/AD server ... or use jcifs.netbios.wins
+	smb.client.domain = 'scrumtime.com'   // scrumtime.com
+	smb.client.username = 'admin@scrumtime.com'    // admin@scrumtime.com
+	smb.client.password = 'test01'                      // test01
 }
 
 /*

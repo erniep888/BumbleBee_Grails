@@ -21,7 +21,7 @@ environments {
             driverClassName = "com.mysql.jdbc.Driver"
             dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
             dbCreate = "update"
-            url = "jdbc:mysql://raldorweb01/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://test/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
             username = "bumblebeeuser"
             password = "bumbl3"
             properties {
@@ -50,7 +50,7 @@ environments {
             driverClassName = "com.mysql.jdbc.Driver"
             dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
             dbCreate = "update"
-            url = "jdbc:mysql://raldorweb01/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://test/bumblebee?useUnicode=yes&characterEncoding=UTF-8"
             username = "bumblebeeuser"
             password = "bumbl3"
             properties {

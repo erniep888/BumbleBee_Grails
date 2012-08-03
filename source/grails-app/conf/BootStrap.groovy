@@ -45,10 +45,10 @@ class BootStrap {
     private void createActiveDirectorySettings(){
         if (ActiveDirectorySettings.count() == 0) {
             ActiveDirectorySettings activeDirectorySettings = new ActiveDirectorySettings(
-                    hostname: 'ldap', port: '389', bindDn: 'oversightdorservice@martinmarietta.com',
-                    bindPassword: 'oversightdorservice1',
-                    keystorePath: /\\raleigh2\ERP&amp;OPS\Projects\Daily Operating Report\Development\certificates\jssecacerts/,
-                    ldapSearchString: "DC=martinmarietta,DC=com"
+                    hostname: 'ldap', port: '389', bindDn: 'ldap@scrumtime.com',
+                    bindPassword: 'test1',
+                    keystorePath: /c:/,
+                    ldapSearchString: "DC=scrumtime,DC=com"
 
             )
             activeDirectorySettings.save(flush: true)
