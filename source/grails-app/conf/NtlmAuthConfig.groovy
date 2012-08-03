@@ -17,6 +17,8 @@
 active = true
  */
 
+active = false
+
 jcifs {
 	http.domainController = '10.100.2.1' // ip address of ldap/AD server ... or use jcifs.netbios.wins
 	smb.client.domain = 'martinmarietta.com'   // scrumtime.com
