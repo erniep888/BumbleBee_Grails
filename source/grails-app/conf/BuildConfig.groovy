@@ -38,21 +38,21 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        runtime ":hibernate:$grailsVersion"
-        runtime ":jquery:1.7.2"
-        runtime ":resources:1.1.6"
+        runtime ":hibernate:latest.integration"
+        runtime ":jquery:latest.integration"
+        runtime ":resources:latest.integration"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
         //runtime ":cached-resources:1.0"
         //runtime ":yui-minify-resources:0.1.4"
 
-        build ":tomcat:$grailsVersion"
+        build ":tomcat:latest.integration"
 
-        runtime ":database-migration:1.1"
-		runtime ":spring-security-core:1.2.7.3"
-		runtime ":dbconsole:1.1"
+        runtime ":database-migration:latest.integration"
+	runtime ":spring-security-core:1.2.7"
+//	runtime ":dbconsole:latest.integration"
 
-        compile ':cache:1.0.0'
+        compile ':cache:latest.integration'
     }
 }
